@@ -13,7 +13,7 @@ The study evaluates a stage-aware protocol that separates target recovery from d
 
 ## Environment
 
-The machine experiments use local [Ollama](https://ollama.com/) models. Python package versions used for the analysis environment are recorded in `requirements.txt`; model names, prompts, seeds, and generation settings are retained with the run outputs and manifests.
+The machine experiments use local [Ollama](https://ollama.com/) models. Use Python 3.10 or newer. Package versions used for the analysis environment are recorded in `requirements.txt`; model names, prompts, seeds, and generation settings are retained with the run outputs and manifests.
 
 ```bash
 python -m venv .venv
@@ -25,17 +25,18 @@ Install the required Ollama models before rerunning machine inference. A short s
 
 ## Reproducing analyses
 
-Run commands from `experiment/`. The principal analysis entry points are:
+The external-transfer analysis can be recomputed directly from the retained outputs:
 
 ```bash
-python validate_outputs.py
-python make_final_outputs.py
-python make_major_revision_figures.py
-python analyze_forward.py --help
-python analyze_reranker.py --help
+python experiment/analyze_forward.py \
+  --input-dir results/external_transfer/full_qwen \
+  --output-dir reproduced/external_transfer \
+  --data-dir experiment/ext_v1_20260810 \
+  --split test \
+  --bootstrap 2000
 ```
 
-The external-transfer aggregate results are already retained under `results/external_transfer/full_analysis/`. The complete retained outputs allow metric recomputation without rerunning model inference.
+The command writes the same point estimates as `results/external_transfer/full_analysis/`; bootstrap limits vary only if the resampling count changes. Additional analysis entry points expose their options through `--help`, including `experiment/analyze_reranker.py` and `experiment/analyze_paired_conditions.py`. The complete retained outputs allow metric recomputation without rerunning model inference.
 
 ## Data and scope
 
