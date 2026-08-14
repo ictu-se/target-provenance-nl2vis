@@ -1,0 +1,17 @@
+{
+  "analysis": "multi-label grouping by operations present in any canonical gold specification",
+  "groups": [
+    "aggregate",
+    "filter",
+    "bin",
+    "time_unit",
+    "sort",
+    "plain_encoding"
+  ],
+  "grouping_use": "analysis only; gold information was never provided to forward generation",
+  "test_records": 751,
+  "case_rows": 1502,
+  "data_sha256": "1f62c3dc7b3c054a8a258279b2fd4dfcde7f41628658245594813643bf268eb6",
+  "per_case_sha256": "eb9f271f46dc7a57dee287ab6d509ed8ce4ce9e4d2bab1d24983bac984718384",
+  "output_sha256": "4174bad4f580b0877a63294a18bd6a6eca87d7982409b716c3a7295837804133"
+}

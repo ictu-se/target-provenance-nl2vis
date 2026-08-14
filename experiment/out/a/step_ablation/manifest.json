@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-08-07T15:44:55.315511+00:00",
+  "modes": [
+    "full",
+    "leave_step_1_out",
+    "leave_step_2_out",
+    "leave_step_3_out",
+    "leave_step_4_out",
+    "leave_step_5_out",
+    "leave_step_6_out"
+  ],
+  "policy": "Each learned reranker is retrained on the train split under the same answer-field ablation used at test time.",
+  "step4_extension": "The untouched legacy module lacked a step-4 switch; the audit wrapper deep-copies each record and empties only step_4.answer before calling the unchanged pipeline.",
+  "reasoning_use": "The constructor and rankers consume step answers, not step reasoning strings."
+}

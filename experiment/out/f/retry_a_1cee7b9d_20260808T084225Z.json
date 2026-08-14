@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-08-08T08:42:25.635910+00:00",
+  "path": "<ARTIFACT_ROOT>/experiment\\out\\f\\mistral_smal_d50e0c_d_55_t_cross150.jsonl",
+  "backup": "<ARTIFACT_ROOT>/experiment\\out\\f\\retry_b_1cee7b9d_20260808T084225Z.jsonl",
+  "input_rows": 150,
+  "retained_rows": 149,
+  "removed": [
+    {
+      "line": 150,
+      "record_id": "nvbench2:test:7",
+      "error": "RuntimeError: Ollama failed after 3 attempts: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate"
+    }
+  ],
+  "purpose": "resumable retry of explicitly selected records"
+}

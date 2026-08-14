@@ -1,0 +1,21 @@
+{
+  "name": "nvBench-v1 balanced seven-family external transfer",
+  "seed": 20260810,
+  "n": 105,
+  "weighting": "empirical external-set composition",
+  "strata": {
+    "arc": {"population": 15},
+    "bar": {"population": 30},
+    "line": {"population": 30},
+    "point": {"population": 30}
+  },
+  "released_family_allocation": {
+    "Bar": 15,
+    "Stacked Bar": 15,
+    "Pie": 15,
+    "Line": 15,
+    "Grouping Line": 15,
+    "Scatter": 15,
+    "Grouping Scatter": 15
+  }
+}

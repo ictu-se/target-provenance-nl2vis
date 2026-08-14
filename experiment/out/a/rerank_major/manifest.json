@@ -1,0 +1,9 @@
+{
+  "files": [
+    "qwen3_14b_613573_77_combined.jsonl",
+    "qwen3_14b_613573_77_staged.jsonl"
+  ],
+  "bootstrap": 2000,
+  "bootstrap_seed": 20260807,
+  "n_case_runs": 300
+}

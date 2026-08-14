@@ -1,0 +1,43 @@
+{
+  "decision_date": "2026-08-07",
+  "smoke_design": {
+    "split": "test",
+    "indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "seed": 44,
+    "temperature": 0.0,
+    "input_policy": "query_and_schema_only",
+    "output_policy": "shared JSON schema plus post-generation schema validation"
+  },
+  "full_test_model": {
+    "model": "qwen3:14b",
+    "conditions": ["direct", "staged"],
+    "reason": "best direct top-1 graded macro (0.653), best direct best-of-five graded macro (0.700), staged exact Hit@5 0.10, and substantially lower latency than Gemma/Mistral"
+  },
+  "cross_family_direct": [
+    "qwen3:14b",
+    "llama3.2:3b",
+    "gemma3:27b",
+    "mistral-small:24b"
+  ],
+  "cross_family_staged": [
+    "qwen3:14b",
+    "gemma3:27b",
+    "mistral-small:24b"
+  ],
+  "smoke_only_exclusions": [
+    {
+      "model": "deepseek-r1:1.5b",
+      "reason": "zero cases with any valid candidate in both direct and staged smoke"
+    },
+    {
+      "model": "phi3.5:latest",
+      "reason": "direct parse success 0.80, direct any-valid rate 0.60, staged any-valid rate 0.30, no exact hit, and lower graded performance than retained models"
+    },
+    {
+      "model": "llama3.2:3b",
+      "condition": "staged",
+      "reason": "staged reduced any-valid rate from 0.70 to 0.30 and top-1 graded macro from 0.572 to 0.462, with no exact hit in either condition"
+    }
+  ],
+  "non_selection_rule": "A model-condition is not expanded when smoke shows structural degeneration, no exact signal, and no incremental graded value relative to a retained family."
+}

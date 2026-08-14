@@ -1,0 +1,36 @@
+{
+  "repaired_utc": "2026-08-07T15:21:48.489345+00:00",
+  "path": "<ARTIFACT_ROOT>/experiment\\out\\f\\mistral_smal_d50e0c_s_44_t.jsonl",
+  "backup": "<ARTIFACT_ROOT>/experiment\\out\\f\\b_a0cc574c_20260807T152148Z.jsonl",
+  "key": "record_id",
+  "input_lines": 16,
+  "retained_lines": 10,
+  "duplicates_removed": [
+    {
+      "line": 2,
+      "record_id": "nvbench2:test:0"
+    },
+    {
+      "line": 4,
+      "record_id": "nvbench2:test:1"
+    },
+    {
+      "line": 6,
+      "record_id": "nvbench2:test:2"
+    },
+    {
+      "line": 8,
+      "record_id": "nvbench2:test:3"
+    },
+    {
+      "line": 10,
+      "record_id": "nvbench2:test:4"
+    },
+    {
+      "line": 16,
+      "record_id": "nvbench2:test:9"
+    }
+  ],
+  "policy": "retain first physical occurrence for each key",
+  "cause": "two resumable workers briefly wrote the same run after an outer shell timeout left one worker alive"
+}

@@ -1,0 +1,39 @@
+{
+  "model": "qwen3:14b",
+  "model_manifest": {
+    "name": "qwen3:14b",
+    "model": "qwen3:14b",
+    "modified_at": "2026-04-24T22:01:35.8395092+07:00",
+    "size": 9276198565,
+    "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "14.8B",
+      "quantization_level": "Q4_K_M"
+    }
+  },
+  "seed": 77,
+  "temperature": 0.0,
+  "input_policy": "query_schema_and_valid_forward_candidate_pool_only",
+  "source_files": [
+    "gemma3_27b_1eb26b_d_55_t_cross150.jsonl",
+    "llama3_2_3b_925b2c_d_55_t_cross150.jsonl",
+    "mistral_smal_d50e0c_d_55_t_cross150.jsonl",
+    "qwen3_14b_613573_d_55_t_cross150.jsonl"
+  ],
+  "source_sha256": {
+    "gemma3_27b_1eb26b_d_55_t_cross150.jsonl": "d72abe7b476730189cfa448e3244456d21fb92d3c1f0c9efa27e446eac6018e3",
+    "llama3_2_3b_925b2c_d_55_t_cross150.jsonl": "4ee575a3ecf3e244ba349c023101a5010297c0370d871cf1074a67e29c84a01f",
+    "mistral_smal_d50e0c_d_55_t_cross150.jsonl": "70c5bde3c0c23dcf3aa4af950c8cfba724489b8312243a0d210611237570ea47",
+    "qwen3_14b_613573_d_55_t_cross150.jsonl": "1f9c7948f4e97640f92785eae608f5d98f5cdbc6dd85a38591e3f9ea659e050f"
+  },
+  "input_pattern": "*_d_55_t_cross150.jsonl",
+  "pool_policy": "canonical union of post-validation candidates",
+  "baseline": "RRF score=sum_m 1/(60+source_rank); descending score; canonical-key tie break",
+  "presentation_policy": "deterministic record-and-seed-specific shuffle to avoid RRF-order leakage"
+}

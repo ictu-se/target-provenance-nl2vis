@@ -1,0 +1,91 @@
+{
+  "created_utc": "2026-08-07T15:25:01.398525+00:00",
+  "data_dir": "<WORKSPACE>\\data_benchmarks\\datasets\\nvBench-2.0\\data\\nvbench2.0",
+  "data_sha256": "1f62c3dc7b3c054a8a258279b2fd4dfcde7f41628658245594813643bf268eb6",
+  "split": "test",
+  "offset": 0,
+  "limit": 0,
+  "indices_file": "<ARTIFACT_ROOT>/experiment\\design\\forward_sample150.json",
+  "indices_sha256": "c5e9fcd24c1bcebaaa9d5396b5d4c7e503c66dc2d4ca3888d37c3f75e08be349",
+  "run_tag": "cross150",
+  "models": {
+    "qwen3:14b": {
+      "name": "qwen3:14b",
+      "model": "qwen3:14b",
+      "modified_at": "2026-04-24T22:01:35.8395092+07:00",
+      "size": 9276198565,
+      "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    "llama3.2:3b": {
+      "name": "llama3.2:3b",
+      "model": "llama3.2:3b",
+      "modified_at": "2026-05-26T22:55:40.1226029+07:00",
+      "size": 2019393189,
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "3.2B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    "gemma3:27b": {
+      "name": "gemma3:27b",
+      "model": "gemma3:27b",
+      "modified_at": "2026-05-30T00:55:31.7905217+07:00",
+      "size": 17396936941,
+      "digest": "a418f5838eaf7fe2cfe0a3046c8384b68ba43a4435542c942f9db00a5f342203",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "gemma3",
+        "families": [
+          "gemma3"
+        ],
+        "parameter_size": "27.4B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    "mistral-small:24b": {
+      "name": "mistral-small:24b",
+      "model": "mistral-small:24b",
+      "modified_at": "2026-05-30T01:20:58.5224198+07:00",
+      "size": 14333921662,
+      "digest": "8039dd90c1138d772437a0779a33b7349efd5d9cca71edcd26e4dd463f90439d",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "23.6B",
+        "quantization_level": "Q4_K_M"
+      }
+    }
+  },
+  "conditions": [
+    "direct"
+  ],
+  "seeds": [
+    55
+  ],
+  "temperature": 0.0,
+  "direct_template_sha256": "9ac6d50a0277ae7558260468001548531c36344aad61d72fa04d6281ada74a81",
+  "staged_template_sha256": "c7099b75892834449f62ac9ef13d9cbdfc8921e38316dee1a1cd8722e9ca8dba",
+  "chart_rules_sha256": "527c472a0d9bafb470e2abf6c13c2291d055632f45f5f901378f680554bfb1ef"
+}

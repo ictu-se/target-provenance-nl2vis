@@ -1,0 +1,32 @@
+{
+  "source": "<WORKSPACE>\\data_benchmarks\\datasets\\nvBench\\NVBench.json",
+  "source_records": 7247,
+  "seed": 20260810,
+  "per_family": 15,
+  "selection_count": 105,
+  "selection_by_chart": {
+    "Bar": 15,
+    "Stacked Bar": 15,
+    "Pie": 15,
+    "Line": 15,
+    "Grouping Line": 15,
+    "Scatter": 15,
+    "Grouping Scatter": 15
+  },
+  "eligible_by_chart": {
+    "Scatter": 137,
+    "Pie": 384,
+    "Bar": 2316,
+    "Stacked Bar": 187,
+    "Line": 68,
+    "Grouping Scatter": 103,
+    "Grouping Line": 19
+  },
+  "exclusions": {
+    "unsupported_transform": 2249,
+    "schema_failure": 95,
+    "gold_parse_failure": 1686,
+    "missing_query": 3
+  },
+  "scope": "single-gold cross-benchmark transfer; WHERE/BIN/HAVING/set operations and non-canonical ordering excluded"
+}

@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-08-07T15:25:00.727837+00:00",
+  "status": "completed",
+  "runner": "<ARTIFACT_ROOT>/experiment\\run_forward_ollama.py",
+  "sample": "<ARTIFACT_ROOT>/experiment\\design\\forward_sample150.json",
+  "phases": [
+    {
+      "name": "cross_family_direct_sample150",
+      "status": "completed",
+      "started_utc": "2026-08-07T15:25:00.749450+00:00",
+      "ended_utc": "2026-08-07T16:49:39.158653+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "cross_family_staged_sample150",
+      "status": "completed",
+      "started_utc": "2026-08-07T16:49:39.175244+00:00",
+      "ended_utc": "2026-08-07T20:24:52.883172+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "qwen_full_test",
+      "status": "completed",
+      "started_utc": "2026-08-07T20:24:52.896579+00:00",
+      "ended_utc": "2026-08-08T00:11:09.711749+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "qwen_repeated_sample150",
+      "status": "completed",
+      "started_utc": "2026-08-08T00:11:09.747000+00:00",
+      "ended_utc": "2026-08-08T02:25:17.942592+00:00",
+      "returncode": 0
+    }
+  ],
+  "ended_utc": "2026-08-08T02:25:18.037796+00:00"
+}

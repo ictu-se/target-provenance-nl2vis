@@ -1,0 +1,47 @@
+{
+  "created_utc": "2026-08-13T02:11:11.848364+00:00",
+  "data_dir": "<WORKSPACE>/data_benchmarks/datasets/nvBench-2.0/data/nvbench2.0",
+  "data_sha256": "1f62c3dc7b3c054a8a258279b2fd4dfcde7f41628658245594813643bf268eb6",
+  "split": "test",
+  "offset": 0,
+  "limit": 0,
+  "indices_file": "<ARTIFACT_ROOT>/experiment/design/forward_sample150.json",
+  "indices_sha256": "c5e9fcd24c1bcebaaa9d5396b5d4c7e503c66dc2d4ca3888d37c3f75e08be349",
+  "run_tag": "cross150",
+  "models": {
+    "llama3.2:3b": {
+      "name": "llama3.2:3b",
+      "model": "llama3.2:3b",
+      "modified_at": "2026-05-04T16:23:13.007602085+07:00",
+      "size": 2019393189,
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "3.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 3072
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    }
+  },
+  "conditions": [
+    "staged"
+  ],
+  "seeds": [
+    55
+  ],
+  "temperature": 0.0,
+  "direct_template_sha256": "9ac6d50a0277ae7558260468001548531c36344aad61d72fa04d6281ada74a81",
+  "direct_rich_template_sha256": "b9d5d1836420a3b0f591fb511890a7019278d3e04ce1f2eaba63bbb34a0d7e0e",
+  "staged_template_sha256": "c7099b75892834449f62ac9ef13d9cbdfc8921e38316dee1a1cd8722e9ca8dba",
+  "chart_rules_sha256": "527c472a0d9bafb470e2abf6c13c2291d055632f45f5f901378f680554bfb1ef"
+}

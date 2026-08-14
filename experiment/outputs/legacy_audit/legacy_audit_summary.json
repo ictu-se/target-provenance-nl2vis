@@ -1,0 +1,508 @@
+{
+  "created_utc": "2026-08-07T15:33:14.089773+00:00",
+  "python": "3.12.12",
+  "data_dir": "<WORKSPACE>\\data_benchmarks\\datasets\\nvBench-2.0\\data\\nvbench2.0",
+  "legacy_dir": "<HISTORICAL_LOCAL_PATH>",
+  "input_sha256": {
+    "train": "997a380d491516efc0b1cb721db4d2ea326aec9f0094102532aa85f72c722de0",
+    "dev": "905e71d68581226b27ec9fcf0ec144960f6cc734de5e86213424b12fe6f4a8a7",
+    "test": "1f62c3dc7b3c054a8a258279b2fd4dfcde7f41628658245594813643bf268eb6"
+  },
+  "legacy_code_sha256": "7cb50e2afca8e246f3097cb04fa2497851fa8117c6e78c7561289db4e4920b37",
+  "six_fields": {
+    "step_1": "column selection and explicit filters",
+    "step_2": "explicit aggregation, binning, or sorting",
+    "step_3": "chart-mark selection",
+    "step_4": "initial channel mapping",
+    "step_5": "completion of obligatory/optional channels",
+    "step_6": "implicit transformations, filters, and final chart list"
+  },
+  "provenance": "All six fields are benchmark-provided annotations generated after valid charts in the reverse-generation pipeline; none is a forward prediction by the legacy system.",
+  "legacy_validation_stage": {
+    "implemented": false,
+    "finding": "No schema validation or IsValid pruning is called by build_candidate_pool; the manuscript algorithm claimed a validation stage that the code did not implement."
+  },
+  "heuristic_specification": {
+    "formula": "3 I(mark=step3) + sum_channels[2 I(aggregate=query_pref) + 0.15 I(no aggregate and no query preference and channel in {x,y})] + sort_term + color_term + 0.35|fields intersect certain_step1| + 0.15|fields intersect ambiguous_step1| + sum_step2 aggregate/sort terms - 0.02 UTF8_JSON_character_length(spec)",
+    "sort_term": "+1 if requested sort is present, otherwise -0.25; zero when no sort is requested",
+    "color_term": "+0.8 if query mentions color and candidate has color, otherwise -0.4; zero when color is not mentioned",
+    "step2_aggregate_term": "+1.25 for each step-2 aggregate present in an encoding, otherwise -0.1",
+    "step2_sort_term": "+0.4 when a step-2 sort string is literally present in the lower-cased query",
+    "normalization": "none",
+    "heuristic_tie_break": "ascending canonical JSON string",
+    "learned_tie_break": "descending heuristic score, then ascending canonical JSON string",
+    "critical_pool_detail": "Both rankers independently rank the first 15 deduplicated candidates (3K for K=5); the heuristic top five is not the learned reranker's input shortlist."
+  },
+  "split_audits": [
+    {
+      "split": "train",
+      "n": 6004,
+      "rates": {
+        "cap15_pool_any_gold": 0.9795136575616256,
+        "complete_pool_any_gold": 0.9795136575616256,
+        "heuristic_top5_any_gold": 0.8509327115256495,
+        "step4_contains_all_gold": 0.07528314457028648,
+        "step4_contains_any_gold": 0.15572951365756163,
+        "step5_contains_all_gold": 0.3754163890739507,
+        "step5_contains_any_gold": 0.46568954030646237,
+        "step6_contains_all_gold": 0.9130579613590939,
+        "step6_contains_any_gold": 0.9778481012658228,
+        "step6_order_equal_gold": 0.9105596269153897,
+        "step6_set_equal_gold": 0.9130579613590939
+      },
+      "pool_sizes": {
+        "gold": {
+          "min": 1,
+          "mean": 3.0229846768820785,
+          "median": 3.0,
+          "max": 5
+        },
+        "step_4": {
+          "min": 1,
+          "mean": 1.540473017988008,
+          "median": 1.0,
+          "max": 5
+        },
+        "step_5": {
+          "min": 1,
+          "mean": 2.74400399733511,
+          "median": 2.0,
+          "max": 6
+        },
+        "step_6": {
+          "min": 1,
+          "mean": 2.902398401065956,
+          "median": 3.0,
+          "max": 6
+        },
+        "raw_step_6_5_4": {
+          "min": 3,
+          "mean": 7.19670219853431,
+          "median": 6.0,
+          "max": 16
+        },
+        "expanded": {
+          "min": 3,
+          "mean": 7.597934710193204,
+          "median": 7.0,
+          "max": 22
+        },
+        "deduplicated_complete": {
+          "min": 1,
+          "mean": 5.2773151232511655,
+          "median": 4.0,
+          "max": 22
+        },
+        "legacy_pool_cap_15": {
+          "min": 1,
+          "mean": 5.268321119253831,
+          "median": 4.0,
+          "max": 15
+        },
+        "legacy_heuristic_top_5": {
+          "min": 1,
+          "mean": 4.107761492338441,
+          "median": 4.0,
+          "max": 5
+        }
+      }
+    },
+    {
+      "split": "dev",
+      "n": 750,
+      "rates": {
+        "cap15_pool_any_gold": 0.9906666666666667,
+        "complete_pool_any_gold": 0.9906666666666667,
+        "heuristic_top5_any_gold": 0.856,
+        "step4_contains_all_gold": 0.092,
+        "step4_contains_any_gold": 0.16666666666666666,
+        "step5_contains_all_gold": 0.4186666666666667,
+        "step5_contains_any_gold": 0.5053333333333333,
+        "step6_contains_all_gold": 0.9133333333333333,
+        "step6_contains_any_gold": 0.9866666666666667,
+        "step6_order_equal_gold": 0.912,
+        "step6_set_equal_gold": 0.9133333333333333
+      },
+      "pool_sizes": {
+        "gold": {
+          "min": 1,
+          "mean": 3.074666666666667,
+          "median": 3.0,
+          "max": 5
+        },
+        "step_4": {
+          "min": 1,
+          "mean": 1.592,
+          "median": 1.0,
+          "max": 5
+        },
+        "step_5": {
+          "min": 1,
+          "mean": 2.8146666666666667,
+          "median": 2.5,
+          "max": 5
+        },
+        "step_6": {
+          "min": 1,
+          "mean": 2.949333333333333,
+          "median": 3.0,
+          "max": 5
+        },
+        "raw_step_6_5_4": {
+          "min": 3,
+          "mean": 7.3773333333333335,
+          "median": 7.0,
+          "max": 15
+        },
+        "expanded": {
+          "min": 3,
+          "mean": 7.681333333333333,
+          "median": 7.0,
+          "max": 18
+        },
+        "deduplicated_complete": {
+          "min": 1,
+          "mean": 5.281333333333333,
+          "median": 5.0,
+          "max": 18
+        },
+        "legacy_pool_cap_15": {
+          "min": 1,
+          "mean": 5.273333333333333,
+          "median": 5.0,
+          "max": 15
+        },
+        "legacy_heuristic_top_5": {
+          "min": 1,
+          "mean": 4.125333333333334,
+          "median": 5.0,
+          "max": 5
+        }
+      }
+    },
+    {
+      "split": "test",
+      "n": 751,
+      "rates": {
+        "cap15_pool_any_gold": 0.9747003994673769,
+        "complete_pool_any_gold": 0.9747003994673769,
+        "heuristic_top5_any_gold": 0.848202396804261,
+        "step4_contains_all_gold": 0.07190412782956059,
+        "step4_contains_any_gold": 0.14647137150466044,
+        "step5_contains_all_gold": 0.45272969374167776,
+        "step5_contains_any_gold": 0.5126498002663116,
+        "step6_contains_all_gold": 0.9280958721704394,
+        "step6_contains_any_gold": 0.9720372836218375,
+        "step6_order_equal_gold": 0.9241011984021305,
+        "step6_set_equal_gold": 0.9280958721704394
+      },
+      "pool_sizes": {
+        "gold": {
+          "min": 1,
+          "mean": 2.9960053262316912,
+          "median": 3,
+          "max": 5
+        },
+        "step_4": {
+          "min": 1,
+          "mean": 1.559254327563249,
+          "median": 1,
+          "max": 5
+        },
+        "step_5": {
+          "min": 1,
+          "mean": 2.81491344873502,
+          "median": 2,
+          "max": 5
+        },
+        "step_6": {
+          "min": 1,
+          "mean": 2.9081225033288947,
+          "median": 3,
+          "max": 5
+        },
+        "raw_step_6_5_4": {
+          "min": 3,
+          "mean": 7.29560585885486,
+          "median": 7,
+          "max": 15
+        },
+        "expanded": {
+          "min": 3,
+          "mean": 7.661784287616511,
+          "median": 7,
+          "max": 20
+        },
+        "deduplicated_complete": {
+          "min": 1,
+          "mean": 5.247669773635153,
+          "median": 4,
+          "max": 18
+        },
+        "legacy_pool_cap_15": {
+          "min": 1,
+          "mean": 5.243675099866844,
+          "median": 4,
+          "max": 15
+        },
+        "legacy_heuristic_top_5": {
+          "min": 1,
+          "mean": 4.115845539280959,
+          "median": 4,
+          "max": 5
+        }
+      }
+    }
+  ],
+  "reranker": {
+    "training_rows": 31631,
+    "positive_rate": 0.5446239448642155,
+    "feature_count": 1589,
+    "solver": "liblinear",
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "legacy_table_reproduction": {
+    "heuristic": {
+      "count": 751,
+      "Hit@1": 0.15046604527296936,
+      "Hit@3": 0.7070572569906791,
+      "Hit@5": 0.848202396804261,
+      "MRR": 0.4196404793608522,
+      "avg_candidate_count": 4.115845539280959
+    },
+    "learned": {
+      "count": 751,
+      "Hit@1": 0.9613848202396804,
+      "Hit@3": 0.9733688415446072,
+      "Hit@5": 0.9747003994673769,
+      "MRR": 0.9667554371948512,
+      "avg_candidate_count": 4.115845539280959
+    },
+    "oracle": {
+      "count": 751,
+      "Hit@1": 0.9747003994673769,
+      "Hit@3": 0.9747003994673769,
+      "Hit@5": 0.9747003994673769,
+      "MRR": 0.9747003994673769,
+      "avg_candidate_count": 4.115845539280959
+    }
+  },
+  "complete_pool_coverage_curves": {
+    "fixed_complete_pool": true,
+    "ks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "pool_size": {
+      "min": 1,
+      "mean": 5.247669773635153,
+      "median": 4,
+      "max": 18
+    },
+    "metrics": {
+      "heuristic": {
+        "F1@1": 0.08255659121171771,
+        "F1@10": 0.7081791562483973,
+        "F1@11": 0.7119476358823895,
+        "F1@12": 0.7135498879683104,
+        "F1@13": 0.7138516642491735,
+        "F1@14": 0.7141223158789005,
+        "F1@15": 0.7141962913190544,
+        "F1@2": 0.2523809523809524,
+        "F1@3": 0.43195104939445816,
+        "F1@4": 0.5411525373575973,
+        "F1@5": 0.5956460169509438,
+        "F1@6": 0.6368065282845575,
+        "F1@7": 0.6667867566669164,
+        "F1@8": 0.6860485128128271,
+        "F1@9": 0.699500795106654,
+        "Hit@1": 0.15046604527296936,
+        "Hit@10": 0.9733688415446072,
+        "Hit@11": 0.9747003994673769,
+        "Hit@12": 0.9747003994673769,
+        "Hit@13": 0.9747003994673769,
+        "Hit@14": 0.9747003994673769,
+        "Hit@15": 0.9747003994673769,
+        "Hit@2": 0.4633821571238349,
+        "Hit@3": 0.7070572569906791,
+        "Hit@4": 0.7723035952063915,
+        "Hit@5": 0.8468708388814914,
+        "Hit@6": 0.9094540612516645,
+        "Hit@7": 0.9560585885486018,
+        "Hit@8": 0.9693741677762983,
+        "Hit@9": 0.9707057256990679,
+        "MRR": 0.4386622550404175,
+        "Precision@1": 0.15046604527296936,
+        "Precision@10": 0.5906484475725488,
+        "Precision@11": 0.5929605163293579,
+        "Precision@12": 0.5939188345313512,
+        "Precision@13": 0.5940980827132625,
+        "Precision@14": 0.5942517240120436,
+        "Precision@15": 0.5942897685241227,
+        "Precision@2": 0.29494007989347537,
+        "Precision@3": 0.4245450510430537,
+        "Precision@4": 0.4871282734132268,
+        "Precision@5": 0.5186196182867289,
+        "Precision@6": 0.5440079893475366,
+        "Precision@7": 0.5640447657092131,
+        "Precision@8": 0.5768372328958215,
+        "Precision@9": 0.5853813962335933,
+        "Recall@1": 0.05867731913004883,
+        "Recall@10": 0.9434531735463826,
+        "Recall@11": 0.9515090989791389,
+        "Recall@12": 0.9553040390590324,
+        "Recall@13": 0.9561029738126942,
+        "Recall@14": 0.9569019085663559,
+        "Recall@15": 0.95716822015091,
+        "Recall@2": 0.2326231691078562,
+        "Recall@3": 0.4632933865956502,
+        "Recall@4": 0.6436307146027519,
+        "Recall@5": 0.7365956502441189,
+        "Recall@6": 0.8098535286284954,
+        "Recall@7": 0.8627829560585886,
+        "Recall@8": 0.8980470483799378,
+        "Recall@9": 0.9246116289391921
+      },
+      "learned": {
+        "F1@1": 0.5150022192632046,
+        "F1@10": 0.7172591131312837,
+        "F1@11": 0.7154540717456829,
+        "F1@12": 0.7146464650811796,
+        "F1@13": 0.7144434677704045,
+        "F1@14": 0.714262479870771,
+        "F1@15": 0.7141962913190544,
+        "F1@2": 0.7904191237080718,
+        "F1@3": 0.8205376957707184,
+        "F1@4": 0.8091285693149874,
+        "F1@5": 0.7878109610466468,
+        "F1@6": 0.7571847445349443,
+        "F1@7": 0.7394777141781137,
+        "F1@8": 0.7288632214064971,
+        "F1@9": 0.7217422021683008,
+        "Hit@1": 0.9613848202396804,
+        "Hit@10": 0.9747003994673769,
+        "Hit@11": 0.9747003994673769,
+        "Hit@12": 0.9747003994673769,
+        "Hit@13": 0.9747003994673769,
+        "Hit@14": 0.9747003994673769,
+        "Hit@15": 0.9747003994673769,
+        "Hit@2": 0.9680426098535286,
+        "Hit@3": 0.9733688415446072,
+        "Hit@4": 0.9733688415446072,
+        "Hit@5": 0.9747003994673769,
+        "Hit@6": 0.9747003994673769,
+        "Hit@7": 0.9747003994673769,
+        "Hit@8": 0.9747003994673769,
+        "Hit@9": 0.9747003994673769,
+        "MRR": 0.9667554371948512,
+        "Precision@1": 0.9613848202396804,
+        "Precision@10": 0.5974393929786739,
+        "Precision@11": 0.5955025814546454,
+        "Precision@12": 0.5946955766529668,
+        "Precision@13": 0.5945077928433454,
+        "Precision@14": 0.5943468352922414,
+        "Precision@15": 0.5942897685241227,
+        "Precision@2": 0.9494007989347537,
+        "Precision@3": 0.8337771859742565,
+        "Precision@4": 0.749445184198846,
+        "Precision@5": 0.6941189525077673,
+        "Precision@6": 0.6474256546826453,
+        "Precision@7": 0.6237746496734512,
+        "Precision@8": 0.6106255151861011,
+        "Precision@9": 0.6023957474689832,
+        "Recall@1": 0.3638260097647581,
+        "Recall@10": 0.95716822015091,
+        "Recall@11": 0.95716822015091,
+        "Recall@12": 0.95716822015091,
+        "Recall@13": 0.95716822015091,
+        "Recall@14": 0.95716822015091,
+        "Recall@15": 0.95716822015091,
+        "Recall@2": 0.7123612960497115,
+        "Recall@3": 0.8531069684864624,
+        "Recall@4": 0.9281624500665778,
+        "Recall@5": 0.9550377274744785,
+        "Recall@6": 0.9563692853972481,
+        "Recall@7": 0.956635596981802,
+        "Recall@8": 0.9569019085663559,
+        "Recall@9": 0.9569019085663559
+      },
+      "oracle": {
+        "F1@1": 0.5232134931202841,
+        "F1@10": 0.7172591131312837,
+        "F1@11": 0.7154540717456829,
+        "F1@12": 0.7146464650811796,
+        "F1@13": 0.7144434677704045,
+        "F1@14": 0.714262479870771,
+        "F1@15": 0.7141962913190544,
+        "F1@2": 0.7993469025426416,
+        "F1@3": 0.825378859932788,
+        "F1@4": 0.811025510958933,
+        "F1@5": 0.7899414537230781,
+        "F1@6": 0.7579110488564549,
+        "F1@7": 0.7399215668190368,
+        "F1@8": 0.7290680764715385,
+        "F1@9": 0.7219324247286963,
+        "Hit@1": 0.9747003994673769,
+        "Hit@10": 0.9747003994673769,
+        "Hit@11": 0.9747003994673769,
+        "Hit@12": 0.9747003994673769,
+        "Hit@13": 0.9747003994673769,
+        "Hit@14": 0.9747003994673769,
+        "Hit@15": 0.9747003994673769,
+        "Hit@2": 0.9747003994673769,
+        "Hit@3": 0.9747003994673769,
+        "Hit@4": 0.9747003994673769,
+        "Hit@5": 0.9747003994673769,
+        "Hit@6": 0.9747003994673769,
+        "Hit@7": 0.9747003994673769,
+        "Hit@8": 0.9747003994673769,
+        "Hit@9": 0.9747003994673769,
+        "MRR": 0.9747003994673769,
+        "Precision@1": 0.9747003994673769,
+        "Precision@10": 0.5974393929786739,
+        "Precision@11": 0.5955025814546454,
+        "Precision@12": 0.5946955766529668,
+        "Precision@13": 0.5945077928433454,
+        "Precision@14": 0.5943468352922414,
+        "Precision@15": 0.5942897685241227,
+        "Precision@2": 0.9593874833555259,
+        "Precision@3": 0.838659565024412,
+        "Precision@4": 0.7514425210830005,
+        "Precision@5": 0.6962494451841988,
+        "Precision@6": 0.6480914336440301,
+        "Precision@7": 0.6241550947942426,
+        "Precision@8": 0.6107919599264472,
+        "Precision@9": 0.6025436983492909,
+        "Recall@1": 0.3698624056813138,
+        "Recall@10": 0.95716822015091,
+        "Recall@11": 0.95716822015091,
+        "Recall@12": 0.95716822015091,
+        "Recall@13": 0.95716822015091,
+        "Recall@14": 0.95716822015091,
+        "Recall@15": 0.95716822015091,
+        "Recall@2": 0.7207723035952063,
+        "Recall@3": 0.8582334664891256,
+        "Recall@4": 0.9300044385264093,
+        "Recall@5": 0.95716822015091,
+        "Recall@6": 0.95716822015091,
+        "Recall@7": 0.95716822015091,
+        "Recall@8": 0.95716822015091,
+        "Recall@9": 0.95716822015091
+      }
+    }
+  }
+}

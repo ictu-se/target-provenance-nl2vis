@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-08-14T13:33:43.917942+00:00",
+  "data_dir": "<ARTIFACT_ROOT>/experiment/ext_v1_20260810",
+  "data_sha256": "175aeb17c48568c989725f8ec778554e8f255b482554ab32e9e37225207a3837",
+  "split": "test",
+  "offset": 0,
+  "limit": 0,
+  "indices_file": null,
+  "indices_sha256": null,
+  "run_tag": "e1full",
+  "models": {
+    "qwen3:14b": {
+      "name": "qwen3:14b",
+      "model": "qwen3:14b",
+      "modified_at": "2026-08-13T10:10:44.426152674+07:00",
+      "size": 9276198565,
+      "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 40960,
+        "embedding_length": 5120
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "thinking"
+      ]
+    }
+  },
+  "conditions": [
+    "direct",
+    "staged"
+  ],
+  "seeds": [
+    69
+  ],
+  "temperature": 0.0,
+  "direct_template_sha256": "9ac6d50a0277ae7558260468001548531c36344aad61d72fa04d6281ada74a81",
+  "direct_rich_template_sha256": "b9d5d1836420a3b0f591fb511890a7019278d3e04ce1f2eaba63bbb34a0d7e0e",
+  "staged_template_sha256": "c7099b75892834449f62ac9ef13d9cbdfc8921e38316dee1a1cd8722e9ca8dba",
+  "chart_rules_sha256": "527c472a0d9bafb470e2abf6c13c2291d055632f45f5f901378f680554bfb1ef"
+}

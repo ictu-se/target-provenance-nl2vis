@@ -1,0 +1,17 @@
+{
+  "created_date": "2026-08-08",
+  "policy": "A registered failure remains a scored model failure. It is allowed by the integrity checker only after the identical request failed in the original run, a normal retry, and a retry after explicit Ollama model unload/reload.",
+  "failures": [
+    {
+      "file": "mistral_smal_d50e0c_d_55_t_cross150.jsonl",
+      "record_id": "nvbench2:test:7",
+      "model": "mistral-small:24b",
+      "condition": "direct",
+      "seed": 55,
+      "temperature": 0.0,
+      "attempts": 9,
+      "error_contains": "500 Server Error: Internal Server Error",
+      "disposition": "retain the original failure row; score as no generated candidate; report inference success as 149/150"
+    }
+  ]
+}

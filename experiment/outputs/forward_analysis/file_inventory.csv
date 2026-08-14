@@ -1,0 +1,13 @@
+﻿file,rows,matched_gold_rows
+deepseek_r1__3aef4d_d_44_t.jsonl,10,10
+deepseek_r1__3aef4d_s_44_t.jsonl,10,10
+gemma3_27b_1eb26b_d_44_t.jsonl,10,10
+gemma3_27b_1eb26b_s_44_t.jsonl,10,10
+llama3_2_3b_925b2c_d_44_t.jsonl,10,10
+llama3_2_3b_925b2c_s_44_t.jsonl,10,10
+mistral_smal_d50e0c_d_44_t.jsonl,10,10
+mistral_smal_d50e0c_s_44_t.jsonl,10,10
+phi3_5_lates_295b29_d_44_t.jsonl,10,10
+phi3_5_lates_295b29_s_44_t.jsonl,10,10
+qwen3_14b_613573_d_44_t.jsonl,10,10
+qwen3_14b_613573_s_44_t.jsonl,10,10

@@ -1,0 +1,9 @@
+{
+  "files": [
+    "mistral_smal_d50e0c_77.jsonl",
+    "qwen3_14b_613573_77.jsonl"
+  ],
+  "bootstrap": 2000,
+  "bootstrap_seed": 20260807,
+  "n_case_runs": 300
+}

@@ -1,0 +1,8 @@
+{
+  "test_cases": 751,
+  "canonical_gold_specifications": 2250,
+  "accepted_gold_specifications": 2250,
+  "error_counts_nonexclusive": {},
+  "invalid_examples": [],
+  "accepted_percent": 100.0
+}

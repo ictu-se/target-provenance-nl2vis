@@ -1,0 +1,4 @@
+﻿file,rows,matched_gold_rows
+gemma3_27b_1eb26b_d_55_t_cross150.jsonl,0,0
+llama3_2_3b_925b2c_d_55_t_cross150.jsonl,150,150
+qwen3_14b_613573_d_55_t_cross150.jsonl,150,150

@@ -1,0 +1,1964 @@
+{
+  "selection_rule": "first test case with complete pool > 5, heuristic Hit@5=0, and learned Hit@1=1",
+  "record_id": "nvbench2:test:1",
+  "index": 1,
+  "query": "Plot the number of payments on a scatter plot with total amount due and full payment status, showing only those not fully paid and where due amount is at least $482.26.",
+  "schema": {
+    "table_columns": [
+      "payment_id",
+      "booking_id",
+      "customer_id",
+      "payment_type_code",
+      "amount_paid_in_full_yn",
+      "payment_date",
+      "amount_due",
+      "amount_paid"
+    ],
+    "column_examples": {
+      "payment_id": [
+        "6",
+        "1",
+        "12"
+      ],
+      "booking_id": [
+        "5",
+        "8",
+        "15"
+      ],
+      "customer_id": [
+        "5",
+        "12",
+        "11"
+      ],
+      "payment_type_code": [
+        "Credit Card",
+        "Cash",
+        "Direct Debit"
+      ],
+      "amount_paid_in_full_yn": [
+        0,
+        1,
+        1
+      ],
+      "payment_date": [
+        "2018-02-27",
+        "2018-03-12",
+        "2018-03-23"
+      ],
+      "amount_due": [
+        259.18,
+        631.93,
+        840.06
+      ],
+      "amount_paid": [
+        135.7,
+        464.06,
+        704.41
+      ]
+    },
+    "unique_value_counts": {
+      "payment_id": 15,
+      "booking_id": 10,
+      "customer_id": 10,
+      "payment_type_code": 4,
+      "amount_paid_in_full_yn": 2,
+      "payment_date": 15,
+      "amount_due": 15,
+      "amount_paid": 15
+    }
+  },
+  "gold_answer": [
+    {
+      "mark": "point",
+      "encoding": {
+        "size": {
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "amount_paid_in_full_yn"
+        },
+        "y": {
+          "field": "amount_due"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "amount_paid_in_full_yn",
+            "lte": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "amount_due",
+            "gte": 482.26
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "size": {
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "amount_paid_in_full_yn"
+        },
+        "y": {
+          "field": "amount_due"
+        },
+        "color": {
+          "field": "payment_id"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "amount_paid_in_full_yn",
+            "lte": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "amount_due",
+            "gte": 482.26
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "size": {
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "amount_paid_in_full_yn"
+        },
+        "y": {
+          "field": "amount_due"
+        },
+        "color": {
+          "field": "payment_type_code"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "amount_paid_in_full_yn",
+            "lte": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "amount_due",
+            "gte": 482.26
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "size": {
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "amount_paid_in_full_yn"
+        },
+        "y": {
+          "field": "amount_due"
+        },
+        "color": {
+          "field": "customer_id"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "amount_paid_in_full_yn",
+            "lte": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "amount_due",
+            "gte": 482.26
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "size": {
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "amount_paid_in_full_yn"
+        },
+        "y": {
+          "field": "amount_due"
+        },
+        "color": {
+          "field": "booking_id"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "amount_paid_in_full_yn",
+            "lte": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "amount_due",
+            "gte": 482.26
+          }
+        }
+      ]
+    }
+  ],
+  "reasoning_fields": {
+    "step_1": {
+      "reasoning": "The NL query specifies two main data columns: 'amount_paid_in_full_yn' which indicates whether the payment was made in full (0 for not fully paid), and 'amount_due' which represents the total amount due. Both of these columns are directly referenced in the query. Additionally, the query includes filters: it specifies that we only want to consider payments that are not fully paid (where 'amount_paid_in_full_yn' is less than or equal to 0) and that the due amount must be at least $482.26.",
+      "answer": {
+        "column_list": [
+          {
+            "field": "amount_paid_in_full_yn",
+            "ambiguous": false
+          },
+          {
+            "field": "amount_due",
+            "ambiguous": false
+          }
+        ],
+        "filter_list": [
+          {
+            "field": "amount_paid_in_full_yn",
+            "lte": 0
+          },
+          {
+            "field": "amount_due",
+            "gte": 482.26
+          }
+        ]
+      }
+    },
+    "step_2": {
+      "reasoning": "The NL query asks for the number of payments, which implies an aggregation operation. The most appropriate aggregation for counting the number of payments is 'count'. Therefore, we will include a count aggregation in our transformation.",
+      "answer": [
+        {
+          "aggregate": "count"
+        }
+      ]
+    },
+    "step_3": {
+      "reasoning": "The NL query specifies that we want to create a scatter plot. Since a scatter plot is typically used to show the relationship between two quantitative variables, we will select 'point' as the chart type.",
+      "answer": "point"
+    },
+    "step_4": {
+      "reasoning": "In the scatter plot, we need to map the data columns to the appropriate channels. The x-axis will represent 'amount_paid_in_full_yn', which is categorical (0 for not fully paid), and the y-axis will represent 'amount_due', which is quantitative. The size channel will represent the count of payments, which is a quantitative measure. This mapping adheres to the requirements for a point chart.",
+      "answer": [
+        {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          }
+        }
+      ]
+    },
+    "step_5": {
+      "reasoning": "The obligatory channels for the point chart are filled. However, we can enhance the visualization by adding color channels to differentiate the points based on other categorical variables. We can use 'payment_id', 'payment_type_code', 'customer_id', and 'booking_id' as potential color channels. Each of these fields can provide additional context to the visualization, allowing us to see how different categories relate to the amount due.",
+      "answer": [
+        {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          }
+        },
+        {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_id"
+            }
+          }
+        },
+        {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_type_code"
+            }
+          }
+        },
+        {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "customer_id"
+            }
+          }
+        },
+        {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "booking_id"
+            }
+          }
+        }
+      ]
+    },
+    "step_6": {
+      "reasoning": "The scatter plot is valid as it stands, but we need to ensure that the implicit transformations are applied correctly. The filters specified in step 1 should be included in the final chart definition to ensure that only the relevant data is visualized. Each of the point chart configurations will include the same filters to maintain consistency and accuracy in the visualization.",
+      "answer": [
+        {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        },
+        {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_id"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        },
+        {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_type_code"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        },
+        {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "customer_id"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        },
+        {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "booking_id"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "candidate_stages": {
+    "raw_step6_step5_step4": [
+      {
+        "source_step": "step_6",
+        "source_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_step": "step_6",
+        "source_rank": 2,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_id"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_step": "step_6",
+        "source_rank": 3,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_type_code"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_step": "step_6",
+        "source_rank": 4,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "customer_id"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_step": "step_6",
+        "source_rank": 5,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "booking_id"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_step": "step_5",
+        "source_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          }
+        }
+      },
+      {
+        "source_step": "step_5",
+        "source_rank": 2,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_id"
+            }
+          }
+        }
+      },
+      {
+        "source_step": "step_5",
+        "source_rank": 3,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_type_code"
+            }
+          }
+        }
+      },
+      {
+        "source_step": "step_5",
+        "source_rank": 4,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "customer_id"
+            }
+          }
+        }
+      },
+      {
+        "source_step": "step_5",
+        "source_rank": 5,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "booking_id"
+            }
+          }
+        }
+      },
+      {
+        "source_step": "step_4",
+        "source_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          }
+        }
+      }
+    ],
+    "raw_count": 11,
+    "expanded": [
+      {
+        "source_step": "step_6",
+        "source_rank": 1,
+        "expansion_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_step": "step_6",
+        "source_rank": 2,
+        "expansion_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_id"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_step": "step_6",
+        "source_rank": 3,
+        "expansion_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_type_code"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_step": "step_6",
+        "source_rank": 4,
+        "expansion_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "customer_id"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_step": "step_6",
+        "source_rank": 5,
+        "expansion_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "booking_id"
+            }
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_step": "step_5",
+        "source_rank": 1,
+        "expansion_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          }
+        }
+      },
+      {
+        "source_step": "step_5",
+        "source_rank": 2,
+        "expansion_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_id"
+            }
+          }
+        }
+      },
+      {
+        "source_step": "step_5",
+        "source_rank": 3,
+        "expansion_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "payment_type_code"
+            }
+          }
+        }
+      },
+      {
+        "source_step": "step_5",
+        "source_rank": 4,
+        "expansion_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "customer_id"
+            }
+          }
+        }
+      },
+      {
+        "source_step": "step_5",
+        "source_rank": 5,
+        "expansion_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            },
+            "color": {
+              "field": "booking_id"
+            }
+          }
+        }
+      },
+      {
+        "source_step": "step_4",
+        "source_rank": 1,
+        "expansion_rank": 1,
+        "spec": {
+          "mark": "point",
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          }
+        }
+      }
+    ],
+    "expanded_count": 11,
+    "validation": {
+      "implemented": false,
+      "removed_count": 0
+    },
+    "deduplicated_complete": [
+      {
+        "encoding": {
+          "size": {
+            "aggregate": "count"
+          },
+          "x": {
+            "field": "amount_paid_in_full_yn"
+          },
+          "y": {
+            "field": "amount_due"
+          }
+        },
+        "mark": "point",
+        "transform": [
+          {
+            "filter": {
+              "field": "amount_due",
+              "gte": 482.26
+            }
+          },
+          {
+            "filter": {
+              "field": "amount_paid_in_full_yn",
+              "lte": 0
+            }
+          }
+        ]
+      },
+      {
+        "encoding": {
+          "color": {
+            "field": "payment_id"
+          },
+          "size": {
+            "aggregate": "count"
+          },
+          "x": {
+            "field": "amount_paid_in_full_yn"
+          },
+          "y": {
+            "field": "amount_due"
+          }
+        },
+        "mark": "point",
+        "transform": [
+          {
+            "filter": {
+              "field": "amount_due",
+              "gte": 482.26
+            }
+          },
+          {
+            "filter": {
+              "field": "amount_paid_in_full_yn",
+              "lte": 0
+            }
+          }
+        ]
+      },
+      {
+        "encoding": {
+          "color": {
+            "field": "payment_type_code"
+          },
+          "size": {
+            "aggregate": "count"
+          },
+          "x": {
+            "field": "amount_paid_in_full_yn"
+          },
+          "y": {
+            "field": "amount_due"
+          }
+        },
+        "mark": "point",
+        "transform": [
+          {
+            "filter": {
+              "field": "amount_due",
+              "gte": 482.26
+            }
+          },
+          {
+            "filter": {
+              "field": "amount_paid_in_full_yn",
+              "lte": 0
+            }
+          }
+        ]
+      },
+      {
+        "encoding": {
+          "color": {
+            "field": "customer_id"
+          },
+          "size": {
+            "aggregate": "count"
+          },
+          "x": {
+            "field": "amount_paid_in_full_yn"
+          },
+          "y": {
+            "field": "amount_due"
+          }
+        },
+        "mark": "point",
+        "transform": [
+          {
+            "filter": {
+              "field": "amount_due",
+              "gte": 482.26
+            }
+          },
+          {
+            "filter": {
+              "field": "amount_paid_in_full_yn",
+              "lte": 0
+            }
+          }
+        ]
+      },
+      {
+        "encoding": {
+          "color": {
+            "field": "booking_id"
+          },
+          "size": {
+            "aggregate": "count"
+          },
+          "x": {
+            "field": "amount_paid_in_full_yn"
+          },
+          "y": {
+            "field": "amount_due"
+          }
+        },
+        "mark": "point",
+        "transform": [
+          {
+            "filter": {
+              "field": "amount_due",
+              "gte": 482.26
+            }
+          },
+          {
+            "filter": {
+              "field": "amount_paid_in_full_yn",
+              "lte": 0
+            }
+          }
+        ]
+      },
+      {
+        "encoding": {
+          "size": {
+            "aggregate": "count"
+          },
+          "x": {
+            "field": "amount_paid_in_full_yn"
+          },
+          "y": {
+            "field": "amount_due"
+          }
+        },
+        "mark": "point"
+      },
+      {
+        "encoding": {
+          "color": {
+            "field": "payment_id"
+          },
+          "size": {
+            "aggregate": "count"
+          },
+          "x": {
+            "field": "amount_paid_in_full_yn"
+          },
+          "y": {
+            "field": "amount_due"
+          }
+        },
+        "mark": "point"
+      },
+      {
+        "encoding": {
+          "color": {
+            "field": "payment_type_code"
+          },
+          "size": {
+            "aggregate": "count"
+          },
+          "x": {
+            "field": "amount_paid_in_full_yn"
+          },
+          "y": {
+            "field": "amount_due"
+          }
+        },
+        "mark": "point"
+      },
+      {
+        "encoding": {
+          "color": {
+            "field": "customer_id"
+          },
+          "size": {
+            "aggregate": "count"
+          },
+          "x": {
+            "field": "amount_paid_in_full_yn"
+          },
+          "y": {
+            "field": "amount_due"
+          }
+        },
+        "mark": "point"
+      },
+      {
+        "encoding": {
+          "color": {
+            "field": "booking_id"
+          },
+          "size": {
+            "aggregate": "count"
+          },
+          "x": {
+            "field": "amount_paid_in_full_yn"
+          },
+          "y": {
+            "field": "amount_due"
+          }
+        },
+        "mark": "point"
+      }
+    ],
+    "deduplicated_complete_count": 10
+  },
+  "rankings": {
+    "heuristic_formula_location": "<HISTORICAL_LOCAL_PATH>",
+    "heuristic": [
+      {
+        "rank": 1,
+        "score": 4.25,
+        "is_exact_gold": false,
+        "spec": {
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point"
+        }
+      },
+      {
+        "rank": 2,
+        "score": 3.5700000000000003,
+        "is_exact_gold": false,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "booking_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point"
+        }
+      },
+      {
+        "rank": 3,
+        "score": 3.5700000000000003,
+        "is_exact_gold": false,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "payment_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point"
+        }
+      },
+      {
+        "rank": 4,
+        "score": 3.5500000000000003,
+        "is_exact_gold": false,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "customer_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point"
+        }
+      },
+      {
+        "rank": 5,
+        "score": 3.43,
+        "is_exact_gold": false,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "payment_type_code"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point"
+        }
+      },
+      {
+        "rank": 6,
+        "score": 1.7300000000000004,
+        "is_exact_gold": true,
+        "spec": {
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point",
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "rank": 7,
+        "score": 1.0499999999999998,
+        "is_exact_gold": true,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "booking_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point",
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "rank": 8,
+        "score": 1.0499999999999998,
+        "is_exact_gold": true,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "payment_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point",
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "rank": 9,
+        "score": 1.0300000000000002,
+        "is_exact_gold": true,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "customer_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point",
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "rank": 10,
+        "score": 0.9100000000000001,
+        "is_exact_gold": true,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "payment_type_code"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point",
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "learned": [
+      {
+        "rank": 1,
+        "probability": 0.9995565764205578,
+        "heuristic_tiebreak": 1.0499999999999998,
+        "is_exact_gold": true,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "booking_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point",
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "rank": 2,
+        "probability": 0.9995565764205578,
+        "heuristic_tiebreak": 1.0499999999999998,
+        "is_exact_gold": true,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "payment_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point",
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "rank": 3,
+        "probability": 0.9995561243657709,
+        "heuristic_tiebreak": 1.0300000000000002,
+        "is_exact_gold": true,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "customer_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point",
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "rank": 4,
+        "probability": 0.9995534023469851,
+        "heuristic_tiebreak": 0.9100000000000001,
+        "is_exact_gold": true,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "payment_type_code"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point",
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "rank": 5,
+        "probability": 0.9970796385467529,
+        "heuristic_tiebreak": 1.7300000000000004,
+        "is_exact_gold": true,
+        "spec": {
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point",
+          "transform": [
+            {
+              "filter": {
+                "field": "amount_due",
+                "gte": 482.26
+              }
+            },
+            {
+              "filter": {
+                "field": "amount_paid_in_full_yn",
+                "lte": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "rank": 6,
+        "probability": 0.8860561496948802,
+        "heuristic_tiebreak": 3.5700000000000003,
+        "is_exact_gold": false,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "booking_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point"
+        }
+      },
+      {
+        "rank": 7,
+        "probability": 0.8860561496948802,
+        "heuristic_tiebreak": 3.5700000000000003,
+        "is_exact_gold": false,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "payment_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point"
+        }
+      },
+      {
+        "rank": 8,
+        "probability": 0.8859531901126334,
+        "heuristic_tiebreak": 3.5500000000000003,
+        "is_exact_gold": false,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "customer_id"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point"
+        }
+      },
+      {
+        "rank": 9,
+        "probability": 0.8853337291225233,
+        "heuristic_tiebreak": 3.43,
+        "is_exact_gold": false,
+        "spec": {
+          "encoding": {
+            "color": {
+              "field": "payment_type_code"
+            },
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point"
+        }
+      },
+      {
+        "rank": 10,
+        "probability": 0.5408229825532027,
+        "heuristic_tiebreak": 4.25,
+        "is_exact_gold": false,
+        "spec": {
+          "encoding": {
+            "size": {
+              "aggregate": "count"
+            },
+            "x": {
+              "field": "amount_paid_in_full_yn"
+            },
+            "y": {
+              "field": "amount_due"
+            }
+          },
+          "mark": "point"
+        }
+      }
+    ]
+  },
+  "reranker_training": {
+    "training_rows": 31631,
+    "positive_rate": 0.5446239448642155,
+    "feature_count": 1589,
+    "solver": "liblinear",
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "interpretation": "This diagnostic succeeds because benchmark-provided step answers, especially step_6.answer, already contain privileged valid-chart information; it is not a deployable query+schema-only result."
+}

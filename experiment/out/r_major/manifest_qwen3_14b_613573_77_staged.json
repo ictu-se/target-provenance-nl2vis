@@ -1,0 +1,49 @@
+{
+  "model": "qwen3:14b",
+  "model_manifest": {
+    "name": "qwen3:14b",
+    "model": "qwen3:14b",
+    "modified_at": "2026-08-13T10:10:44.426152674+07:00",
+    "size": 9276198565,
+    "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "14.8B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 40960,
+      "embedding_length": 5120
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  },
+  "seed": 77,
+  "temperature": 0.0,
+  "input_policy": "query_schema_and_valid_forward_candidate_pool_only",
+  "source_files": [
+    "gemma3_27b_1eb26b_s_55_t_cross150.jsonl",
+    "llama3_2_3b_925b2c_s_55_t_cross150.jsonl",
+    "mistral_smal_d50e0c_s_55_t_cross150.jsonl",
+    "qwen3_14b_613573_s_55_t_cross150.jsonl"
+  ],
+  "source_sha256": {
+    "gemma3_27b_1eb26b_s_55_t_cross150.jsonl": "4b6ada26b023e68bbbae00f9102e520ea1c4a0cac4f5f882a0215044646fefcc",
+    "llama3_2_3b_925b2c_s_55_t_cross150.jsonl": "b90f00906ec3b4b793881f8971a289da0d0c62549930a81e767fe0d1c79f4767",
+    "mistral_smal_d50e0c_s_55_t_cross150.jsonl": "addf72589fc63eb20ec8e0c266798e265a6bf07e64a9fb262e77f0c42a21fae9",
+    "qwen3_14b_613573_s_55_t_cross150.jsonl": "3465cd25d1a89f0402eea080c01f591c92fb022a6d9d26352fb3496ee996fc48"
+  },
+  "input_patterns": [
+    "*_s_55_t_cross150.jsonl"
+  ],
+  "pool_name": "staged",
+  "pool_policy": "canonical union of post-validation candidates",
+  "baseline": "RRF score=sum_m 1/(60+source_rank); descending score; canonical-key tie break",
+  "presentation_policy": "deterministic record-and-seed-specific shuffle to avoid RRF-order leakage"
+}

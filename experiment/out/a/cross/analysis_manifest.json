@@ -1,0 +1,47 @@
+{
+  "input_dir": "<ARTIFACT_ROOT>/experiment\\out\\f",
+  "split": "test",
+  "files": [
+    {
+      "file": "gemma3_27b_1eb26b_d_55_t_cross150.jsonl",
+      "rows": 150,
+      "matched_gold_rows": 150
+    },
+    {
+      "file": "gemma3_27b_1eb26b_s_55_t_cross150.jsonl",
+      "rows": 150,
+      "matched_gold_rows": 150
+    },
+    {
+      "file": "llama3_2_3b_925b2c_d_55_t_cross150.jsonl",
+      "rows": 150,
+      "matched_gold_rows": 150
+    },
+    {
+      "file": "mistral_smal_d50e0c_d_55_t_cross150.jsonl",
+      "rows": 150,
+      "matched_gold_rows": 150
+    },
+    {
+      "file": "mistral_smal_d50e0c_s_55_t_cross150.jsonl",
+      "rows": 150,
+      "matched_gold_rows": 150
+    },
+    {
+      "file": "qwen3_14b_613573_d_55_t_cross150.jsonl",
+      "rows": 150,
+      "matched_gold_rows": 150
+    },
+    {
+      "file": "qwen3_14b_613573_s_55_t_cross150.jsonl",
+      "rows": 150,
+      "matched_gold_rows": 150
+    }
+  ],
+  "case_rows": 1050,
+  "bootstrap_repetitions": 2000,
+  "bootstrap_seed": 20260807,
+  "exact_match_policy": "canonicalized full-spec equality against all unique gold specifications",
+  "graded_policy": "unweighted macro F1 over mark, channels, channel-field pairs, operations, and filters",
+  "validity_policy": "allowed mark, required channels, schema-grounded fields, and supported filters"
+}

@@ -1,0 +1,204 @@
+{
+  "created_utc": "2026-08-07T14:36:28.330832+00:00",
+  "legacy_dir": "<HISTORICAL_LOCAL_PATH>",
+  "conditions": [
+    {
+      "condition": "train_long_t5_nvbench_full",
+      "prediction_count": 2581,
+      "unique_record_ids": 2581,
+      "strict_json_parse_count": 0,
+      "strict_json_parse_rate": 0.0,
+      "raw_string_exact_count": 0,
+      "raw_string_exact_rate": 0.0,
+      "legacy_regex_parse_rate_claim": 1.0,
+      "legacy_slot_mean": 0.9357190659011658,
+      "legacy_component_metrics": {
+        "parseable_rate": 1.0,
+        "exact_match": 0.0,
+        "chart_accuracy": 0.9891514916698954,
+        "x_accuracy": 0.9860519178612941,
+        "y_accuracy": 0.974041069352964,
+        "aggregate_accuracy": 0.9903138318481208,
+        "color_accuracy": 0.9817900038744672,
+        "group_accuracy": 0.8973266175900814,
+        "order_accuracy": 0.9039132119333592,
+        "bin_accuracy": 0.9523440526927548,
+        "filter_sql_accuracy": 1.0,
+        "filter_field_accuracy": 0.7841921735761332,
+        "source_table_accuracy": 0.8337853545137544,
+        "slot_mean": 0.9357190659011658
+      },
+      "training_configuration": {
+        "model_dir": "<HISTORICAL_LOCAL_PATH>",
+        "tokenizer_dir": "<HISTORICAL_LOCAL_PATH>",
+        "config_dir": "<HISTORICAL_LOCAL_PATH>",
+        "seed": 42,
+        "train_records": 20578,
+        "dev_records": 2603,
+        "test_records": 2581,
+        "max_source_length": 1738,
+        "max_target_length": 256,
+        "per_device_batch_size": 1,
+        "gradient_accumulation_steps": 4,
+        "learning_rate": 3e-05,
+        "num_train_epochs": 10.0,
+        "early_stopping_patience": 3,
+        "eval_steps": 1286,
+        "best_model_checkpoint": "<HISTORICAL_LOCAL_PATH>",
+        "train_metrics": {
+          "train_runtime": 20462.7241,
+          "train_samples_per_second": 10.056,
+          "train_steps_per_second": 2.514,
+          "total_flos": 8.5429797538176e+16,
+          "train_loss": 0.0071886577317934975,
+          "epoch": 9.748177665467976
+        },
+        "dev_metrics": {
+          "eval_loss": 0.006595430430024862,
+          "eval_runtime": 157.9873,
+          "eval_samples_per_second": 16.476,
+          "eval_steps_per_second": 16.476,
+          "epoch": 9.748177665467976
+        },
+        "test_metrics": {
+          "test_loss": 0.006062943022698164,
+          "test_runtime": 156.3138,
+          "test_samples_per_second": 16.512,
+          "test_steps_per_second": 16.512,
+          "epoch": 9.748177665467976
+        }
+      },
+      "sha256": {
+        "predictions": "57cdb3b3df9e5599dd3b1c21c8f75e7b08003a0d5147176c104d4ce11e7db2d3",
+        "component_summary": "1027f3d919a1702cd2f782294521d34c03ab35497ee8e63ec5c9b01bd06ef99b",
+        "training_summary": "f4f44a8697a7afceef6d0429ae0811d7a05a1f4090c19213b308705f451ef1b1"
+      },
+      "malformed_examples": [
+        {
+          "record_id": "nvBench:full:2405@x_name@DESC:nl4:direct_ir_generation",
+          "prediction": "\"mark\": \"bar\", \"encodings\": \"x\": \"field\": \"title\", \"y\": \"field\": \"title\", \"aggregate\": \"count\", \"operations\": [\"type\": \"group_by\", \"field\": \"title\", \"type\": \"filter\", \"sql\": \"T1.stars BETWEEN 3\", \"type\": \"filter\", \"sql\": \"5\", \"type\": \"order_by\", \"expression\": \"title\", \"direction\": \"desc\"], \"source_tables\": [\"Rating\", \"Movie\"], \"dataset\": \"nvBench\"",
+          "gold": "{\"mark\": \"bar\", \"encodings\": {\"x\": {\"field\": \"title\"}, \"y\": {\"field\": \"title\", \"aggregate\": \"count\"}}, \"operations\": [{\"type\": \"group_by\", \"field\": \"title\"}, {\"type\": \"filter\", \"sql\": \"T1.stars BETWEEN 3\"}, {\"type\": \"filter\", \"sql\": \"5\"}, {\"type\": \"order_by\", \"expression\": \"title\", \"direction\": \"desc\"}], \"source_tables\": [\"Rating\", \"Movie\"]}"
+        },
+        {
+          "record_id": "nvBench:full:2911@y_name@DESC:nl4:direct_ir_generation",
+          "prediction": "\"mark\": \"bar\", \"encodings\": \"x\": \"field\": \"meter_200\", \"y\": \"field\": \"ID\", \"aggregate\": \"avg\", \"operations\": [\"type\": \"group_by\", \"field\": \"meter_200\", \"type\": \"order_by\", \"expression\": \"AVG(ID)\", \"direction\": \"desc\"], \"source_tables\": [\"swimmer\"], \"dataset\":",
+          "gold": "{\"mark\": \"bar\", \"encodings\": {\"x\": {\"field\": \"meter_200\"}, \"y\": {\"field\": \"ID\", \"aggregate\": \"avg\"}}, \"operations\": [{\"type\": \"group_by\", \"field\": \"meter_200\"}, {\"type\": \"order_by\", \"expression\": \"AVG(ID)\", \"direction\": \"desc\"}], \"source_tables\": [\"swimmer\"]}"
+        },
+        {
+          "record_id": "nvBench:full:2901@y_name@ASC:nl4:direct_ir_generation",
+          "prediction": "\"mark\": \"bar\", \"encodings\": \"x\": \"field\": \"course_name\", \"y\": \"field\": \"course_id\", \"operations\": [\"type\": \"order_by\", \"expression\": \"T1.course_id\", \"direction\": \"asc\"], \"source_tables\": [\"Courses\", \"Sections\"], \"dataset\": \"nvBench\"",
+          "gold": "{\"mark\": \"bar\", \"encodings\": {\"x\": {\"field\": \"course_name\"}, \"y\": {\"field\": \"course_id\"}}, \"operations\": [{\"type\": \"order_by\", \"expression\": \"T1.course_id\", \"direction\": \"asc\"}], \"source_tables\": [\"Courses\", \"Sections\"]}"
+        }
+      ]
+    },
+    {
+      "condition": "train_long_t5_nvbench_lora",
+      "prediction_count": 2581,
+      "unique_record_ids": 2581,
+      "strict_json_parse_count": 0,
+      "strict_json_parse_rate": 0.0,
+      "raw_string_exact_count": 0,
+      "raw_string_exact_rate": 0.0,
+      "legacy_regex_parse_rate_claim": 1.0,
+      "legacy_slot_mean": 0.9227219893628262,
+      "legacy_component_metrics": {
+        "parseable_rate": 1.0,
+        "exact_match": 0.0,
+        "chart_accuracy": 0.988376598217745,
+        "x_accuracy": 0.9790778767919411,
+        "y_accuracy": 0.9631925610228593,
+        "aggregate_accuracy": 0.9845021309569935,
+        "color_accuracy": 0.9442076714451763,
+        "group_accuracy": 0.8539325842696629,
+        "order_accuracy": 0.9027508717551337,
+        "bin_accuracy": 0.9438202247191011,
+        "filter_sql_accuracy": 0.9984502130956994,
+        "filter_field_accuracy": 0.7779930259589306,
+        "source_table_accuracy": 0.8136381247578458,
+        "slot_mean": 0.9227219893628262
+      },
+      "training_configuration": {
+        "adapter_mode": "lora",
+        "model_dir": "<HISTORICAL_LOCAL_PATH>",
+        "tokenizer_dir": "<HISTORICAL_LOCAL_PATH>",
+        "config_dir": "<HISTORICAL_LOCAL_PATH>",
+        "seed": 42,
+        "train_records": 20578,
+        "dev_records": 2603,
+        "test_records": 2581,
+        "max_source_length": 1738,
+        "max_target_length": 256,
+        "per_device_batch_size": 1,
+        "gradient_accumulation_steps": 4,
+        "learning_rate": 0.0002,
+        "num_train_epochs": 5.0,
+        "early_stopping_patience": 2,
+        "eval_steps": 1286,
+        "best_model_checkpoint": "<HISTORICAL_LOCAL_PATH>",
+        "lora_r": 16,
+        "lora_alpha": 32,
+        "lora_dropout": 0.05,
+        "lora_target_modules": [
+          "q",
+          "k",
+          "v",
+          "o",
+          "wi_0",
+          "wi_1",
+          "wo"
+        ],
+        "train_metrics": {
+          "train_runtime": 32294.7344,
+          "train_samples_per_second": 3.186,
+          "train_steps_per_second": 0.797,
+          "total_flos": 4.514811405253632e+16,
+          "train_loss": 0.058169190728977194,
+          "epoch": 5.0
+        },
+        "dev_metrics": {
+          "eval_loss": 0.012889588251709938,
+          "eval_runtime": 249.2738,
+          "eval_samples_per_second": 10.442,
+          "eval_steps_per_second": 10.442,
+          "epoch": 5.0
+        },
+        "test_metrics": {
+          "test_loss": 0.012541249394416809,
+          "test_runtime": 248.2159,
+          "test_samples_per_second": 10.398,
+          "test_steps_per_second": 10.398,
+          "epoch": 5.0
+        }
+      },
+      "sha256": {
+        "predictions": "1666f2d13792c4bae22d7bc304431f9635f4146dd5a77772756620640e05bb73",
+        "component_summary": "4e41772c3c15d28e8cc8853f9508e332d869e0fefe32459c3908b3d782d8ecbe",
+        "training_summary": "6824496c219c3548bf992c59407ea7174398c3647bc7f5b2403671084b03e728"
+      },
+      "malformed_examples": [
+        {
+          "record_id": "nvBench:full:2405@x_name@DESC:nl4:direct_ir_generation",
+          "prediction": "\"mark\": \"bar\", \"encodings\": \"x\": \"field\": \"title\", \"y\": \"field\": \"title\", \"aggregate\": \"count\", \"operations\": [\"type\": \"group_by\", \"field\": \"title\", \"type\": \"filter\", \"sql\": \"stars BETWEEN 3\", \"type\": \"filter\", \"sql\": \"5\", \"type\": \"order_by\", \"expression\": \"title\", \"direction\": \"desc\"], \"source_tables\": [\"Rating\", \"Movie\"]",
+          "gold": "{\"mark\": \"bar\", \"encodings\": {\"x\": {\"field\": \"title\"}, \"y\": {\"field\": \"title\", \"aggregate\": \"count\"}}, \"operations\": [{\"type\": \"group_by\", \"field\": \"title\"}, {\"type\": \"filter\", \"sql\": \"T1.stars BETWEEN 3\"}, {\"type\": \"filter\", \"sql\": \"5\"}, {\"type\": \"order_by\", \"expression\": \"title\", \"direction\": \"desc\"}], \"source_tables\": [\"Rating\", \"Movie\"]}"
+        },
+        {
+          "record_id": "nvBench:full:2911@y_name@DESC:nl4:direct_ir_generation",
+          "prediction": "\"mark\": \"bar\", \"encodings\": \"x\": \"field\": \"meter_200\", \"y\": \"field\": \"ID\", \"aggregate\": \"avg\", \"operations\": [\"type\": \"group_by\", \"field\": \"meter_200\", \"type\": \"order_by\", \"expression\": \"AVG(ID)\", \"direction\": \"desc\"], \"source_tables\": [\"swimmer\"]",
+          "gold": "{\"mark\": \"bar\", \"encodings\": {\"x\": {\"field\": \"meter_200\"}, \"y\": {\"field\": \"ID\", \"aggregate\": \"avg\"}}, \"operations\": [{\"type\": \"group_by\", \"field\": \"meter_200\"}, {\"type\": \"order_by\", \"expression\": \"AVG(ID)\", \"direction\": \"desc\"}], \"source_tables\": [\"swimmer\"]}"
+        },
+        {
+          "record_id": "nvBench:full:2901@y_name@ASC:nl4:direct_ir_generation",
+          "prediction": "\"mark\": \"bar\", \"encodings\": \"x\": \"field\": \"course_name\", \"y\": \"field\": \"course_id\", \"operations\": [\"type\": \"order_by\", \"expression\": \"T1.course_id\", \"direction\": \"asc\"], \"source_tables\": [\"Courses\", \"Sections\"]",
+          "gold": "{\"mark\": \"bar\", \"encodings\": {\"x\": {\"field\": \"course_name\"}, \"y\": {\"field\": \"course_id\"}}, \"operations\": [{\"type\": \"order_by\", \"expression\": \"T1.course_id\", \"direction\": \"asc\"}], \"source_tables\": [\"Courses\", \"Sections\"]}"
+        }
+      ]
+    }
+  ],
+  "audit_conclusion": {
+    "strict_structured_generation_supported": false,
+    "reason": "All 5,162 saved predictions fail strict JSON parsing. The legacy evaluator labels a row parseable when a regular expression finds a mark token, then extracts slots from malformed text. This does not support the manuscript claim of fully parseable IR.",
+    "revision_action": "Remove the direct-IR branch from the ambiguity-ranking paper. Preserve it only in the audit record; do not cite slot_mean as a structured-generation baseline without a new strictly parsed rerun.",
+    "rerun_needed_for_revised_scope": false,
+    "rerun_condition": "Rerun only if direct IR remains a scientific contribution after scope revision; then require strict JSON/schema validation and multiple seeds."
+  }
+}

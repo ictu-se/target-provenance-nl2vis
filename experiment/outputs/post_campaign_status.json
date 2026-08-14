@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-08-07T15:41:47.913265+00:00",
+  "status": "completed",
+  "steps": [
+    {
+      "name": "analyze_cross_family",
+      "status": "completed",
+      "started_utc": "2026-08-08T02:25:22.637543+00:00",
+      "ended_utc": "2026-08-08T02:25:35.861593+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "weight_cross_family",
+      "status": "completed",
+      "started_utc": "2026-08-08T02:25:35.872857+00:00",
+      "ended_utc": "2026-08-08T02:25:43.339621+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "paired_direct_staged",
+      "status": "completed",
+      "started_utc": "2026-08-08T02:25:43.369885+00:00",
+      "ended_utc": "2026-08-08T02:25:53.027965+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "analyze_qwen_full",
+      "status": "completed",
+      "started_utc": "2026-08-08T02:25:53.039606+00:00",
+      "ended_utc": "2026-08-08T02:26:07.355724+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "analyze_stability",
+      "status": "completed",
+      "started_utc": "2026-08-08T02:26:07.385684+00:00",
+      "ended_utc": "2026-08-08T02:26:08.214439+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "qwen_reranker",
+      "status": "completed",
+      "started_utc": "2026-08-08T02:26:08.231668+00:00",
+      "ended_utc": "2026-08-08T02:28:30.371802+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "mistral_reranker",
+      "status": "completed",
+      "started_utc": "2026-08-08T02:28:30.451011+00:00",
+      "ended_utc": "2026-08-08T02:33:39.890072+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "analyze_rerankers",
+      "status": "completed",
+      "started_utc": "2026-08-08T02:33:39.910960+00:00",
+      "ended_utc": "2026-08-08T02:33:44.074217+00:00",
+      "returncode": 0
+    },
+    {
+      "name": "refresh_environment",
+      "status": "completed",
+      "started_utc": "2026-08-08T02:33:44.086035+00:00",
+      "ended_utc": "2026-08-08T02:33:45.116232+00:00",
+      "returncode": 0
+    }
+  ],
+  "ended_utc": "2026-08-08T02:33:45.134271+00:00"
+}

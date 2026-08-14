@@ -1,0 +1,22 @@
+{
+  "input_dir": "<WORKSPACE>/_runs/p01_extv1/full_qwen",
+  "split": "test",
+  "files": [
+    {
+      "file": "qwen3_14b_613573_d_69_t_e1full.jsonl",
+      "rows": 105,
+      "matched_gold_rows": 105
+    },
+    {
+      "file": "qwen3_14b_613573_s_69_t_e1full.jsonl",
+      "rows": 105,
+      "matched_gold_rows": 105
+    }
+  ],
+  "case_rows": 210,
+  "bootstrap_repetitions": 5000,
+  "bootstrap_seed": 20260807,
+  "exact_match_policy": "canonicalized full-spec equality against all unique gold specifications",
+  "graded_policy": "unweighted macro F1 over mark, channels, channel-field pairs, operations, and filters",
+  "validity_policy": "allowed mark, required channels, schema-grounded fields, and supported filters"
+}
