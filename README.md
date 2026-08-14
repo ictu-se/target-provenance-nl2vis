@@ -43,7 +43,7 @@ The included benchmark-derived records contain only the fields required for the 
 
 ## Persistent archive
 
-A versioned research snapshot is also available at [Zenodo](https://doi.org/10.5281/zenodo.16752270).
+A versioned research snapshot is also available at [Zenodo](https://doi.org/10.5281/zenodo.21914363).
 
 ## License
 
