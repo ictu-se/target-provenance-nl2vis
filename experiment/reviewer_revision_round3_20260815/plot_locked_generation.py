@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Plot empirical locked-holdout exact and validity outcomes."""
+"""Plot empirical locked-holdout exact and registered-compliance outcomes."""
 
 from __future__ import annotations
 
@@ -34,8 +34,8 @@ def main() -> None:
     models = list(MODEL_LABELS)
     metrics = [
         ("raw_hit@1", "Exact Hit@1"),
-        ("top1_validity", "Top-one validity"),
-        ("valid_fraction", "Valid-list fraction"),
+        ("top1_validity", "Top-one compliance"),
+        ("valid_fraction", "Compliant-list fraction"),
     ]
 
     plt.rcParams.update({

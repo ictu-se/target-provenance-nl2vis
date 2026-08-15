@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "date": "2026-08-15",
+  "new_model_inference": false,
+  "locked_generation_rows_audited": 1800,
+  "candidate_render_attempts": 4703,
+  "renderer_failures": 440,
+  "locked_reranker_case_runs_audited": 900,
+  "nonempty_reranker_parse_failures": 0,
+  "unknown_or_duplicate_reranker_ids": 0,
+  "manuscript_updated": true,
+  "missing_outputs": []
+}

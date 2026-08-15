@@ -46,6 +46,10 @@ stage-wise aggregates, counterfactual results, and worked-example evidence.
   provenance manifests.
 - `reviewer_revision_round2_20260814/`: locked-design, strict-adapter,
   core-equivalence, exact-gain taxonomy, and sensitivity scripts.
+- `reviewer_revision_round3_20260815/`: public-workflow and cross-release
+  audits, locked reranking analysis, and empirical figure generation.
+- `reviewer_revision_round4_20260815/`: renderer-execution and retained
+  complete-pool reranker-protocol audits.
 
 ## Locked experimental design
 

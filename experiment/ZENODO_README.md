@@ -1,7 +1,7 @@
-# Experimental archive: auditing target provenance and ranked alternatives in NL2Vis
+# Experimental archive: auditing target provenance and exact-match claims in ranked NL2Vis
 
 This machine-only archive supports the experiments reported in “Auditing
-Target Provenance and Ranked Alternatives in NL2Vis.” It contains generation
+Target Provenance and Exact-Match Claims in Ranked NL2Vis.” It contains generation
 and analysis code, frozen sample indices, model outputs, validation records,
 aggregate results, rendered experimental figures, and environment/version
 records.
@@ -21,6 +21,10 @@ or human-participant data. No participant study was conducted.
 - `reviewer_revision_round3_20260815/` adds candidate-level validity,
   component metrics, the public-workflow provenance check, cross-release
   overlap audit, and locked Qwen/Mistral reranking on three pools.
+- `reviewer_revision_round4_20260815/` separates JSON parseability,
+  Vega-Lite renderer execution, and registered benchmark compliance, and
+  verifies complete-pool exposure and prefix-only output handling for the
+  retained reranker runs.
 - The earlier cross-release adapter campaign is retained with an explicit
   exclusion notice and is not part of the reported result.
 
@@ -29,7 +33,7 @@ or human-participant data. No participant study was conducted.
 The archive supports validation, exact specification reproduction,
 core-equivalence sensitivity, graded fidelity, GoldRecall, exact-gain taxonomy,
 stratified paired intervals, pool construction, RRF sensitivity, constrained
-LLM reranking, and cross-seed overlap. Benchmark source datasets retain their
-original licenses and citations.
+LLM reranking, cross-seed overlap, renderer execution, and reranker-protocol
+checks. Benchmark source datasets retain their original licenses and citations.
 
 Use the version DOI shown by the current Zenodo record when citing this archive.

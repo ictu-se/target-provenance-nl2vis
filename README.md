@@ -1,8 +1,8 @@
-# Auditing Target Provenance and Ranked Alternatives in NL2Vis
+# Auditing Target Provenance and Exact-Match Claims in Ranked NL2Vis
 
 This repository contains the code, frozen experimental designs, machine outputs,
-and derived results for the paper *Auditing Target Provenance and Ranked
-Alternatives in NL2Vis*. The manuscript and submission documents are
+and derived results for the paper *Auditing Target Provenance and Exact-Match
+Claims in Ranked NL2Vis*. The manuscript and submission documents are
 intentionally excluded.
 
 The study audits how target-derived benchmark annotations can enter ranked
@@ -22,11 +22,15 @@ component analyses, and four rendered case studies.
   design, strict cross-release adapter, and round-2 analysis code.
 - `experiment/reviewer_revision_round3_20260815/`: locked reranking design,
   public-workflow source audit, release-lineage audit, and analysis code.
+- `experiment/reviewer_revision_round4_20260815/`: renderer-execution and
+  complete-pool reranker-protocol audit code.
 - `results/reviewer_revision_round2_20260814/`: retained machine outputs and
   derived tables for the locked holdout, cross-release check, reranking extension,
   and temperature-0 repeatability experiment.
 - `results/reviewer_revision_round3_20260815/`: locked reranking outputs,
   candidate/list-validity results, component metrics, and lineage-audit results.
+- `results/reviewer_revision_round4_20260815/`: candidate-level renderer
+  outcomes and retained-run checks of reranker input and output handling.
 - `results/figures/`: final empirical plots and four rendered benchmark cases
   in PDF and PNG formats.
 - `results/external_transfer/`: an earlier external-adapter campaign retained

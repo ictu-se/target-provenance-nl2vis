@@ -12,7 +12,7 @@ import requests
 
 
 DEFAULT_API = "https://zenodo.org/api"
-TITLE = "Auditing Target Provenance and Ranked Alternatives in NL2Vis: Code and Experimental Results"
+TITLE = "Auditing Target Provenance and Exact-Match Claims in Ranked NL2Vis: Code and Experimental Results"
 
 
 def env_value(path: Path, key: str) -> str:
@@ -207,7 +207,7 @@ def main() -> None:
     parser.add_argument("--publish", action="store_true")
     parser.add_argument("--state-file", type=Path)
     parser.add_argument("--new-version-of", type=int)
-    parser.add_argument("--version", default="1.2.1")
+    parser.add_argument("--version", default="1.2.2")
     args = parser.parse_args()
 
     token = env_value(args.env_file, "ZENODO_ACCESS_TOKEN")
