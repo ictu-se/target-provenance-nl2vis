@@ -12,10 +12,10 @@ import numpy as np
 
 
 MODEL_LABELS = {
-    "gemma3:27b": "Gemma 3\n27B",
-    "llama3.2:3b": "Llama 3.2\n3B",
-    "mistral-small:24b": "Mistral-Small\n24B",
-    "qwen3:14b": "Qwen 3\n14B",
+    "gemma3:27b": "Gemma",
+    "llama3.2:3b": "Llama",
+    "mistral-small:24b": "Mistral",
+    "qwen3:14b": "Qwen",
 }
 PROMPTS = ["direct", "direct_rich", "staged"]
 PROMPT_LABELS = ["Direct-basic", "Direct-rich", "Staged-rich"]
