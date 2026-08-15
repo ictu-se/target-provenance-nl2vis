@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "model": "mistral-small:24b",
+  "model_manifest": {
+    "name": "mistral-small:24b",
+    "model": "mistral-small:24b",
+    "modified_at": "2026-08-14T22:42:48.090434973+07:00",
+    "size": 14333921662,
+    "digest": "8039dd90c1138d772437a0779a33b7349efd5d9cca71edcd26e4dd463f90439d",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "llama",
+      "families": [
+        "llama"
+      ],
+      "parameter_size": "23.6B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 32768,
+      "embedding_length": 5120
+    },
+    "capabilities": [
+      "completion",
+      "tools"
+    ]
+  },
+  "variant": "full",
+  "seed": 91,
+  "temperature": 0.0,
+  "source_files": [
+    "gemma3_27b_1eb26b_d_55_d_r2holdout150.jsonl",
+    "gemma3_27b_1eb26b_r_55_d_r2holdout150.jsonl",
+    "gemma3_27b_1eb26b_s_55_d_r2holdout150.jsonl",
+    "llama3_2_3b_925b2c_d_55_d_r2holdout150.jsonl",
+    "llama3_2_3b_925b2c_r_55_d_r2holdout150.jsonl",
+    "llama3_2_3b_925b2c_s_55_d_r2holdout150.jsonl",
+    "mistral_smal_d50e0c_d_55_d_r2holdout150.jsonl",
+    "mistral_smal_d50e0c_r_55_d_r2holdout150.jsonl",
+    "mistral_smal_d50e0c_s_55_d_r2holdout150.jsonl",
+    "qwen3_14b_613573_d_55_d_r2holdout150.jsonl",
+    "qwen3_14b_613573_r_55_d_r2holdout150.jsonl",
+    "qwen3_14b_613573_s_55_d_r2holdout150.jsonl"
+  ],
+  "source_sha256": {
+    "gemma3_27b_1eb26b_d_55_d_r2holdout150.jsonl": "00376e9b19e607bb73e85a6126c8fec9ed2a11a53ed41249e324b025959d9c09",
+    "gemma3_27b_1eb26b_r_55_d_r2holdout150.jsonl": "91afda79fe85f129e3e125d9fa0fd7c531ceec3e9643d700c5d1b2299df4f43e",
+    "gemma3_27b_1eb26b_s_55_d_r2holdout150.jsonl": "9ca5a4377db3b4899db6753f1ab836516ddabf70a0a046e696927488e91f5b28",
+    "llama3_2_3b_925b2c_d_55_d_r2holdout150.jsonl": "b1ff347ac68cd420321dc451e2f8aa14f1c206cf8a484b72bcd0307e5a6d1a13",
+    "llama3_2_3b_925b2c_r_55_d_r2holdout150.jsonl": "c6a6c2cf919c8b06371812de2a8d9aa96ed87707d9e3074e2dba81215ed10982",
+    "llama3_2_3b_925b2c_s_55_d_r2holdout150.jsonl": "50efd7231edcfd643e7145adb41bb82fb55ba3b2c36b3339829102cf20dc88a6",
+    "mistral_smal_d50e0c_d_55_d_r2holdout150.jsonl": "8050dc49545219059edbdecd74620cde103d6bce52130ae51f5179eff91594e5",
+    "mistral_smal_d50e0c_r_55_d_r2holdout150.jsonl": "8af5d1b36f0cafa63d1913dbd11a9361d7f77c014e94682fe0c8351e2a8aa6d5",
+    "mistral_smal_d50e0c_s_55_d_r2holdout150.jsonl": "8e0899127e0feb372cdee98dfdafc0e3a06f11a0fdd9147075370aa64d4c0f45",
+    "qwen3_14b_613573_d_55_d_r2holdout150.jsonl": "6e10e002e29e13b176c75a782c649d4a9d84fa5f7f60c9e45fc0c6bb157dada8",
+    "qwen3_14b_613573_r_55_d_r2holdout150.jsonl": "d979592e29e75de1d6274867d1bfb160935182fd5ade30725f1d885c0e9b1ac6",
+    "qwen3_14b_613573_s_55_d_r2holdout150.jsonl": "4ceac8edb15833480c01fd8d6346ddcd2dfde5ee7af99e524514c989892d8f2a"
+  },
+  "conditions": [
+    "direct",
+    "direct_rich",
+    "staged"
+  ],
+  "eligibility": "renderer executable AND study-registered benchmark-normal-form compliant",
+  "excluded_model": null,
+  "baseline": "RRF k0=60 over eligible source ranks with canonical-key tie breaking",
+  "output_policy": "exactly min(5,pool_size) distinct existing IDs; no backfill",
+  "rows": 150
+}

@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "gold_specifications": 2250,
+  "gold_false_rejections": 0,
+  "gold_acceptance": 2250,
+  "negative_perturbations": 15750,
+  "perturbation_families": 7,
+  "false_acceptances": 0,
+  "target_error_misses": 0,
+  "nonexclusive_error_counts": {
+    "invalid_mark": 2250,
+    "unsupported_channel:radius": 2250,
+    "missing_required_channel": 2250,
+    "unknown_field:__not_in_schema__": 2250,
+    "count_with_field:x": 476,
+    "unsupported_transform": 2250,
+    "non_object_filter": 2250,
+    "count_with_field:size": 32,
+    "count_with_field:color": 1742
+  },
+  "scope": "internal validation of the study-registered benchmark-normal-form rules; not Vega-Lite, semantic, or perceptual validation"
+}

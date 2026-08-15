@@ -1,8 +1,8 @@
-# Auditing Target Provenance and Exact-Match Claims in Ranked NL2Vis
+# A Stage-Resolved Audit of Target Provenance and Exact-Match Evaluation in Ranked NL2Vis
 
 This repository contains the code, frozen experimental designs, machine outputs,
-and derived results for the paper *Auditing Target Provenance and Exact-Match
-Claims in Ranked NL2Vis*. The manuscript and submission documents are
+and derived results for the paper *A Stage-Resolved Audit of Target Provenance
+and Exact-Match Evaluation in Ranked NL2Vis*. The manuscript and submission documents are
 intentionally excluded.
 
 The study audits how target-derived benchmark annotations can enter ranked
@@ -11,8 +11,8 @@ per-instance-target-answer-free generation, candidate coverage, and ordering.
 The retained evidence includes a locked development-holdout comparison across
 four local-model families and three prompt conditions, a same-lineage
 nvBench-v1 cross-release check, repeated temperature-0 runs, locked
-development-holdout RRF and two LLM rerankers, candidate-level validity and
-component analyses, and four rendered case studies.
+development-holdout RRF and two LLM rerankers, candidate-level execution,
+study-normal-form and component analyses, and four rendered case studies.
 
 ## Repository structure
 
@@ -24,6 +24,9 @@ component analyses, and four rendered case studies.
   public-workflow source audit, release-lineage audit, and analysis code.
 - `experiment/reviewer_revision_round4_20260815/`: renderer-execution and
   complete-pool reranker-protocol audit code.
+- `experiment/reviewer_revision_round5_20260815/`: core/component-matched
+  breadth, cost, normal-form validation, forensic replay, and eligible-pool
+  reranking code plus the inference-fixed protocol.
 - `results/reviewer_revision_round2_20260814/`: retained machine outputs and
   derived tables for the locked holdout, cross-release check, reranking extension,
   and temperature-0 repeatability experiment.
@@ -31,6 +34,9 @@ component analyses, and four rendered case studies.
   candidate/list-validity results, component metrics, and lineage-audit results.
 - `results/reviewer_revision_round4_20260815/`: candidate-level renderer
   outcomes and retained-run checks of reranker input and output handling.
+- `results/reviewer_revision_round5_20260815/`: all-TAF executable/intersected
+  reranking outputs, leave-self-out results, normal-form perturbation checks,
+  cost summaries, and matched-breadth tables.
 - `results/figures/`: final empirical plots and four rendered benchmark cases
   in PDF and PNG formats.
 - `results/external_transfer/`: an earlier external-adapter campaign retained

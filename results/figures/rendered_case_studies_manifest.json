@@ -231,7 +231,7 @@
           }
         },
         {
-          "title": "(b) Qwen staged top 1 (invalid)",
+          "title": "(b) Qwen staged top 1\n(normal-form noncompliant)",
           "note": "Count-with-field yields equal cost slices",
           "spec": {
             "encoding": {

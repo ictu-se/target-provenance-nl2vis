@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "rows": 1800,
+  "runs": 12,
+  "bootstrap": 5000,
+  "core_policy": "presentation metadata removed exactly as registered before analysis",
+  "component_identical_policy": "maximum bipartite matching where all five registered component-set similarities equal one",
+  "threshold_policy": "maximum bipartite matching at equal-weight component macro thresholds 0.80 and 0.90",
+  "cost_policy": "retained wall-clock elapsed_seconds and Ollama prompt/evaluation token counts",
+  "uncertainty": "percentile endpoints of the finite-population-adjusted within-stratum empirical bootstrap"
+}

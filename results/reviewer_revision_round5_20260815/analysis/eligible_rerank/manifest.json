@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "case_runs": 600,
+  "groups": 4,
+  "bootstrap": 5000,
+  "uncertainty": "percentile endpoints of finite-population-adjusted stratified empirical bootstrap",
+  "ancestry": "a selected candidate may have multiple generator sources; source-any indicators are nonexclusive"
+}

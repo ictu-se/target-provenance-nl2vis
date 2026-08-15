@@ -1,0 +1,39 @@
+{
+  "status": "locked_before_inference",
+  "locked_local_date": "2026-08-15",
+  "sample": "the existing stratified 150-case nvBench-2.0 development holdout",
+  "population_estimand": "the fixed 720-record development population after the 30-case engineering screen",
+  "generation_sources": {
+    "models": ["gemma3:27b", "llama3.2:3b", "mistral-small:24b", "qwen3:14b"],
+    "conditions": ["direct", "direct_rich", "staged"],
+    "generation_outputs": "previously locked temperature-0 seed-55 outputs"
+  },
+  "candidate_eligibility": "at least one retained source occurrence is both Vega-Lite renderer executable and study-registered benchmark-normal-form compliant",
+  "pool_variants": {
+    "all_taf_eligible": "eligible canonical union of all twelve generation sources",
+    "leave_self_out": "for each reranker, remove its source contributions and retain a candidate only if at least one eligible non-self source remains"
+  },
+  "ordering": {
+    "baseline": "RRF with k0=60 over eligible source ranks and canonical-key tie breaking",
+    "rerankers": ["qwen3:14b", "mistral-small:24b"],
+    "temperature": 0.0,
+    "seed": 91,
+    "candidate_presentation": "deterministic record-and-seed-specific shuffle",
+    "required_output_length": "exactly min(5, pool size) distinct existing IDs"
+  },
+  "primary_metrics": [
+    "complete-pool exact oracle",
+    "RRF Hit@1",
+    "LLM Hit@1",
+    "paired LLM-minus-RRF Hit@1",
+    "returned-prefix completeness"
+  ],
+  "secondary_metrics": [
+    "Hit@5 under equal prefix length",
+    "graded top-one fidelity",
+    "self-source ancestry of the selected top one",
+    "full-pool versus leave-self-out sensitivity"
+  ],
+  "interpretation": "post-review sensitivity analysis; no external or untouched-set generalization claim"
+}
+

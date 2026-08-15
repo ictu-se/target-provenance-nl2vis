@@ -1,7 +1,7 @@
-# Experimental archive: auditing target provenance and exact-match claims in ranked NL2Vis
+# Experimental archive: stage-resolved target provenance and exact-match evaluation in ranked NL2Vis
 
-This machine-only archive supports the experiments reported in “Auditing
-Target Provenance and Exact-Match Claims in Ranked NL2Vis.” It contains generation
+This machine-only archive supports the experiments reported in “A Stage-Resolved
+Audit of Target Provenance and Exact-Match Evaluation in Ranked NL2Vis.” It contains generation
 and analysis code, frozen sample indices, model outputs, validation records,
 aggregate results, rendered experimental figures, and environment/version
 records.
@@ -22,9 +22,13 @@ or human-participant data. No participant study was conducted.
   component metrics, the public-workflow provenance check, cross-release
   overlap audit, and locked Qwen/Mistral reranking on three pools.
 - `reviewer_revision_round4_20260815/` separates JSON parseability,
-  Vega-Lite renderer execution, and registered benchmark compliance, and
+  Vega-Lite renderer execution, and study-normal-form compliance, and
   verifies complete-pool exposure and prefix-only output handling for the
   retained reranker runs.
+- `reviewer_revision_round5_20260815/` surfaces core and component-matched
+  breadth, primary latency and token cost, validates the normal-form checker
+  using 15,750 perturbations, replays the retained forensic record, and runs
+  full and leave-self-out reranking on executable/intersected all-TAF pools.
 - The earlier cross-release adapter campaign is retained with an explicit
   exclusion notice and is not part of the reported result.
 

@@ -1,0 +1,8 @@
+﻿perturbation,n,target_detection,rejected,false_acceptance
+invalid_mark,2250,2250,2250,0
+unsupported_channel,2250,2250,2250,0
+missing_required_channel,2250,2250,2250,0
+unknown_field,2250,2250,2250,0
+field_bearing_count,2250,2250,2250,0
+unsupported_transform,2250,2250,2250,0
+non_object_filter,2250,2250,2250,0
