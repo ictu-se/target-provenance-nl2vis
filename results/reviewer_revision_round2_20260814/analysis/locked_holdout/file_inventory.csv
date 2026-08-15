@@ -1,0 +1,13 @@
+﻿file,rows
+gemma3_27b_1eb26b_d_55_d_r2holdout150.jsonl,150
+gemma3_27b_1eb26b_r_55_d_r2holdout150.jsonl,150
+gemma3_27b_1eb26b_s_55_d_r2holdout150.jsonl,150
+llama3_2_3b_925b2c_d_55_d_r2holdout150.jsonl,150
+llama3_2_3b_925b2c_r_55_d_r2holdout150.jsonl,150
+llama3_2_3b_925b2c_s_55_d_r2holdout150.jsonl,150
+mistral_smal_d50e0c_d_55_d_r2holdout150.jsonl,150
+mistral_smal_d50e0c_r_55_d_r2holdout150.jsonl,150
+mistral_smal_d50e0c_s_55_d_r2holdout150.jsonl,150
+qwen3_14b_613573_d_55_d_r2holdout150.jsonl,150
+qwen3_14b_613573_r_55_d_r2holdout150.jsonl,150
+qwen3_14b_613573_s_55_d_r2holdout150.jsonl,150

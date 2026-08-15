@@ -1,0 +1,49 @@
+{
+  "model": "mistral-small:24b",
+  "model_manifest": {
+    "name": "mistral-small:24b",
+    "model": "mistral-small:24b",
+    "modified_at": "2026-08-14T22:42:48.090434973+07:00",
+    "size": 14333921662,
+    "digest": "8039dd90c1138d772437a0779a33b7349efd5d9cca71edcd26e4dd463f90439d",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "llama",
+      "families": [
+        "llama"
+      ],
+      "parameter_size": "23.6B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 32768,
+      "embedding_length": 5120
+    },
+    "capabilities": [
+      "completion",
+      "tools"
+    ]
+  },
+  "seed": 77,
+  "temperature": 0.0,
+  "input_policy": "query_schema_and_valid_forward_candidate_pool_only",
+  "source_files": [
+    "gemma3_27b_1eb26b_d_55_t_cross150.jsonl",
+    "llama3_2_3b_925b2c_d_55_t_cross150.jsonl",
+    "mistral_smal_d50e0c_d_55_t_cross150.jsonl",
+    "qwen3_14b_613573_d_55_t_cross150.jsonl"
+  ],
+  "source_sha256": {
+    "gemma3_27b_1eb26b_d_55_t_cross150.jsonl": "d72abe7b476730189cfa448e3244456d21fb92d3c1f0c9efa27e446eac6018e3",
+    "llama3_2_3b_925b2c_d_55_t_cross150.jsonl": "4ee575a3ecf3e244ba349c023101a5010297c0370d871cf1074a67e29c84a01f",
+    "mistral_smal_d50e0c_d_55_t_cross150.jsonl": "70c5bde3c0c23dcf3aa4af950c8cfba724489b8312243a0d210611237570ea47",
+    "qwen3_14b_613573_d_55_t_cross150.jsonl": "1f9c7948f4e97640f92785eae608f5d98f5cdbc6dd85a38591e3f9ea659e050f"
+  },
+  "input_patterns": [
+    "*_d_55_t_cross150.jsonl"
+  ],
+  "pool_name": "direct",
+  "pool_policy": "canonical union of post-validation candidates",
+  "split": "test",
+  "baseline": "RRF score=sum_s 1/(60+source_rank), where each model-condition run is a distinct source; canonical duplicates retain every source contribution; descending score; canonical-key tie break",
+  "presentation_policy": "deterministic record-and-seed-specific shuffle to avoid RRF-order leakage"
+}

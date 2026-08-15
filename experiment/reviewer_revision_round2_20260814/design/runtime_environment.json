@@ -1,0 +1,33 @@
+{
+  "captured_date": "2026-08-14",
+  "operating_system": "macOS 26.5.2 (build 25F84)",
+  "processor": "Apple M4 Max",
+  "physical_cores": 16,
+  "logical_cores": 16,
+  "unified_memory_bytes": 51539607552,
+  "ollama_version": "0.32.5",
+  "backend": "local Ollama",
+  "models": {
+    "gemma3:27b": {
+      "digest": "a418f5838eaf7fe2cfe0a3046c8384b68ba43a4435542c942f9db00a5f342203",
+      "parameters": "27.4B",
+      "quantization": "Q4_K_M"
+    },
+    "llama3.2:3b": {
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "parameters": "3.2B",
+      "quantization": "Q4_K_M"
+    },
+    "mistral-small:24b": {
+      "digest": "8039dd90c1138d772437a0779a33b7349efd5d9cca71edcd26e4dd463f90439d",
+      "parameters": "23.6B",
+      "quantization": "Q4_K_M"
+    },
+    "qwen3:14b": {
+      "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "parameters": "14.8B",
+      "quantization": "Q4_K_M"
+    }
+  },
+  "reporting_note": "Historical exploratory test-set runs used a different Windows/NVIDIA environment and are not compared to the locked holdout on raw latency. All locked holdout conditions were run in this single environment."
+}

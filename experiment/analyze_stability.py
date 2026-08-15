@@ -60,26 +60,62 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         writer.writerows(rows)
 
 
+def design_weighted_mean(
+    rows: list[dict[str, Any]], metric: str, populations: dict[str, int] | None
+) -> float:
+    if not populations:
+        return mean(float(row[metric]) for row in rows)
+    by_family: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        by_family[str(row["gold_family"])].append(row)
+    missing = set(populations) - set(by_family)
+    if missing:
+        raise ValueError(f"Missing design strata for weighted stability estimate: {sorted(missing)}")
+    return sum(
+        populations[family] * mean(float(row[metric]) for row in by_family[family])
+        for family in populations
+    ) / sum(populations.values())
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-dir", type=Path, default=HERE / "out" / "f")
+    parser.add_argument("--input-dirs", nargs="+", type=Path)
     parser.add_argument("--pattern", default="qwen3*_repeat150.jsonl")
     parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA)
+    parser.add_argument("--split", default="test", choices=("train", "dev", "test"))
+    parser.add_argument("--design", type=Path)
     parser.add_argument("--output-dir", type=Path, default=HERE / "outputs" / "stability")
     args = parser.parse_args()
 
-    gold = {row["record_id"]: dedupe_specs(row["gold_answer"]) for row in load_split(args.data_dir, "test")}
-    rows = [row for path in sorted(args.input_dir.glob(args.pattern)) for row in read_jsonl(path)]
+    gold_rows = {row["record_id"]: row for row in load_split(args.data_dir, args.split)}
+    gold = {record_id: dedupe_specs(row["gold_answer"]) for record_id, row in gold_rows.items()}
+    gold_family = {
+        record_id: "+".join(sorted({str(spec.get("mark", "unknown")) for spec in specs}))
+        for record_id, specs in gold.items()
+    }
+    populations: dict[str, int] | None = None
+    if args.design:
+        design = json.loads(args.design.read_text(encoding="utf-8"))
+        if "population_strata_after_screen" in design:
+            populations = {str(k): int(v) for k, v in design["population_strata_after_screen"].items()}
+        elif "strata" in design:
+            populations = {str(k): int(v["population"]) for k, v in design["strata"].items()}
+        else:
+            raise ValueError("Unsupported design manifest: no population strata")
+    input_dirs = args.input_dirs or [args.input_dir]
+    paths = sorted({path for input_dir in input_dirs for path in input_dir.glob(args.pattern)})
+    rows = [row for path in paths for row in read_jsonl(path)]
     grouped: dict[tuple[str, str], dict[int, dict[str, Any]]] = defaultdict(dict)
     for row in rows:
         grouped[(row["condition"], row["record_id"])][int(row["seed"])] = row
 
     per_pair: list[dict[str, Any]] = []
-    run_metrics: dict[tuple[str, int], list[dict[str, float]]] = defaultdict(list)
+    run_metrics: dict[tuple[str, int], list[dict[str, Any]]] = defaultdict(list)
     for (condition, record_id), by_seed in grouped.items():
         for seed, row in by_seed.items():
             metrics = ranked_exact_metrics(dedupe_specs(row.get("candidates", [])), gold[record_id], (1, 5))
-            run_metrics[(condition, seed)].append(metrics)
+            run_metrics[(condition, seed)].append({**metrics, "gold_family": gold_family[record_id]})
         for left_seed, right_seed in combinations(sorted(by_seed), 2):
             left = keys(by_seed[left_seed].get("candidates", []))
             right = keys(by_seed[right_seed].get("candidates", []))
@@ -87,6 +123,7 @@ def main() -> None:
             right_valid = keys(by_seed[right_seed].get("valid_candidates", []))
             per_pair.append({
                 "condition": condition, "record_id": record_id,
+                "gold_family": gold_family[record_id],
                 "left_seed": left_seed, "right_seed": right_seed,
                 "top1_agreement": float(bool(left) and bool(right) and left[0] == right[0]),
                 "candidate_set_jaccard": jaccard(left, right),
@@ -99,11 +136,22 @@ def main() -> None:
         pairs = [row for row in per_pair if row["condition"] == condition]
         result: dict[str, Any] = {"condition": condition, "pair_case_rows": len(pairs)}
         for metric in ("top1_agreement", "candidate_set_jaccard", "valid_set_jaccard", "rank_biased_overlap_p90"):
-            result[metric] = mean(float(row[metric]) for row in pairs)
+            seed_pairs = sorted({(int(row["left_seed"]), int(row["right_seed"])) for row in pairs})
+            result[metric] = mean(
+                design_weighted_mean(
+                    [row for row in pairs if (int(row["left_seed"]), int(row["right_seed"])) == seed_pair],
+                    metric,
+                    populations,
+                )
+                for seed_pair in seed_pairs
+            )
         seeds = sorted(seed for candidate_condition, seed in run_metrics if candidate_condition == condition)
         result["seeds"] = ";".join(str(seed) for seed in seeds)
         for metric in ("Hit@1", "Hit@5", "MRR"):
-            values = [mean(row[metric] for row in run_metrics[(condition, seed)]) for seed in seeds]
+            values = [
+                design_weighted_mean(run_metrics[(condition, seed)], metric, populations)
+                for seed in seeds
+            ]
             result[f"{metric.lower()}_across_seed_mean"] = mean(values)
             result[f"{metric.lower()}_across_seed_sd"] = pstdev(values) if len(values) > 1 else 0.0
             result[f"{metric.lower()}_across_seed_min"] = min(values)

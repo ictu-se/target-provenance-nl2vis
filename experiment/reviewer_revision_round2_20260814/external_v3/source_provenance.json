@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-08-14T17:28:38.624322+00:00",
+  "repository": "https://github.com/TsinghuaDatabaseGroup/nvBench.git",
+  "commit": "544fbc218a2c2fd5dac7591371e3e01ccd6afb93",
+  "commit_time": "2021-08-11T11:12:25+08:00",
+  "source_file": "NVBench.json",
+  "records": 7247,
+  "working_sha256": "ebe9dfad1097a63b3e9aae802d616af98bad37e4f071fa7e82e06e42c0de314c",
+  "committed_sha256": "8c85a9454fe1343074ba915bcbb379f170ab62bb1279b6a7aed23255e6eefbcf",
+  "byte_identical_to_commit": false,
+  "semantic_json_identical_to_commit": true,
+  "byte_difference_interpretation": "line-ending normalization only"
+}

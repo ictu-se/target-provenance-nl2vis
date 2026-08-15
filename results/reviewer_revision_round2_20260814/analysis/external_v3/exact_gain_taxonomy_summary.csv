@@ -1,0 +1,8 @@
+﻿model,contrast,baseline_difference,cases
+qwen3:14b,staged-rich minus direct-basic (secondary),field_or_channel_mapping,5
+qwen3:14b,staged-rich minus direct-basic (secondary),multiple_components,4
+qwen3:14b,staged-rich minus direct-basic (secondary),operation_only,2
+qwen3:14b,staged-rich minus direct-basic (secondary),other_representation_difference,9
+qwen3:14b,staged-rich minus direct-rich,field_or_channel_mapping,5
+qwen3:14b,staged-rich minus direct-rich,multiple_components,3
+qwen3:14b,staged-rich minus direct-rich,other_representation_difference,12

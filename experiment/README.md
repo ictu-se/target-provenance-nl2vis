@@ -1,65 +1,63 @@
-# Reviewer-revision experiments
+# Experimental methods and retained evidence
 
-This directory contains the auditable replacement experiments for the rejected
-Information Visualization submission.  The original submission snapshot is
-left unchanged.
+This directory contains the auditable machine experiments for the
+target-provenance study. Privileged diagnostics, historical post-selection
+experiments, and locked primary experiments remain distinguishable in file
+names, designs, and analysis manifests.
 
 ## Evidence policy
 
-- `query + schema` are the only inputs allowed in deployable forward conditions.
-- Benchmark `steps` are privileged annotations.  Results using them are reported
-  only as diagnostic or oracle conditions.
-- `step_6.answer` is never treated as a model prediction.
-- The synthetic expert-rating CSV from the legacy project is excluded from all
-  scientific analyses.
-- Every output records input hashes, model name, seed, prompt hash, and timestamp.
+- Query and schema are the only per-instance inputs permitted in forward
+  generation.
+- Benchmark step answers are privileged annotations and are used only for the
+  provenance diagnostic or oracle analyses.
+- Forward conditions are described as per-instance-target-answer-free, not as
+  leakage-free in an unrestricted sense; their prompts were designed with
+  knowledge of the benchmark grammar.
+- Synthetic preview ratings and malformed Direct-IR outputs are excluded from
+  scientific results.
+- Run outputs retain the model, condition, seed, prompt hash, decoding settings,
+  timing, parsing status, candidates, and validation outcomes.
 
 ## Data
 
 Scripts locate the workspace-relative nvBench 2.0 checkout by default. In a
-standalone copy, set `NVBENCH2_DATA_DIR` to the directory containing
-`train.json`, `dev.json`, and `test.json`, or pass `--data-dir` where offered.
-Set `NVBENCH2_TEST_FILE` for the operation-group post-hoc analysis.
+standalone copy, pass `--data-dir` to a directory containing the released split
+files. The exact dataset commit, split counts, and checksums are recorded in the
+round-2 provenance manifest. The strict nvBench-v1 derived subset and its
+selection record are included because they are required to reproduce the
+external analysis.
 
-The audited legacy source is not redistributed here. Set
-`INTENTLENS_LEGACY_DIR` or pass `--legacy-dir` to the directory containing
-`paper4_candidates.py` and its saved artifacts. Forward experiments do not
-depend on the legacy source.
+The audited secondary source implementation is not redistributed. Forward
+experiments do not depend on it. The repository instead retains the audit code,
+stage-wise aggregates, counterfactual results, and worked-example evidence.
 
-## Scripts
+## Main scripts
 
-- `common.py`: parsing, canonicalization, exact and graded metrics.
-- `audit_legacy.py`: six-step provenance, leakage, candidate-pool stages, and
-  reproduction of the legacy heuristic/reranker.
-- `run_forward_ollama.py`: resumable direct and forward-six-step Ollama runs.
-- `analyze_forward.py`: exact/graded metrics, coverage curves, uncertainty, and
-  grouped analyses.
-- `make_stratified_sample.py`: fixed, proportional mark-family test sample with
-  every non-empty stratum represented.
-- `run_campaign.py`: resumable cross-family, full-test, and repeated-run campaign.
-- `run_forward_reranker.py`: leakage-free complete-pool RRF and LLM reranking.
-- `analyze_stratified_sample.py`: design-weighted estimates and stratified
-  bootstrap intervals.
-- `analyze_paired_conditions.py`: paired direct-versus-staged effects.
-- `analyze_stability.py`: cross-seed top-one, set, and rank stability.
-- `analyze_legacy_paired.py`: paired bootstrap and exact McNemar audit of the
-  privileged legacy condition.
-- `make_worked_example.py`: complete trace-to-pool-to-ranking diagnostic example.
-- `make_audit_figures.py`: fixed-pool coverage and pool-stage figures.
-- `capture_environment.py`: software, hardware, model-digest, data-hash, and
-  script-hash manifest.
-
-Generated files are written under `outputs/` and the short-path artifact tree
-`out/` (needed because the manuscript directory is close to the Windows legacy
-path-length limit). `outputs/campaign_status.json` is the canonical live status.
+- `common.py`: parsing, canonicalization, validation, and exact/graded metrics.
+- `audit_legacy.py`: six-step candidate ancestry and privileged containment.
+- `run_forward_ollama.py`: resumable direct-basic, direct-rich, and staged-rich
+  local-model runs.
+- `analyze_forward.py`: exact/graded metrics and grouped summaries.
+- `run_forward_reranker.py`: fixed-pool RRF and constrained LLM reranking.
+- `analyze_reranker.py`: pool oracles, RRF/LLM results, and paired contrasts.
+- `analyze_stability.py`: cross-seed top-one, set, valid-set, and rank overlap.
+- `capture_environment.py`: software, hardware, model, data, prompt, and script
+  provenance manifests.
+- `reviewer_revision_round2_20260814/`: locked-design, strict-adapter,
+  core-equivalence, exact-gain taxonomy, and sensitivity scripts.
 
 ## Locked experimental design
 
-- Legacy results use all 751 test records and are labeled privileged diagnostics.
-- Cross-family forward comparison uses the fixed 150-record design in
-  `design/forward_sample150.json`, sampled within canonical gold mark-family
-  strata and analyzed with population weights.
-- Qwen-14B direct and forward-staged conditions also run on all 751 test records.
-- Qwen-14B stability uses three temperature-0.2 seeds on the same 150 records.
-- DeepSeek-1.5B, Phi-3.5, and staged Llama-3.2 are smoke-only exclusions under
-  the predeclared evidence in `design/smoke_decisions.json`.
+- The primary prompt comparison uses a 30-case development engineering screen
+  followed by a disjoint stratified 150-case development holdout.
+- Gemma, Llama, Mistral, and Qwen run direct-basic, instruction-matched
+  direct-rich, and staged-rich at temperature 0 on the same holdout.
+- Exact or graded outcomes cannot remove a model or condition from the screen.
+- The strict nvBench-v1 check samples 15 cases from each of seven chart families
+  after deterministic eligibility filtering and adapter validation.
+- Main-setting repeatability uses Qwen seeds 55, 101, and 202 at temperature 0
+  for all three prompt conditions on the locked holdout.
+- The historical nvBench 2.0 test campaign, stochastic temperature-0.2 runs,
+  case selection, and pooled reranking remain exploratory because engineering
+  previously reused that test split.

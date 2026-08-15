@@ -1,0 +1,53 @@
+{
+  "status": "locked_before_round2_inference",
+  "created_utc": "2026-08-14T15:40:13.468841+00:00",
+  "models": [
+    "gemma3:27b",
+    "llama3.2:3b",
+    "mistral-small:24b",
+    "qwen3:14b"
+  ],
+  "conditions": [
+    "direct",
+    "direct_rich",
+    "staged"
+  ],
+  "primary_contrasts": [
+    "direct_rich-minus-direct",
+    "staged-minus-direct_rich"
+  ],
+  "secondary_contrast": "staged-minus-direct",
+  "generation": {
+    "temperature": 0.0,
+    "seed": 55,
+    "num_ctx": 8192,
+    "num_predict": 3072
+  },
+  "screen_decision_rule": "retain all locked models and conditions unless an API/model failure prevents JSON generation; outcome metrics cannot exclude a run",
+  "holdout_rule": "never use the 150 holdout cases for model or prompt selection",
+  "main_setting_robustness_extension": {
+    "registered_before_holdout_inference": true,
+    "model": "qwen3:14b",
+    "conditions": [
+      "direct",
+      "direct_rich",
+      "staged"
+    ],
+    "temperature": 0.0,
+    "seeds": [
+      55,
+      101,
+      202
+    ],
+    "sample": "same locked 150-case development holdout",
+    "interpretation": "configuration rerun robustness at the main decoding setting; not stochastic sampling robustness"
+  },
+  "prompt_sha256": {
+    "chart_rules": "527c472a0d9bafb470e2abf6c13c2291d055632f45f5f901378f680554bfb1ef",
+    "direct": "9ac6d50a0277ae7558260468001548531c36344aad61d72fa04d6281ada74a81",
+    "direct_rich": "b9d5d1836420a3b0f591fb511890a7019278d3e04ce1f2eaba63bbb34a0d7e0e",
+    "staged": "c7099b75892834449f62ac9ef13d9cbdfc8921e38316dee1a1cd8722e9ca8dba"
+  },
+  "screen_design_sha256": "aa5fb8fc92b99e4853089dd27bf5a54f9030ba7f6a897dcefce89ed177bbe9a5",
+  "holdout_design_sha256": "7378ff19be4199f8e4c0cc588eeaabc25bde63b6f184613d9b381beaafea6887"
+}

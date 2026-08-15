@@ -1,0 +1,10 @@
+{
+  "files": [
+    "mistral_smal_d50e0c_77_direct.jsonl",
+    "mistral_smal_d50e0c_77_staged.jsonl",
+    "mistral_smal_d50e0c_77_union.jsonl"
+  ],
+  "bootstrap": 2000,
+  "bootstrap_seed": 20260807,
+  "n_case_runs": 450
+}

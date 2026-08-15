@@ -1,0 +1,26 @@
+{
+  "input_dir": "WORKSPACE_ROOT/manuscripts/00_stage_aware_interactive_nl2vis_submission_latex/Information_Visualization___Ambiguity_Aware_Evaluation_for_NL2Vis/experiments/reviewer_revision_round2_20260814/runs/holdout",
+  "design": "WORKSPACE_ROOT/manuscripts/00_stage_aware_interactive_nl2vis_submission_latex/Information_Visualization___Ambiguity_Aware_Evaluation_for_NL2Vis/experiments/reviewer_revision_round2_20260814/design/dev_locked_holdout150.json",
+  "models": [
+    "gemma3:27b",
+    "llama3.2:3b",
+    "mistral-small:24b",
+    "qwen3:14b"
+  ],
+  "conditions": [
+    "direct",
+    "direct_rich",
+    "staged"
+  ],
+  "n_per_run": 150,
+  "population_after_screen_exclusion": 720,
+  "bootstrap_repetitions": 5000,
+  "bootstrap_seed": 20260814,
+  "full_exact_policy": "full normalized specification equality",
+  "core_equivalence_policy": "full equality after removing top-level title, description, usermeta, schema, config, dimensions, and encoding axis/legend/title/format; type and scale are retained because they can affect meaning or rendering",
+  "primary_contrasts": [
+    "direct-rich minus direct-basic",
+    "staged-rich minus direct-rich"
+  ],
+  "secondary_contrast": "staged-rich minus direct-basic"
+}

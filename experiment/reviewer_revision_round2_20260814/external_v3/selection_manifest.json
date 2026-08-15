@@ -1,0 +1,64 @@
+{
+  "adapter_version": "strict-v3",
+  "source": "data_benchmarks/datasets/nvBench/NVBench.json",
+  "source_sha256": "ebe9dfad1097a63b3e9aae802d616af98bad37e4f071fa7e82e06e42c0de314c",
+  "source_records": 7247,
+  "source_databases": 152,
+  "eligible_databases": 145,
+  "seed": 20260814,
+  "per_family": 15,
+  "selection_count": 105,
+  "selected_gold_validator_accept": 105,
+  "selected_gold_within_registered_aggregate_timeunit_vocabulary": 105,
+  "selection_databases": 47,
+  "selection_by_chart": {
+    "Bar": 15,
+    "Stacked Bar": 15,
+    "Pie": 15,
+    "Line": 15,
+    "Grouping Line": 15,
+    "Scatter": 15,
+    "Grouping Scatter": 15
+  },
+  "eligible_by_chart": {
+    "Scatter": 113,
+    "Pie": 341,
+    "Bar": 2125,
+    "Stacked Bar": 186,
+    "Line": 65,
+    "Grouping Scatter": 98,
+    "Grouping Line": 18
+  },
+  "source_hardness": {
+    "Medium": 2802,
+    "Easy": 1434,
+    "Hard": 2074,
+    "Extra Hard": 937
+  },
+  "eligible_hardness": {
+    "Medium": 1265,
+    "Easy": 1002,
+    "Hard": 600,
+    "Extra Hard": 79
+  },
+  "selection_hardness": {
+    "Hard": 23,
+    "Medium": 36,
+    "Easy": 36,
+    "Extra Hard": 10
+  },
+  "exclusions": {
+    "unsupported_transform": 2213,
+    "schema_failure": 53,
+    "unsupported_aggregate": 260,
+    "unsupported_limit_or_offset": 45,
+    "unsupported_order_syntax": 70,
+    "unsupported_order_target": 1581,
+    "unsupported_binning": 9,
+    "unsupported_distinct": 42,
+    "missing_query": 3,
+    "missing_distinct_group_field": 25
+  },
+  "selection_sha256": "75419e46f7dd0ee34142fdbdad47c84bcd951431e18de4d659393bc9e6a260ed",
+  "scope": "balanced seven-family estimate for the strict canonical-grammar-eligible subset; filters, distinct/min/max aggregation, limits, offsets, unsupported sorting, and unsupported binning are excluded; YEAR, MONTH, and WEEKDAY binning are retained as explicit time units; not nvBench-v1-wide performance"
+}

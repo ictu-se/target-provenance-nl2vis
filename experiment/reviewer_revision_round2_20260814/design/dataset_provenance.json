@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-08-14T15:49:58.417466+00:00",
+  "source_repository": "https://github.com/HKUSTDial/nvBench-2.0.git",
+  "commit": "f664a45c4d828a78e816089e58bf4843ea589555",
+  "commit_timestamp": "2025-11-13T14:01:41+08:00",
+  "splits": {
+    "train": {
+      "path": "data/nvbench2.0/train.json",
+      "records": 6004,
+      "working_sha256": "997a380d491516efc0b1cb721db4d2ea326aec9f0094102532aa85f72c722de0",
+      "commit_blob_sha256": "12a58935f7e50fb9eec1f85d0a93a458f5ad951c5eb9e0ed3f46ce7e0659ac20",
+      "semantically_identical_to_commit": true,
+      "byte_identical_to_commit": false
+    },
+    "dev": {
+      "path": "data/nvbench2.0/dev.json",
+      "records": 750,
+      "working_sha256": "905e71d68581226b27ec9fcf0ec144960f6cc734de5e86213424b12fe6f4a8a7",
+      "commit_blob_sha256": "a815a23e0998f69f03fef7bdee45e18a69deec49490ee099b9511a133f34291c",
+      "semantically_identical_to_commit": true,
+      "byte_identical_to_commit": false
+    },
+    "test": {
+      "path": "data/nvbench2.0/test.json",
+      "records": 751,
+      "working_sha256": "1f62c3dc7b3c054a8a258279b2fd4dfcde7f41628658245594813643bf268eb6",
+      "commit_blob_sha256": "22f8802d8e3fbf391b7dccee8f979c812f0792a3853c7f9914394c8016ae6cc2",
+      "semantically_identical_to_commit": true,
+      "byte_identical_to_commit": false
+    }
+  },
+  "total_records": 7505,
+  "paper_reported_queries": 7878,
+  "unreconciled_difference": 373,
+  "interpretation": "The checked-out split contents are semantically identical to the cited commit. Byte differences are line-ending/formatting differences and do not change parsed JSON. The 373-record gap therefore exists between the public commit and the paper/README count, not because the present study silently filtered the split files."
+}

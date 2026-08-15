@@ -43,7 +43,14 @@ def build_pool(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[d
             if key is None:
                 continue
             by_key.setdefault(key, candidate)
-            provenance[key].append({"model": row["model"], "rank": rank})
+            provenance[key].append(
+                {
+                    "model": row["model"],
+                    "condition": row.get("condition", "unknown"),
+                    "source_run": f"{row['model']}::{row.get('condition', 'unknown')}",
+                    "rank": rank,
+                }
+            )
 
     scored: list[tuple[float, str, dict[str, Any]]] = []
     for key, candidate in by_key.items():
@@ -140,6 +147,7 @@ def main() -> None:
     parser.add_argument("--input-patterns", nargs="+", default=["*_d_55_t_cross150.jsonl"])
     parser.add_argument("--pool-name", default="direct")
     parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA)
+    parser.add_argument("--split", default="test", choices=("train", "dev", "test"))
     parser.add_argument("--model", default="qwen3:14b")
     parser.add_argument("--seed", type=int, default=77)
     parser.add_argument("--temperature", type=float, default=0.0)
@@ -148,7 +156,7 @@ def main() -> None:
     args = parser.parse_args()
 
     generator_rows, source_files = load_generator_rows(args.input_dir, args.input_patterns)
-    gold_rows = {row["record_id"]: row for row in load_split(args.data_dir, "test")}
+    gold_rows = {row["record_id"]: row for row in load_split(args.data_dir, args.split)}
     args.output_dir.mkdir(parents=True, exist_ok=True)
     pool_slug = "".join(character if character.isalnum() else "_" for character in args.pool_name.lower()).strip("_")
     output_path = args.output_dir / f"{compact_model_slug(args.model)}_{args.seed}_{pool_slug}.jsonl"
@@ -165,7 +173,8 @@ def main() -> None:
         "input_patterns": args.input_patterns,
         "pool_name": args.pool_name,
         "pool_policy": "canonical union of post-validation candidates",
-        "baseline": "RRF score=sum_m 1/(60+source_rank); descending score; canonical-key tie break",
+        "split": args.split,
+        "baseline": "RRF score=sum_s 1/(60+source_rank), where each model-condition run is a distinct source; canonical duplicates retain every source contribution; descending score; canonical-key tie break",
         "presentation_policy": "deterministic record-and-seed-specific shuffle to avoid RRF-order leakage",
     }
     (args.output_dir / f"manifest_{compact_model_slug(args.model)}_{args.seed}_{pool_slug}.json").write_text(

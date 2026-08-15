@@ -1,0 +1,316 @@
+﻿record_id,model,condition,chart_family,hardness,exact_hit1,exact_hit5,core_hit1,core_hit5,top1_graded,any_valid,elapsed_seconds
+nvbench-v1-strict:1021,qwen3:14b,direct,Pie,Easy,0.0,0.0,0.0,0.0,0.64,1.0,5.451705625000017
+nvbench-v1-strict:1096,qwen3:14b,direct,Line,Easy,0.0,0.0,0.0,0.0,0.8800000000000001,1.0,6.285297208000003
+nvbench-v1-strict:1098,qwen3:14b,direct,Line,Easy,0.0,0.0,0.0,0.0,0.8800000000000001,1.0,6.2854996670000105
+nvbench-v1-strict:1165,qwen3:14b,direct,Line,Medium,0.0,0.0,0.0,0.0,0.82,1.0,5.93364625000001
+nvbench-v1-strict:1186,qwen3:14b,direct,Line,Easy,0.0,0.0,0.0,0.0,0.7333333333333333,0.0,4.227999791000002
+nvbench-v1-strict:1198,qwen3:14b,direct,Pie,Medium,1.0,1.0,1.0,1.0,1.0,1.0,4.199051582999999
+nvbench-v1-strict:1203@y_name@ASC,qwen3:14b,direct,Bar,Hard,0.0,0.0,0.0,0.0,0.8,0.0,6.13491975
+nvbench-v1-strict:1236,qwen3:14b,direct,Pie,Easy,0.0,0.0,0.0,0.0,0.64,1.0,4.665381416999992
+nvbench-v1-strict:129@y_name@DESC,qwen3:14b,direct,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.7657142857142858,0.0,7.0677485000000075
+nvbench-v1-strict:1314,qwen3:14b,direct,Pie,Medium,0.0,0.0,0.0,0.0,0.64,1.0,7.725575333000023
+nvbench-v1-strict:1334@y_name@ASC,qwen3:14b,direct,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.8571428571428571,1.0,5.799731332999997
+nvbench-v1-strict:1349,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,6.651464916999998
+nvbench-v1-strict:134@y_name@DESC,qwen3:14b,direct,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.8428571428571429,0.0,4.075537542000006
+nvbench-v1-strict:1350,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,8.928210334000028
+nvbench-v1-strict:1351,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,6.62926833399996
+nvbench-v1-strict:1352,qwen3:14b,direct,Grouping Line,Hard,1.0,1.0,1.0,1.0,1.0,1.0,7.097709209000016
+nvbench-v1-strict:1353,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,7.000424667000004
+nvbench-v1-strict:1387,qwen3:14b,direct,Grouping Line,Extra Hard,0.0,0.0,0.0,0.0,0.8333333333333333,0.0,8.159909874999983
+nvbench-v1-strict:14,qwen3:14b,direct,Pie,Easy,0.0,0.0,0.0,0.0,0.64,1.0,4.557456500000001
+nvbench-v1-strict:1420,qwen3:14b,direct,Pie,Easy,0.0,0.0,0.0,0.0,0.2,0.0,5.048419749999994
+nvbench-v1-strict:1425,qwen3:14b,direct,Scatter,Medium,0.0,0.0,0.0,0.0,0.7,1.0,4.938820625000005
+nvbench-v1-strict:1431,qwen3:14b,direct,Pie,Medium,0.0,0.0,0.0,0.0,0.9,0.0,1.7431109160000062
+nvbench-v1-strict:145@y_name@ASC,qwen3:14b,direct,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.7657142857142858,0.0,7.129589584000001
+nvbench-v1-strict:1484,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,6.2681983330000435
+nvbench-v1-strict:1490,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.8666666666666666,0.0,5.912739084000009
+nvbench-v1-strict:169,qwen3:14b,direct,Line,Medium,0.0,0.0,0.0,0.0,0.82,1.0,5.8605135829999995
+nvbench-v1-strict:170,qwen3:14b,direct,Line,Medium,0.0,0.0,0.0,0.0,0.9,1.0,6.965960124999981
+nvbench-v1-strict:171,qwen3:14b,direct,Line,Easy,0.0,0.0,0.0,0.0,1.0,1.0,4.414295291000002
+nvbench-v1-strict:188,qwen3:14b,direct,Line,Easy,0.0,0.0,0.0,0.0,0.8800000000000001,1.0,1.8472139160000154
+nvbench-v1-strict:2064,qwen3:14b,direct,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,7.716736499999968
+nvbench-v1-strict:2080@y_name@DESC,qwen3:14b,direct,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.7,0.0,6.036221666999992
+nvbench-v1-strict:2125,qwen3:14b,direct,Scatter,Medium,0.0,0.0,0.0,0.0,0.9,0.0,4.030756999999994
+nvbench-v1-strict:2205,qwen3:14b,direct,Bar,Medium,0.0,0.0,0.0,0.0,0.72,1.0,4.830764916
+nvbench-v1-strict:2235@y_name@ASC,qwen3:14b,direct,Bar,Hard,0.0,0.0,0.0,0.0,0.9,1.0,4.990718874999999
+nvbench-v1-strict:2247@y_name@DESC,qwen3:14b,direct,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.6666666666666667,1.0,5.576209917
+nvbench-v1-strict:2264,qwen3:14b,direct,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,6.0526237499999525
+nvbench-v1-strict:2266,qwen3:14b,direct,Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,2.9323371250000037
+nvbench-v1-strict:2270,qwen3:14b,direct,Scatter,Easy,0.0,0.0,0.0,0.0,0.9199999999999999,1.0,6.4010829169999965
+nvbench-v1-strict:2272,qwen3:14b,direct,Scatter,Easy,0.0,0.0,0.0,0.0,0.6,1.0,4.435028875
+nvbench-v1-strict:2275,qwen3:14b,direct,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.7428571428571429,0.0,7.0045092910000335
+nvbench-v1-strict:2281,qwen3:14b,direct,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,5.454582416999983
+nvbench-v1-strict:2286,qwen3:14b,direct,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.8,1.0,4.743995584000004
+nvbench-v1-strict:2290,qwen3:14b,direct,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,6.317802875000041
+nvbench-v1-strict:2298,qwen3:14b,direct,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.9333333333333332,1.0,5.6693881669999655
+nvbench-v1-strict:2299,qwen3:14b,direct,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.8,1.0,5.529716000000008
+nvbench-v1-strict:2313,qwen3:14b,direct,Pie,Easy,0.0,0.0,0.0,0.0,0.8,1.0,4.169095750000025
+nvbench-v1-strict:2351@y_name@ASC,qwen3:14b,direct,Bar,Medium,0.0,0.0,0.0,0.0,0.8,0.0,3.313866292
+nvbench-v1-strict:2360@y_name@ASC,qwen3:14b,direct,Bar,Hard,0.0,0.0,0.0,0.0,0.8,0.0,2.804569333
+nvbench-v1-strict:2361,qwen3:14b,direct,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,6.195474540999953
+nvbench-v1-strict:240,qwen3:14b,direct,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.8,1.0,7.054635708000092
+nvbench-v1-strict:2750@y_name@DESC,qwen3:14b,direct,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.65,1.0,6.498222791000003
+nvbench-v1-strict:2751@y_name@ASC,qwen3:14b,direct,Bar,Medium,0.0,0.0,0.0,0.0,0.8,0.0,4.008434749999999
+nvbench-v1-strict:2755@y_name@DESC,qwen3:14b,direct,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.8333333333333333,1.0,3.5206577909999908
+nvbench-v1-strict:2874,qwen3:14b,direct,Scatter,Easy,0.0,0.0,0.0,0.0,0.7,0.0,3.2864028749999648
+nvbench-v1-strict:2946,qwen3:14b,direct,Stacked Bar,Easy,0.0,0.0,0.0,0.0,0.8,0.0,1.6402907089999985
+nvbench-v1-strict:2991,qwen3:14b,direct,Scatter,Medium,0.0,0.0,0.0,0.0,0.8,1.0,5.301109542000006
+nvbench-v1-strict:3008,qwen3:14b,direct,Line,Easy,0.0,0.0,0.0,0.0,0.58,0.0,6.648474374999978
+nvbench-v1-strict:3072,qwen3:14b,direct,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,0.9199999999999999,1.0,4.978152541999975
+nvbench-v1-strict:3086@y_name@DESC,qwen3:14b,direct,Stacked Bar,Medium,0.0,0.0,0.0,0.0,0.5714285714285714,0.0,7.576246124999997
+nvbench-v1-strict:3090,qwen3:14b,direct,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.72,1.0,4.511207041999995
+nvbench-v1-strict:3093,qwen3:14b,direct,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.5599999999999999,1.0,4.767010874999997
+nvbench-v1-strict:3111@y_name@ASC,qwen3:14b,direct,Bar,Easy,0.0,0.0,0.0,0.0,0.6,1.0,4.762587333000003
+nvbench-v1-strict:3162,qwen3:14b,direct,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,0.8,1.0,6.665263291999963
+nvbench-v1-strict:3178,qwen3:14b,direct,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,0.8,1.0,6.156128708999972
+nvbench-v1-strict:3209@y_name@DESC,qwen3:14b,direct,Bar,Medium,0.0,0.0,0.0,0.0,0.8399999999999999,0.0,5.510131084000001
+nvbench-v1-strict:3237,qwen3:14b,direct,Bar,Medium,0.0,0.0,0.0,0.0,0.9,1.0,4.312915791999998
+nvbench-v1-strict:324,qwen3:14b,direct,Line,Easy,0.0,0.0,0.0,0.0,0.8333333333333333,1.0,5.511257083000032
+nvbench-v1-strict:3240,qwen3:14b,direct,Line,Easy,0.0,0.0,0.0,0.0,1.0,1.0,5.400947291999955
+nvbench-v1-strict:3284,qwen3:14b,direct,Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,5.478079874999992
+nvbench-v1-strict:351,qwen3:14b,direct,Scatter,Easy,0.0,0.0,0.0,0.0,0.8,1.0,6.267753125000013
+nvbench-v1-strict:352,qwen3:14b,direct,Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,5.35651470800002
+nvbench-v1-strict:385,qwen3:14b,direct,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,6.453484458000048
+nvbench-v1-strict:391,qwen3:14b,direct,Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,5.721323625000025
+nvbench-v1-strict:410,qwen3:14b,direct,Scatter,Medium,0.0,0.0,0.0,0.0,0.76,0.0,5.1827377909999655
+nvbench-v1-strict:433,qwen3:14b,direct,Pie,Medium,0.0,0.0,0.0,0.0,0.2,1.0,3.9367111669999986
+nvbench-v1-strict:478,qwen3:14b,direct,Pie,Medium,0.0,1.0,0.0,1.0,0.9,1.0,2.687202458999991
+nvbench-v1-strict:47@y_name@ASC,qwen3:14b,direct,Bar,Medium,0.0,0.0,0.0,0.0,0.8,0.0,1.2322507089999988
+nvbench-v1-strict:513@y_name@ASC,qwen3:14b,direct,Bar,Hard,0.0,0.0,0.0,0.0,0.8533333333333333,0.0,3.0932523749999987
+nvbench-v1-strict:558,qwen3:14b,direct,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,7.012354708000004
+nvbench-v1-strict:565,qwen3:14b,direct,Pie,Easy,0.0,0.0,0.0,0.0,0.8400000000000001,1.0,2.0112654160000147
+nvbench-v1-strict:62,qwen3:14b,direct,Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,1.5947512500000016
+nvbench-v1-strict:627,qwen3:14b,direct,Bar,Medium,0.0,0.0,0.0,0.0,1.0,1.0,5.506964457999999
+nvbench-v1-strict:647,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,6.08571137499996
+nvbench-v1-strict:648,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.8333333333333333,0.0,8.141455667000002
+nvbench-v1-strict:680@y_name@ASC,qwen3:14b,direct,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.5714285714285714,0.0,7.016643208999994
+nvbench-v1-strict:683,qwen3:14b,direct,Bar,Easy,0.0,0.0,0.0,0.0,0.9,0.0,4.297532540999995
+nvbench-v1-strict:698,qwen3:14b,direct,Pie,Easy,0.0,0.0,0.0,0.0,0.9,0.0,3.3643713330000082
+nvbench-v1-strict:707,qwen3:14b,direct,Scatter,Easy,0.0,1.0,0.0,1.0,0.8,1.0,4.500158624999983
+nvbench-v1-strict:712,qwen3:14b,direct,Pie,Medium,0.0,0.0,0.0,0.0,0.9,0.0,3.4616818750000107
+nvbench-v1-strict:734,qwen3:14b,direct,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,0.76,1.0,5.954257250000069
+nvbench-v1-strict:770,qwen3:14b,direct,Line,Easy,0.0,0.0,0.0,0.0,0.8333333333333333,0.0,5.427661084000022
+nvbench-v1-strict:776,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.8933333333333333,0.0,11.167489999999987
+nvbench-v1-strict:778,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,7.19424516600003
+nvbench-v1-strict:779,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,8.25003049999998
+nvbench-v1-strict:793@y_name@ASC,qwen3:14b,direct,Bar,Hard,0.0,0.0,0.0,0.0,0.8533333333333333,0.0,3.384555167000002
+nvbench-v1-strict:798,qwen3:14b,direct,Line,Medium,0.0,0.0,0.0,0.0,0.9,0.0,2.732010833000004
+nvbench-v1-strict:849@y_name@DESC,qwen3:14b,direct,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.7285714285714285,0.0,4.959110833000011
+nvbench-v1-strict:850,qwen3:14b,direct,Grouping Line,Extra Hard,0.0,0.0,0.0,0.0,0.8933333333333333,0.0,11.371489291999978
+nvbench-v1-strict:872@y_name@ASC,qwen3:14b,direct,Bar,Medium,0.0,0.0,0.0,0.0,0.8,1.0,4.382691999999999
+nvbench-v1-strict:874,qwen3:14b,direct,Pie,Medium,0.0,0.0,0.0,0.0,0.9,0.0,4.247836333000009
+nvbench-v1-strict:877,qwen3:14b,direct,Scatter,Medium,0.0,0.0,0.0,0.0,0.9,0.0,5.007438999999977
+nvbench-v1-strict:895,qwen3:14b,direct,Line,Easy,0.0,0.0,0.0,0.0,0.78,0.0,3.840462083000034
+nvbench-v1-strict:942,qwen3:14b,direct,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,5.552589249999983
+nvbench-v1-strict:959,qwen3:14b,direct,Pie,Easy,0.0,0.0,0.0,0.0,0.7,0.0,4.668419875000012
+nvbench-v1-strict:997,qwen3:14b,direct,Line,Medium,0.0,0.0,0.0,0.0,0.9,0.0,6.243092083999954
+nvbench-v1-strict:1021,qwen3:14b,direct_rich,Pie,Easy,0.0,0.0,0.0,0.0,0.64,0.0,1.7241810000000442
+nvbench-v1-strict:1096,qwen3:14b,direct_rich,Line,Easy,0.0,0.0,0.0,0.0,0.8800000000000001,1.0,1.9506314169999541
+nvbench-v1-strict:1098,qwen3:14b,direct_rich,Line,Easy,0.0,0.0,0.0,0.0,0.8800000000000001,1.0,6.416640791999953
+nvbench-v1-strict:1165,qwen3:14b,direct_rich,Line,Medium,0.0,0.0,0.0,0.0,0.8333333333333333,0.0,2.928583500000059
+nvbench-v1-strict:1186,qwen3:14b,direct_rich,Line,Easy,0.0,0.0,0.0,0.0,0.7333333333333333,0.0,2.3159521670000913
+nvbench-v1-strict:1198,qwen3:14b,direct_rich,Pie,Medium,1.0,1.0,1.0,1.0,1.0,1.0,1.542096249999986
+nvbench-v1-strict:1203@y_name@ASC,qwen3:14b,direct_rich,Bar,Hard,0.0,0.0,0.0,0.0,0.9,1.0,4.063717624999981
+nvbench-v1-strict:1236,qwen3:14b,direct_rich,Pie,Easy,0.0,0.0,0.0,0.0,0.64,1.0,1.6686589160000267
+nvbench-v1-strict:129@y_name@DESC,qwen3:14b,direct_rich,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.7657142857142858,0.0,8.03609700000004
+nvbench-v1-strict:1314,qwen3:14b,direct_rich,Pie,Medium,0.0,0.0,0.0,0.0,0.9,0.0,1.811042708000059
+nvbench-v1-strict:1334@y_name@ASC,qwen3:14b,direct_rich,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.8,1.0,7.668846415999951
+nvbench-v1-strict:1349,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.8933333333333333,0.0,1.5080278330000283
+nvbench-v1-strict:134@y_name@DESC,qwen3:14b,direct_rich,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.7857142857142858,0.0,5.531692083000053
+nvbench-v1-strict:1350,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,6.612429084000041
+nvbench-v1-strict:1351,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,1.6611027920000652
+nvbench-v1-strict:1352,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,1.5570584999999255
+nvbench-v1-strict:1353,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,1.5724504590000379
+nvbench-v1-strict:1387,qwen3:14b,direct_rich,Grouping Line,Extra Hard,0.0,0.0,0.0,0.0,0.8333333333333333,0.0,2.104439665999962
+nvbench-v1-strict:14,qwen3:14b,direct_rich,Pie,Easy,0.0,0.0,0.0,0.0,0.6,1.0,1.7665313339999784
+nvbench-v1-strict:1420,qwen3:14b,direct_rich,Pie,Easy,0.0,0.0,0.0,0.0,0.36,0.0,5.472680209000032
+nvbench-v1-strict:1425,qwen3:14b,direct_rich,Scatter,Medium,0.0,0.0,0.0,0.0,0.7,1.0,4.75026575000004
+nvbench-v1-strict:1431,qwen3:14b,direct_rich,Pie,Medium,0.0,0.0,0.0,0.0,0.9,0.0,1.8375736670000151
+nvbench-v1-strict:145@y_name@ASC,qwen3:14b,direct_rich,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.7657142857142858,0.0,5.138542165999979
+nvbench-v1-strict:1484,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,5.498777874999973
+nvbench-v1-strict:1490,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.8666666666666666,0.0,5.416260165999915
+nvbench-v1-strict:169,qwen3:14b,direct_rich,Line,Medium,0.0,0.0,0.0,0.0,0.96,1.0,5.540244292000011
+nvbench-v1-strict:170,qwen3:14b,direct_rich,Line,Medium,0.0,0.0,0.0,0.0,0.96,1.0,6.066625584000008
+nvbench-v1-strict:171,qwen3:14b,direct_rich,Line,Easy,0.0,0.0,0.0,0.0,1.0,1.0,4.4896937920000255
+nvbench-v1-strict:188,qwen3:14b,direct_rich,Line,Easy,0.0,0.0,0.0,0.0,0.8800000000000001,1.0,1.8324483750000127
+nvbench-v1-strict:2064,qwen3:14b,direct_rich,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,7.097623209000062
+nvbench-v1-strict:2080@y_name@DESC,qwen3:14b,direct_rich,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.6133333333333333,0.0,4.172942832999979
+nvbench-v1-strict:2125,qwen3:14b,direct_rich,Scatter,Medium,0.0,0.0,0.0,0.0,0.9,0.0,2.007265500000017
+nvbench-v1-strict:2205,qwen3:14b,direct_rich,Bar,Medium,0.0,0.0,0.0,0.0,0.72,1.0,5.41820266700006
+nvbench-v1-strict:2235@y_name@ASC,qwen3:14b,direct_rich,Bar,Hard,0.0,0.0,0.0,0.0,0.8533333333333333,1.0,5.893980541000019
+nvbench-v1-strict:2247@y_name@DESC,qwen3:14b,direct_rich,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.6666666666666667,1.0,6.291088542000011
+nvbench-v1-strict:2264,qwen3:14b,direct_rich,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,5.538697584000033
+nvbench-v1-strict:2266,qwen3:14b,direct_rich,Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,2.09576662500001
+nvbench-v1-strict:2270,qwen3:14b,direct_rich,Scatter,Easy,0.0,0.0,0.0,0.0,0.9199999999999999,1.0,5.279347790999964
+nvbench-v1-strict:2272,qwen3:14b,direct_rich,Scatter,Easy,0.0,0.0,0.0,0.0,0.6,1.0,4.152979541999912
+nvbench-v1-strict:2275,qwen3:14b,direct_rich,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,5.492606458000068
+nvbench-v1-strict:2281,qwen3:14b,direct_rich,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,5.489865333000012
+nvbench-v1-strict:2286,qwen3:14b,direct_rich,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,6.240157624999938
+nvbench-v1-strict:2290,qwen3:14b,direct_rich,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,6.020290375000059
+nvbench-v1-strict:2298,qwen3:14b,direct_rich,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,5.439892041000007
+nvbench-v1-strict:2299,qwen3:14b,direct_rich,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.8,1.0,5.489323709000018
+nvbench-v1-strict:2313,qwen3:14b,direct_rich,Pie,Easy,0.0,0.0,0.0,0.0,0.8,1.0,4.444341916999974
+nvbench-v1-strict:2351@y_name@ASC,qwen3:14b,direct_rich,Bar,Medium,0.0,0.0,0.0,0.0,0.8,0.0,3.8215618330000325
+nvbench-v1-strict:2360@y_name@ASC,qwen3:14b,direct_rich,Bar,Hard,0.0,0.0,0.0,0.0,0.7733333333333333,0.0,3.6542586250000113
+nvbench-v1-strict:2361,qwen3:14b,direct_rich,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,6.110448708000035
+nvbench-v1-strict:240,qwen3:14b,direct_rich,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.8,1.0,2.083094416999984
+nvbench-v1-strict:2750@y_name@DESC,qwen3:14b,direct_rich,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.65,1.0,4.73726479100003
+nvbench-v1-strict:2751@y_name@ASC,qwen3:14b,direct_rich,Bar,Medium,0.0,0.0,0.0,0.0,0.8,0.0,1.513252040999987
+nvbench-v1-strict:2755@y_name@DESC,qwen3:14b,direct_rich,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.7657142857142858,0.0,4.814620417000015
+nvbench-v1-strict:2874,qwen3:14b,direct_rich,Scatter,Easy,0.0,0.0,0.0,0.0,0.8400000000000001,0.0,1.6551767920000202
+nvbench-v1-strict:2946,qwen3:14b,direct_rich,Stacked Bar,Easy,0.0,0.0,0.0,0.0,0.8,0.0,1.663364582999975
+nvbench-v1-strict:2991,qwen3:14b,direct_rich,Scatter,Medium,0.0,0.0,0.0,0.0,1.0,1.0,4.072577083999931
+nvbench-v1-strict:3008,qwen3:14b,direct_rich,Line,Easy,0.0,0.0,0.0,0.0,0.6,1.0,3.2994245410000076
+nvbench-v1-strict:3072,qwen3:14b,direct_rich,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,0.9199999999999999,1.0,5.237159584000096
+nvbench-v1-strict:3086@y_name@DESC,qwen3:14b,direct_rich,Stacked Bar,Medium,0.0,0.0,0.0,0.0,0.6285714285714286,0.0,8.611827999999946
+nvbench-v1-strict:3090,qwen3:14b,direct_rich,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.5599999999999999,1.0,5.143220625000026
+nvbench-v1-strict:3093,qwen3:14b,direct_rich,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.5599999999999999,1.0,5.2511255829999754
+nvbench-v1-strict:3111@y_name@ASC,qwen3:14b,direct_rich,Bar,Easy,0.0,0.0,0.0,0.0,0.6,0.0,2.088730041999952
+nvbench-v1-strict:3162,qwen3:14b,direct_rich,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,0.8,1.0,6.586918500000024
+nvbench-v1-strict:3178,qwen3:14b,direct_rich,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,0.8,1.0,5.826433374999965
+nvbench-v1-strict:3209@y_name@DESC,qwen3:14b,direct_rich,Bar,Medium,0.0,0.0,0.0,0.0,0.77,0.0,13.569512041999928
+nvbench-v1-strict:3237,qwen3:14b,direct_rich,Bar,Medium,0.0,0.0,0.0,0.0,0.9,1.0,4.856676375000006
+nvbench-v1-strict:324,qwen3:14b,direct_rich,Line,Easy,0.0,0.0,0.0,0.0,0.9,0.0,4.530414083000096
+nvbench-v1-strict:3240,qwen3:14b,direct_rich,Line,Easy,0.0,0.0,0.0,0.0,1.0,1.0,5.180843707999998
+nvbench-v1-strict:3284,qwen3:14b,direct_rich,Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,5.10809395800004
+nvbench-v1-strict:351,qwen3:14b,direct_rich,Scatter,Easy,0.0,0.0,0.0,0.0,0.8,1.0,5.1547694580000325
+nvbench-v1-strict:352,qwen3:14b,direct_rich,Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,4.860358333000022
+nvbench-v1-strict:385,qwen3:14b,direct_rich,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,6.3680403329999535
+nvbench-v1-strict:391,qwen3:14b,direct_rich,Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,3.353242874999978
+nvbench-v1-strict:410,qwen3:14b,direct_rich,Scatter,Medium,0.0,0.0,0.0,0.0,0.76,0.0,1.5307146669999838
+nvbench-v1-strict:433,qwen3:14b,direct_rich,Pie,Medium,0.0,0.0,0.0,0.0,0.2,1.0,4.098495750000097
+nvbench-v1-strict:478,qwen3:14b,direct_rich,Pie,Medium,0.0,1.0,0.0,1.0,0.9,1.0,2.7708080419999987
+nvbench-v1-strict:47@y_name@ASC,qwen3:14b,direct_rich,Bar,Medium,0.0,0.0,0.0,0.0,0.8,0.0,1.4125914170000442
+nvbench-v1-strict:513@y_name@ASC,qwen3:14b,direct_rich,Bar,Hard,0.0,0.0,0.0,0.0,0.8533333333333333,0.0,2.1365652920000002
+nvbench-v1-strict:558,qwen3:14b,direct_rich,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,1.0,8.026485542000046
+nvbench-v1-strict:565,qwen3:14b,direct_rich,Pie,Easy,0.0,0.0,0.0,0.0,0.9,1.0,1.9223095419999936
+nvbench-v1-strict:62,qwen3:14b,direct_rich,Scatter,Easy,0.0,0.0,0.0,0.0,1.0,1.0,1.4358905000000277
+nvbench-v1-strict:627,qwen3:14b,direct_rich,Bar,Medium,0.0,0.0,0.0,0.0,1.0,1.0,6.817774665999991
+nvbench-v1-strict:647,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,4.910149124999975
+nvbench-v1-strict:648,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.8333333333333333,0.0,3.477424458000087
+nvbench-v1-strict:680@y_name@ASC,qwen3:14b,direct_rich,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.7047619047619047,0.0,3.637313457999994
+nvbench-v1-strict:683,qwen3:14b,direct_rich,Bar,Easy,0.0,0.0,0.0,0.0,1.0,1.0,1.6919442920000165
+nvbench-v1-strict:698,qwen3:14b,direct_rich,Pie,Easy,0.0,0.0,0.0,0.0,0.9,0.0,1.1766924170000266
+nvbench-v1-strict:707,qwen3:14b,direct_rich,Scatter,Easy,0.0,0.0,0.0,0.0,0.72,1.0,5.153385667000066
+nvbench-v1-strict:712,qwen3:14b,direct_rich,Pie,Medium,0.0,0.0,0.0,0.0,0.9,0.0,1.197189334000086
+nvbench-v1-strict:734,qwen3:14b,direct_rich,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,0.76,1.0,3.674834916000009
+nvbench-v1-strict:770,qwen3:14b,direct_rich,Line,Easy,0.0,0.0,0.0,0.0,0.82,1.0,2.2463099160000866
+nvbench-v1-strict:776,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,9.436479833000021
+nvbench-v1-strict:778,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,1.0,1.0,4.180131875000029
+nvbench-v1-strict:779,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,7.670509749999951
+nvbench-v1-strict:793@y_name@ASC,qwen3:14b,direct_rich,Bar,Hard,0.0,0.0,0.0,0.0,0.6571428571428571,0.0,1.8649249579999605
+nvbench-v1-strict:798,qwen3:14b,direct_rich,Line,Medium,0.0,0.0,0.0,0.0,0.9,0.0,2.636199083000065
+nvbench-v1-strict:849@y_name@DESC,qwen3:14b,direct_rich,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.7619047619047619,0.0,5.564693541999986
+nvbench-v1-strict:850,qwen3:14b,direct_rich,Grouping Line,Extra Hard,0.0,0.0,0.0,0.0,0.8933333333333333,0.0,6.038397208000106
+nvbench-v1-strict:872@y_name@ASC,qwen3:14b,direct_rich,Bar,Medium,0.0,0.0,0.0,0.0,0.8,0.0,1.5580893750000087
+nvbench-v1-strict:874,qwen3:14b,direct_rich,Pie,Medium,0.0,0.0,0.0,0.0,0.9,0.0,1.4838077499999827
+nvbench-v1-strict:877,qwen3:14b,direct_rich,Scatter,Medium,0.0,0.0,0.0,0.0,0.9,0.0,2.9615694169999642
+nvbench-v1-strict:895,qwen3:14b,direct_rich,Line,Easy,0.0,0.0,0.0,0.0,0.8800000000000001,1.0,1.6312474999999722
+nvbench-v1-strict:942,qwen3:14b,direct_rich,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,5.177485165999997
+nvbench-v1-strict:959,qwen3:14b,direct_rich,Pie,Easy,0.0,0.0,0.0,0.0,0.7,0.0,2.329441541999927
+nvbench-v1-strict:997,qwen3:14b,direct_rich,Line,Medium,0.0,0.0,0.0,0.0,0.8800000000000001,1.0,2.9844877090000637
+nvbench-v1-strict:1021,qwen3:14b,staged,Pie,Easy,1.0,1.0,1.0,1.0,1.0,1.0,12.633646374999898
+nvbench-v1-strict:1096,qwen3:14b,staged,Line,Easy,0.0,0.0,0.0,0.0,0.96,1.0,15.144087749999926
+nvbench-v1-strict:1098,qwen3:14b,staged,Line,Easy,0.0,0.0,0.0,0.0,0.96,1.0,15.27243999999996
+nvbench-v1-strict:1165,qwen3:14b,staged,Line,Medium,0.0,0.0,0.0,0.0,0.9,0.0,14.727158959000008
+nvbench-v1-strict:1186,qwen3:14b,staged,Line,Easy,0.0,0.0,0.0,0.0,0.9,1.0,13.823077499999954
+nvbench-v1-strict:1198,qwen3:14b,staged,Pie,Medium,1.0,1.0,1.0,1.0,1.0,1.0,14.453739584000004
+nvbench-v1-strict:1203@y_name@ASC,qwen3:14b,staged,Bar,Hard,0.0,0.0,0.0,0.0,0.8,0.0,16.46778437499995
+nvbench-v1-strict:1236,qwen3:14b,staged,Pie,Easy,1.0,1.0,1.0,1.0,1.0,1.0,12.754614459000095
+nvbench-v1-strict:129@y_name@DESC,qwen3:14b,staged,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.9,1.0,15.014280333999977
+nvbench-v1-strict:1314,qwen3:14b,staged,Pie,Medium,0.0,0.0,0.0,0.0,0.9,0.0,13.633405249999896
+nvbench-v1-strict:1334@y_name@ASC,qwen3:14b,staged,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.8,1.0,17.938611834000085
+nvbench-v1-strict:1349,qwen3:14b,staged,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9,1.0,18.173031374999937
+nvbench-v1-strict:134@y_name@DESC,qwen3:14b,staged,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,14.387482417000001
+nvbench-v1-strict:1350,qwen3:14b,staged,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,15.716744875000131
+nvbench-v1-strict:1351,qwen3:14b,staged,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.96,1.0,17.196166209000012
+nvbench-v1-strict:1352,qwen3:14b,staged,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9,1.0,16.041569750000008
+nvbench-v1-strict:1353,qwen3:14b,staged,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9,1.0,15.773251374999973
+nvbench-v1-strict:1387,qwen3:14b,staged,Grouping Line,Extra Hard,0.0,0.0,0.0,0.0,0.8333333333333333,0.0,18.50565037499996
+nvbench-v1-strict:14,qwen3:14b,staged,Pie,Easy,0.0,0.0,0.0,0.0,0.9,0.0,20.512196457999835
+nvbench-v1-strict:1420,qwen3:14b,staged,Pie,Easy,0.0,0.0,0.0,0.0,0.16,0.0,26.399942667000005
+nvbench-v1-strict:1425,qwen3:14b,staged,Scatter,Medium,0.0,0.0,0.0,0.0,0.6,0.0,20.891145291000157
+nvbench-v1-strict:1431,qwen3:14b,staged,Pie,Medium,0.0,0.0,0.0,0.0,0.9,0.0,14.707690707999973
+nvbench-v1-strict:145@y_name@ASC,qwen3:14b,staged,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.9333333333333332,1.0,14.89969337499997
+nvbench-v1-strict:1484,qwen3:14b,staged,Grouping Line,Hard,1.0,1.0,1.0,1.0,1.0,1.0,15.546656999999868
+nvbench-v1-strict:1490,qwen3:14b,staged,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,1.0,14.512992417000078
+nvbench-v1-strict:169,qwen3:14b,staged,Line,Medium,0.0,0.0,0.0,0.0,0.8,0.0,18.706095458999926
+nvbench-v1-strict:170,qwen3:14b,staged,Line,Medium,0.0,0.0,0.0,0.0,0.9,1.0,17.504852165999864
+nvbench-v1-strict:171,qwen3:14b,staged,Line,Easy,1.0,1.0,1.0,1.0,1.0,1.0,14.342134458000146
+nvbench-v1-strict:188,qwen3:14b,staged,Line,Easy,0.0,0.0,0.0,0.0,0.8333333333333333,0.0,12.226068042000179
+nvbench-v1-strict:2064,qwen3:14b,staged,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,18.269484083000407
+nvbench-v1-strict:2080@y_name@DESC,qwen3:14b,staged,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.7,0.0,15.822728249999955
+nvbench-v1-strict:2125,qwen3:14b,staged,Scatter,Medium,0.0,0.0,0.0,0.0,0.9,0.0,14.275000374999763
+nvbench-v1-strict:2205,qwen3:14b,staged,Bar,Medium,0.0,0.0,0.0,0.0,0.7,0.0,17.966362209000067
+nvbench-v1-strict:2235@y_name@ASC,qwen3:14b,staged,Bar,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,17.854357917000016
+nvbench-v1-strict:2247@y_name@DESC,qwen3:14b,staged,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.4666666666666667,0.0,24.850158375000092
+nvbench-v1-strict:2264,qwen3:14b,staged,Grouping Scatter,Medium,1.0,1.0,1.0,1.0,1.0,1.0,16.301912082999934
+nvbench-v1-strict:2266,qwen3:14b,staged,Scatter,Easy,1.0,1.0,1.0,1.0,1.0,1.0,12.676357875000122
+nvbench-v1-strict:2270,qwen3:14b,staged,Scatter,Easy,0.0,0.0,0.0,0.0,0.9199999999999999,1.0,13.787927665999632
+nvbench-v1-strict:2272,qwen3:14b,staged,Scatter,Easy,0.0,1.0,0.0,1.0,0.6,1.0,16.868761749999976
+nvbench-v1-strict:2275,qwen3:14b,staged,Grouping Scatter,Medium,1.0,1.0,1.0,1.0,1.0,1.0,15.900275333000081
+nvbench-v1-strict:2281,qwen3:14b,staged,Grouping Scatter,Medium,0.0,1.0,0.0,1.0,0.8666666666666668,1.0,20.94390604199998
+nvbench-v1-strict:2286,qwen3:14b,staged,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.9199999999999999,1.0,15.206762374999926
+nvbench-v1-strict:2290,qwen3:14b,staged,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.8666666666666668,1.0,16.064502542000355
+nvbench-v1-strict:2298,qwen3:14b,staged,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.6666666666666667,0.0,21.77031187500006
+nvbench-v1-strict:2299,qwen3:14b,staged,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.7333333333333333,1.0,22.02601791699999
+nvbench-v1-strict:2313,qwen3:14b,staged,Pie,Easy,0.0,0.0,0.0,0.0,0.7,1.0,15.161665332999974
+nvbench-v1-strict:2351@y_name@ASC,qwen3:14b,staged,Bar,Medium,0.0,0.0,0.0,0.0,0.8,0.0,13.280676125000127
+nvbench-v1-strict:2360@y_name@ASC,qwen3:14b,staged,Bar,Hard,0.0,0.0,0.0,0.0,0.8,0.0,13.141354749999891
+nvbench-v1-strict:2361,qwen3:14b,staged,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.8666666666666668,1.0,14.59355608299984
+nvbench-v1-strict:240,qwen3:14b,staged,Grouping Scatter,Medium,0.0,0.0,0.0,0.0,0.8,1.0,14.269295374999729
+nvbench-v1-strict:2750@y_name@DESC,qwen3:14b,staged,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,18.050735957999905
+nvbench-v1-strict:2751@y_name@ASC,qwen3:14b,staged,Bar,Medium,0.0,0.0,0.0,0.0,0.8,0.0,12.943791084000168
+nvbench-v1-strict:2755@y_name@DESC,qwen3:14b,staged,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.9,1.0,16.016104957999914
+nvbench-v1-strict:2874,qwen3:14b,staged,Scatter,Easy,1.0,1.0,1.0,1.0,1.0,1.0,14.906175333000192
+nvbench-v1-strict:2946,qwen3:14b,staged,Stacked Bar,Easy,0.0,0.0,0.0,0.0,0.76,0.0,16.74062245799996
+nvbench-v1-strict:2991,qwen3:14b,staged,Scatter,Medium,1.0,1.0,1.0,1.0,1.0,1.0,12.898876417000338
+nvbench-v1-strict:3008,qwen3:14b,staged,Line,Easy,0.0,0.0,0.0,0.0,0.7,1.0,16.808527207999987
+nvbench-v1-strict:3072,qwen3:14b,staged,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,0.9199999999999999,1.0,13.305986958000176
+nvbench-v1-strict:3086@y_name@DESC,qwen3:14b,staged,Stacked Bar,Medium,0.0,0.0,0.0,0.0,0.6666666666666667,1.0,21.212856124999917
+nvbench-v1-strict:3090,qwen3:14b,staged,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.6,0.0,19.522701459000018
+nvbench-v1-strict:3093,qwen3:14b,staged,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.6,0.0,19.14478391700004
+nvbench-v1-strict:3111@y_name@ASC,qwen3:14b,staged,Bar,Easy,0.0,0.0,0.0,0.0,0.6,0.0,16.474483541999916
+nvbench-v1-strict:3162,qwen3:14b,staged,Grouping Scatter,Easy,0.0,1.0,0.0,1.0,0.8,1.0,18.159218833000068
+nvbench-v1-strict:3178,qwen3:14b,staged,Grouping Scatter,Easy,0.0,1.0,0.0,1.0,0.8,1.0,18.405428292000124
+nvbench-v1-strict:3209@y_name@DESC,qwen3:14b,staged,Bar,Medium,0.0,0.0,0.0,0.0,0.8800000000000001,0.0,15.065360749999854
+nvbench-v1-strict:3237,qwen3:14b,staged,Bar,Medium,0.0,0.0,0.0,0.0,0.7,1.0,14.89908437500003
+nvbench-v1-strict:324,qwen3:14b,staged,Line,Easy,0.0,0.0,0.0,0.0,0.9333333333333332,1.0,14.31805104099999
+nvbench-v1-strict:3240,qwen3:14b,staged,Line,Easy,1.0,1.0,1.0,1.0,1.0,1.0,17.531785833000185
+nvbench-v1-strict:3284,qwen3:14b,staged,Scatter,Easy,1.0,1.0,1.0,1.0,1.0,1.0,11.854462166999838
+nvbench-v1-strict:351,qwen3:14b,staged,Scatter,Easy,0.0,0.0,0.0,0.0,1.0,0.0,12.819826875000217
+nvbench-v1-strict:352,qwen3:14b,staged,Scatter,Easy,1.0,1.0,1.0,1.0,1.0,1.0,18.587828958000046
+nvbench-v1-strict:385,qwen3:14b,staged,Grouping Scatter,Easy,1.0,1.0,1.0,1.0,1.0,1.0,13.732446957999855
+nvbench-v1-strict:391,qwen3:14b,staged,Scatter,Easy,1.0,1.0,1.0,1.0,1.0,1.0,12.542271124999843
+nvbench-v1-strict:410,qwen3:14b,staged,Scatter,Medium,0.0,0.0,0.0,0.0,0.8,0.0,20.58609875000002
+nvbench-v1-strict:433,qwen3:14b,staged,Pie,Medium,0.0,0.0,0.0,0.0,0.2,0.0,14.681103416000042
+nvbench-v1-strict:478,qwen3:14b,staged,Pie,Medium,0.0,0.0,0.0,0.0,0.9,1.0,16.108114083000146
+nvbench-v1-strict:47@y_name@ASC,qwen3:14b,staged,Bar,Medium,0.0,0.0,0.0,0.0,0.8,0.0,12.777502166999966
+nvbench-v1-strict:513@y_name@ASC,qwen3:14b,staged,Bar,Hard,0.0,0.0,0.0,0.0,0.9,1.0,15.292127749999963
+nvbench-v1-strict:558,qwen3:14b,staged,Stacked Bar,Hard,1.0,1.0,1.0,1.0,1.0,1.0,16.340006415999824
+nvbench-v1-strict:565,qwen3:14b,staged,Pie,Easy,1.0,1.0,1.0,1.0,1.0,1.0,14.34939908399997
+nvbench-v1-strict:62,qwen3:14b,staged,Scatter,Easy,1.0,1.0,1.0,1.0,1.0,1.0,13.383800749999864
+nvbench-v1-strict:627,qwen3:14b,staged,Bar,Medium,0.0,0.0,0.0,0.0,0.6,1.0,16.84064258300009
+nvbench-v1-strict:647,qwen3:14b,staged,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,0.0,14.775923250000233
+nvbench-v1-strict:648,qwen3:14b,staged,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.8333333333333333,0.0,16.554734374999953
+nvbench-v1-strict:680@y_name@ASC,qwen3:14b,staged,Stacked Bar,Hard,0.0,0.0,0.0,0.0,0.9,1.0,14.72147479199998
+nvbench-v1-strict:683,qwen3:14b,staged,Bar,Easy,1.0,1.0,1.0,1.0,1.0,1.0,11.754919333000089
+nvbench-v1-strict:698,qwen3:14b,staged,Pie,Easy,0.0,0.0,0.0,0.0,0.9,0.0,14.96123020899995
+nvbench-v1-strict:707,qwen3:14b,staged,Scatter,Easy,1.0,1.0,1.0,1.0,1.0,1.0,22.039896792000036
+nvbench-v1-strict:712,qwen3:14b,staged,Pie,Medium,0.0,0.0,0.0,0.0,0.9,0.0,13.43792537499985
+nvbench-v1-strict:734,qwen3:14b,staged,Grouping Scatter,Easy,0.0,0.0,0.0,0.0,0.76,1.0,12.928923208000015
+nvbench-v1-strict:770,qwen3:14b,staged,Line,Easy,0.0,0.0,0.0,0.0,0.9,0.0,14.486696250000023
+nvbench-v1-strict:776,qwen3:14b,staged,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.8933333333333333,0.0,19.529525708000165
+nvbench-v1-strict:778,qwen3:14b,staged,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.9333333333333332,1.0,18.236338125000202
+nvbench-v1-strict:779,qwen3:14b,staged,Grouping Line,Hard,0.0,0.0,0.0,0.0,0.8333333333333333,0.0,20.94263229199987
+nvbench-v1-strict:793@y_name@ASC,qwen3:14b,staged,Bar,Hard,0.0,0.0,0.0,0.0,0.8333333333333333,0.0,17.160987333999856
+nvbench-v1-strict:798,qwen3:14b,staged,Line,Medium,0.0,0.0,0.0,0.0,0.86,0.0,19.384179500000073
+nvbench-v1-strict:849@y_name@DESC,qwen3:14b,staged,Stacked Bar,Extra Hard,0.0,0.0,0.0,0.0,0.7333333333333334,0.0,25.081136959000105
+nvbench-v1-strict:850,qwen3:14b,staged,Grouping Line,Extra Hard,0.0,0.0,0.0,0.0,0.9,1.0,16.606484958000237
+nvbench-v1-strict:872@y_name@ASC,qwen3:14b,staged,Bar,Medium,0.0,0.0,0.0,0.0,0.9,1.0,12.127527667000095
+nvbench-v1-strict:874,qwen3:14b,staged,Pie,Medium,0.0,0.0,0.0,0.0,0.9,0.0,13.747138167000003
+nvbench-v1-strict:877,qwen3:14b,staged,Scatter,Medium,0.0,0.0,0.0,0.0,0.9,0.0,15.970912750000025
+nvbench-v1-strict:895,qwen3:14b,staged,Line,Easy,0.0,0.0,0.0,0.0,0.8,0.0,14.62646537500018
+nvbench-v1-strict:942,qwen3:14b,staged,Grouping Line,Hard,1.0,1.0,1.0,1.0,1.0,1.0,18.997258583000075
+nvbench-v1-strict:959,qwen3:14b,staged,Pie,Easy,0.0,0.0,0.0,0.0,0.5,0.0,17.807242667000082
+nvbench-v1-strict:997,qwen3:14b,staged,Line,Medium,0.0,0.0,0.0,0.0,0.9,1.0,16.528723375000027

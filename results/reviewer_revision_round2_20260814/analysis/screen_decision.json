@@ -1,0 +1,117 @@
+{
+  "created_utc": "2026-08-14T16:34:35.342237+00:00",
+  "decision_basis": "completion, API errors, and parse success only; no gold, exact, graded, validity, or latency outcome was used for retention",
+  "expected_runs": 12,
+  "observed_runs": 12,
+  "all_locked_runs_retained": true,
+  "runs": [
+    {
+      "model": "gemma3:27b",
+      "condition": "direct",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    },
+    {
+      "model": "gemma3:27b",
+      "condition": "direct_rich",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    },
+    {
+      "model": "gemma3:27b",
+      "condition": "staged",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    },
+    {
+      "model": "llama3.2:3b",
+      "condition": "direct",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    },
+    {
+      "model": "llama3.2:3b",
+      "condition": "direct_rich",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    },
+    {
+      "model": "llama3.2:3b",
+      "condition": "staged",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    },
+    {
+      "model": "mistral-small:24b",
+      "condition": "direct",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    },
+    {
+      "model": "mistral-small:24b",
+      "condition": "direct_rich",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    },
+    {
+      "model": "mistral-small:24b",
+      "condition": "staged",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    },
+    {
+      "model": "qwen3:14b",
+      "condition": "direct",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    },
+    {
+      "model": "qwen3:14b",
+      "condition": "direct_rich",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    },
+    {
+      "model": "qwen3:14b",
+      "condition": "staged",
+      "rows": 30,
+      "unique_cases": 30,
+      "parse_success_rows": 30,
+      "api_error_rows": 0,
+      "engineering_usable": true
+    }
+  ]
+}

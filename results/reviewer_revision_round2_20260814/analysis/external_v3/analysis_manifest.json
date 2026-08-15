@@ -1,0 +1,31 @@
+{
+  "adapter_version": "strict-v3",
+  "selection_scope": "balanced seven-family estimate for the strict canonical-grammar-eligible subset; filters, distinct/min/max aggregation, limits, offsets, unsupported sorting, and unsupported binning are excluded; YEAR, MONTH, and WEEKDAY binning are retained as explicit time units; not nvBench-v1-wide performance",
+  "source_records": 7247,
+  "eligible_records": 2946,
+  "selected_records": 105,
+  "selected_databases": 47,
+  "eligible_gold_validator_acceptance": "100% by construction; validator rejections are excluded and counted in the selection manifest",
+  "manual_adapter_audit": {
+    "sample_size": 21,
+    "passed": 21,
+    "failed": 0
+  },
+  "bootstrap_repetitions": 5000,
+  "bootstrap_seed": 20260814,
+  "bootstrap_unit": "case, stratified by chart family with equal family weighting",
+  "files": [
+    {
+      "file": "qwen3_14b_613573_d_69_t_extstrict105.jsonl",
+      "rows": 105
+    },
+    {
+      "file": "qwen3_14b_613573_r_69_t_extstrict105.jsonl",
+      "rows": 105
+    },
+    {
+      "file": "qwen3_14b_613573_s_69_t_extstrict105.jsonl",
+      "rows": 105
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "audit_type": "manual source-to-canonical conversion review",
+  "sampling_seed": 20260814,
+  "sampling_frame": "105 selected strict-v3 external cases sorted by record_id",
+  "sample_size": 21,
+  "criteria": [
+    "chart family maps to the registered canonical mark",
+    "selected x field is retained",
+    "measure field and registered aggregation are retained",
+    "grouping field is retained as color when present",
+    "supported y-ordering is retained as x sort",
+    "YEAR, MONTH, or WEEKDAY binning is retained as an explicit timeUnit"
+  ],
+  "interpretation_boundary": "This audit checks adapter faithfulness to the released nvBench-v1 VQL and visualization object. It does not repair or independently validate inconsistencies between a released query and its released VQL.",
+  "cases": [
+    {"record_id": "nvbench-v1-strict:779", "verdict": "pass", "note": "YEAR binning, count, and location grouping retained."},
+    {"record_id": "nvbench-v1-strict:2298", "verdict": "pass", "note": "Unaggregated scatter fields and founder grouping retained."},
+    {"record_id": "nvbench-v1-strict:872@y_name@ASC", "verdict": "pass", "note": "Count and ascending y-order retained."},
+    {"record_id": "nvbench-v1-strict:513@y_name@ASC", "verdict": "pass", "note": "Sum measure and ascending y-order retained."},
+    {"record_id": "nvbench-v1-strict:324", "verdict": "pass", "note": "Date field and count retained."},
+    {"record_id": "nvbench-v1-strict:793@y_name@ASC", "verdict": "pass", "note": "WEEKDAY binning, count, and ascending y-order retained."},
+    {"record_id": "nvbench-v1-strict:1186", "verdict": "pass", "note": "Adapter retains the released date_arrived field; the query says departed, an inherited query/VQL inconsistency."},
+    {"record_id": "nvbench-v1-strict:2351@y_name@ASC", "verdict": "pass", "note": "Color field, count, and ascending y-order retained."},
+    {"record_id": "nvbench-v1-strict:3209@y_name@DESC", "verdict": "pass", "note": "Released WEEKDAY binning and descending y-order retained despite unusual source wording."},
+    {"record_id": "nvbench-v1-strict:942", "verdict": "pass", "note": "YEAR binning, count, and grouping retained."},
+    {"record_id": "nvbench-v1-strict:647", "verdict": "pass", "note": "Year, count, and semester grouping retained."},
+    {"record_id": "nvbench-v1-strict:410", "verdict": "pass", "note": "Identifier and count retained."},
+    {"record_id": "nvbench-v1-strict:1236", "verdict": "pass", "note": "Pie category and mean age retained."},
+    {"record_id": "nvbench-v1-strict:433", "verdict": "pass", "note": "Pie category and count retained."},
+    {"record_id": "nvbench-v1-strict:2991", "verdict": "pass", "note": "Lot field and mean transaction amount retained."},
+    {"record_id": "nvbench-v1-strict:734", "verdict": "pass", "note": "Scatter fields and released template-type grouping retained."},
+    {"record_id": "nvbench-v1-strict:1352", "verdict": "pass", "note": "YEAR binning, sum, and full-time grouping retained."},
+    {"record_id": "nvbench-v1-strict:1350", "verdict": "pass", "note": "YEAR binning, sum, and full-time grouping retained."},
+    {"record_id": "nvbench-v1-strict:1420", "verdict": "pass", "note": "Adapter retains released name/id fields; the query's more-than-one condition is absent from source SQL and is not invented by the adapter."},
+    {"record_id": "nvbench-v1-strict:2235@y_name@ASC", "verdict": "pass", "note": "Founder, sum revenue, and ascending y-order retained."},
+    {"record_id": "nvbench-v1-strict:1198", "verdict": "pass", "note": "Treatment category and sum cost retained."}
+  ],
+  "passed": 21,
+  "failed": 0,
+  "inherited_query_vql_inconsistencies_noted": 3
+}

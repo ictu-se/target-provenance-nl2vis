@@ -1,0 +1,267 @@
+{
+  "case_selection": "Post-hoc explanatory cases covering filter retention, specification mapping, multiple acceptable interpretations, exact-match brittleness, and a staged counterexample.",
+  "rendering_note": "Renderer-required type declarations and presentation properties were added; marks, fields, aggregates, and filters were not changed.",
+  "cases": [
+    {
+      "record_id": "nvbench2:test:14",
+      "query": "Which coaches are represented in the pie chart for Robert Chen, Joe Fabbri, or Jameson Tomas?",
+      "csv_file": "riding_club@coach.csv",
+      "panels": [
+        {
+          "title": "(a) Qwen direct top 1",
+          "note": "Filter omitted: all five coaches remain",
+          "spec": {
+            "encoding": {
+              "color": {
+                "field": "coach_name"
+              },
+              "theta": {
+                "aggregate": "count",
+                "field": "coach_name"
+              }
+            },
+            "mark": "arc"
+          }
+        },
+        {
+          "title": "(b) Qwen staged top 1 = Gold 1",
+          "note": "Requested filter retained; equal counts",
+          "spec": {
+            "encoding": {
+              "color": {
+                "field": "coach_name"
+              },
+              "theta": {
+                "aggregate": "count"
+              }
+            },
+            "mark": "arc",
+            "transform": [
+              {
+                "filter": {
+                  "field": "coach_name",
+                  "oneOf": [
+                    "Jameson Tomas",
+                    "Joe Fabbri",
+                    "Robert Chen"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "title": "(c) Benchmark Gold 2",
+          "note": "Same filter; rank controls slice angle",
+          "spec": {
+            "mark": "arc",
+            "encoding": {
+              "color": {
+                "field": "coach_name"
+              },
+              "theta": {
+                "field": "rank"
+              }
+            },
+            "transform": [
+              {
+                "filter": {
+                  "field": "coach_name",
+                  "oneOf": [
+                    "Robert Chen",
+                    "Joe Fabbri",
+                    "Jameson Tomas"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "record_id": "nvbench2:test:77",
+      "query": "The scatter plot displays the total number of entries by games played and league.",
+      "csv_file": "baseball_1@team_half.csv",
+      "panels": [
+        {
+          "title": "(a) Qwen direct top 1",
+          "note": "Aggregates collapse the requested mapping",
+          "spec": {
+            "encoding": {
+              "x": {
+                "aggregate": "sum",
+                "field": "g"
+              },
+              "y": {
+                "aggregate": "count",
+                "field": "league_id"
+              }
+            },
+            "mark": "point"
+          }
+        },
+        {
+          "title": "(b) Qwen staged top 1 = Gold 4",
+          "note": "Games, wins, league, and count are retained",
+          "spec": {
+            "encoding": {
+              "color": {
+                "field": "league_id"
+              },
+              "size": {
+                "aggregate": "count"
+              },
+              "x": {
+                "field": "g"
+              },
+              "y": {
+                "field": "w"
+              }
+            },
+            "mark": "point"
+          }
+        },
+        {
+          "title": "(c) Benchmark Gold 1",
+          "note": "Alternative mapping uses rank and games",
+          "spec": {
+            "mark": "point",
+            "encoding": {
+              "size": {
+                "aggregate": "count"
+              },
+              "y": {
+                "field": "g"
+              },
+              "color": {
+                "field": "league_id"
+              },
+              "x": {
+                "field": "rank"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "record_id": "nvbench2:test:142",
+      "query": "Create a heat map showing the relationship between group or address ID and store name.",
+      "csv_file": "cre_Drama_Workshop_Groups@Drama_Workshop_Groups.csv",
+      "panels": [
+        {
+          "title": "(a) Qwen direct top 1 (non-exact)",
+          "note": "Same visible design; added field-type declarations",
+          "spec": {
+            "encoding": {
+              "color": {
+                "aggregate": "count",
+                "type": "quantitative"
+              },
+              "x": {
+                "field": "workshop_group_id",
+                "type": "nominal"
+              },
+              "y": {
+                "field": "store_name",
+                "type": "nominal"
+              }
+            },
+            "mark": "rect"
+          }
+        },
+        {
+          "title": "(b) Qwen staged top 1 = Gold 1",
+          "note": "Workshop-group ID interpretation",
+          "spec": {
+            "encoding": {
+              "color": {
+                "aggregate": "count"
+              },
+              "x": {
+                "field": "workshop_group_id"
+              },
+              "y": {
+                "field": "store_name"
+              }
+            },
+            "mark": "rect"
+          }
+        },
+        {
+          "title": "(c) Qwen staged top 2 = Gold 2",
+          "note": "Address-ID interpretation",
+          "spec": {
+            "encoding": {
+              "color": {
+                "aggregate": "count"
+              },
+              "x": {
+                "field": "address_id"
+              },
+              "y": {
+                "field": "store_name"
+              }
+            },
+            "mark": "rect"
+          }
+        }
+      ]
+    },
+    {
+      "record_id": "nvbench2:test:358",
+      "query": "The distribution of daily rental fee in a pie chart.",
+      "csv_file": "products_for_hire@Products_for_Hire.csv",
+      "panels": [
+        {
+          "title": "(a) Qwen direct top 1 = Gold 4",
+          "note": "Daily fee is summed by product type",
+          "spec": {
+            "encoding": {
+              "color": {
+                "field": "product_type_code"
+              },
+              "theta": {
+                "aggregate": "sum",
+                "field": "daily_hire_cost"
+              }
+            },
+            "mark": "arc"
+          }
+        },
+        {
+          "title": "(b) Qwen staged top 1 (invalid)",
+          "note": "Count-with-field yields equal cost slices",
+          "spec": {
+            "encoding": {
+              "color": {
+                "field": "daily_hire_cost"
+              },
+              "theta": {
+                "aggregate": "count",
+                "field": "daily_hire_cost"
+              }
+            },
+            "mark": "arc"
+          }
+        },
+        {
+          "title": "(c) Benchmark Gold 1",
+          "note": "Daily fee mapped to individual products",
+          "spec": {
+            "mark": "arc",
+            "encoding": {
+              "theta": {
+                "field": "daily_hire_cost"
+              },
+              "color": {
+                "field": "product_id"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
