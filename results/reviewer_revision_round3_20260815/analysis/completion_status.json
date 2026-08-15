@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "date": "2026-08-15",
+  "locked_generation_case_runs": 1800,
+  "locked_reranking_case_runs": 900,
+  "reranking_runs": 6,
+  "rows_per_reranking_run": 150,
+  "unexpected_reranking_errors": 0,
+  "expected_empty_pool_counts": {
+    "direct": 5,
+    "staged": 20,
+    "union": 1
+  },
+  "design_weighted_pool_oracle_percent": {
+    "direct": 14.99,
+    "staged": 29.36,
+    "union": 32.08
+  },
+  "design_weighted_llm_minus_rrf_hit1_points": {
+    "mistral_direct": 2.72,
+    "mistral_staged": -1.34,
+    "mistral_union": -9.51,
+    "qwen_direct": 4.07,
+    "qwen_staged": 4.09,
+    "qwen_union": -10.20
+  },
+  "public_workflow_audit_complete": true,
+  "cross_release_overlap_audit_complete": true,
+  "manuscript_included": false
+}

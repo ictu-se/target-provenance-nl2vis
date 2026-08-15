@@ -1,28 +1,32 @@
-# Target-Provenance Audits for Ambiguous NL2Vis
+# Auditing Target Provenance and Ranked Alternatives in NL2Vis
 
 This repository contains the code, frozen experimental designs, machine outputs,
-and derived results for the paper *Target-Provenance Audits for Ambiguous
-NL2Vis: From Privileged Traces to Forward Alternatives*. The manuscript and
-submission documents are intentionally excluded.
+and derived results for the paper *Auditing Target Provenance and Ranked
+Alternatives in NL2Vis*. The manuscript and submission documents are
+intentionally excluded.
 
 The study audits how target-derived benchmark annotations can enter ranked
 NL2Vis candidate pools. It separates privileged diagnostics from
 per-instance-target-answer-free generation, candidate coverage, and ordering.
 The retained evidence includes a locked development-holdout comparison across
-four local-model families and three prompt conditions, a strict nvBench-v1
-eligible-subset check, repeated temperature-0 runs, pool-specific RRF and two
-LLM rerankers, deterministic metric sensitivity analyses, and four rendered
-case studies.
+four local-model families and three prompt conditions, a same-lineage
+nvBench-v1 cross-release check, repeated temperature-0 runs, locked
+development-holdout RRF and two LLM rerankers, candidate-level validity and
+component analyses, and four rendered case studies.
 
 ## Repository structure
 
 - `experiment/`: analysis and inference code, frozen designs, validation
   summaries, and environment records.
 - `experiment/reviewer_revision_round2_20260814/`: the locked development
-  design, strict external adapter, and round-2 analysis code.
+  design, strict cross-release adapter, and round-2 analysis code.
+- `experiment/reviewer_revision_round3_20260815/`: locked reranking design,
+  public-workflow source audit, release-lineage audit, and analysis code.
 - `results/reviewer_revision_round2_20260814/`: retained machine outputs and
-  derived tables for the locked holdout, external check, reranking extension,
+  derived tables for the locked holdout, cross-release check, reranking extension,
   and temperature-0 repeatability experiment.
+- `results/reviewer_revision_round3_20260815/`: locked reranking outputs,
+  candidate/list-validity results, component metrics, and lineage-audit results.
 - `results/figures/`: final empirical plots and four rendered benchmark cases
   in PDF and PNG formats.
 - `results/external_transfer/`: an earlier external-adapter campaign retained
@@ -64,8 +68,9 @@ submission file, or participant data. No participant study was conducted.
 
 ## Persistent archive
 
-The immutable version-1.1.1 research snapshot is available at
-[Zenodo](https://doi.org/10.5281/zenodo.21941099).
+The current immutable research snapshot is available through the version DOI
+reported in the paper. Earlier versions remain accessible from the Zenodo
+concept record.
 
 ## License
 

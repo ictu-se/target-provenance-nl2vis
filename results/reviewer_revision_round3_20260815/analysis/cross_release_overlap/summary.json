@@ -1,0 +1,73 @@
+{
+  "scope": "descriptive cross-release lineage audit; overlap is not evidence of data independence or external generalization",
+  "nvbench_v1": {
+    "records": 7247,
+    "databases": 152,
+    "schema_derivation_failures": 0,
+    "records_with_database_in_v2": 7229,
+    "records_with_database_in_v2_proportion": 0.9975162136056299,
+    "unique_queries": 25339,
+    "strict_vql_analytic_signatures": 2507
+  },
+  "nvbench_2_0": {
+    "records": 7505,
+    "databases": 158,
+    "unique_queries": 7452,
+    "overlap_with_v1": {
+      "records": 7505,
+      "db_id_overlap": {
+        "count": 7242,
+        "proportion": 0.9649566955363091
+      },
+      "query_overlap": {
+        "count": 0,
+        "proportion": 0.0
+      },
+      "db_query_overlap": {
+        "count": 0,
+        "proportion": 0.0
+      },
+      "db_schema_overlap": {
+        "count": 2790,
+        "proportion": 0.37175216522318455
+      },
+      "db_analytic_overlap": {
+        "count": 233,
+        "proportion": 0.031045969353764157
+      }
+    }
+  },
+  "strict_selected_105": {
+    "records": 105,
+    "overlap_with_nvbench_2_0": {
+      "records": 105,
+      "db_id_overlap": {
+        "count": 105,
+        "proportion": 1.0
+      },
+      "query_overlap": {
+        "count": 0,
+        "proportion": 0.0
+      },
+      "db_query_overlap": {
+        "count": 0,
+        "proportion": 0.0
+      },
+      "db_schema_overlap": {
+        "count": 52,
+        "proportion": 0.49523809523809526
+      },
+      "db_analytic_overlap": {
+        "count": 10,
+        "proportion": 0.09523809523809523
+      }
+    }
+  },
+  "unique_key_intersections": {
+    "database_ids": 151,
+    "normalized_queries": 0,
+    "database_query_pairs": 0,
+    "database_schema_pairs": 241,
+    "database_analytic_pairs": 158
+  }
+}

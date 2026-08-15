@@ -5,6 +5,7 @@ import csv
 import json
 import random
 from collections import defaultdict
+from math import sqrt
 from pathlib import Path
 from statistics import mean
 from typing import Any
@@ -111,8 +112,12 @@ def summarize(cases: list[dict[str, Any]], bootstrap: int) -> dict[str, Any]:
 
 
 def summarize_design(cases: list[dict[str, Any]], design: dict[str, Any], bootstrap: int) -> dict[str, Any] | None:
-    populations = {name: int(info["population"]) for name, info in design["strata"].items()}
-    expected = {name: int(info["sample"]) for name, info in design["strata"].items()}
+    if "population_strata_after_screen" in design:
+        populations = {name: int(value) for name, value in design["population_strata_after_screen"].items()}
+        expected = {name: int(value) for name, value in design["allocation"].items()}
+    else:
+        populations = {name: int(info["population"]) for name, info in design["strata"].items()}
+        expected = {name: int(info["sample"]) for name, info in design["strata"].items()}
     strata: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for case in cases:
         strata[case["gold_family"]].append(case)
@@ -122,6 +127,26 @@ def summarize_design(cases: list[dict[str, Any]], design: dict[str, Any], bootst
     def estimate(sampled: dict[str, list[dict[str, Any]]], metric: str) -> float:
         return sum(populations[name] * mean(float(case[metric]) for case in group) for name, group in sampled.items()) / sum(populations.values())
 
+    def fpc_bootstrap(metric: str, rng: random.Random) -> list[float]:
+        point = estimate(strata, metric)
+        total = sum(populations.values())
+        observed_means = {
+            name: mean(float(case[metric]) for case in group) for name, group in strata.items()
+        }
+        values = []
+        for _ in range(bootstrap):
+            deviation = 0.0
+            for name, population in populations.items():
+                group = strata[name]
+                n_h = len(group)
+                if n_h <= 1 or population <= 1 or n_h >= population:
+                    continue
+                sampled_mean = mean(float(case[metric]) for case in rng.choices(group, k=n_h))
+                scale = sqrt((1.0 - n_h / population) * n_h / (n_h - 1))
+                deviation += (population / total) * scale * (sampled_mean - observed_means[name])
+            values.append(point + deviation)
+        return values
+
     output: dict[str, Any] = {
         "model": cases[0]["model"], "pool_name": cases[0]["pool_name"], "seed": cases[0]["seed"], "temperature": cases[0]["temperature"],
         "n": len(cases), "weighted_population": sum(populations.values()),
@@ -130,19 +155,13 @@ def summarize_design(cases: list[dict[str, Any]], design: dict[str, Any], bootst
     for metric in SUMMARY_METRICS:
         output[metric] = estimate(strata, metric)
         if metric in {"complete_pool_oracle", "rrf_hit@1", "rrf_hit@5", "llm_hit@1", "llm_hit@5", "llm_top1_graded"}:
-            estimates = []
-            for _ in range(bootstrap):
-                sampled = {name: rng.choices(group, k=len(group)) for name, group in strata.items()}
-                estimates.append(estimate(sampled, metric))
+            estimates = fpc_bootstrap(metric, rng)
             output[f"{metric}_ci_low"] = percentile(estimates, 0.025)
             output[f"{metric}_ci_high"] = percentile(estimates, 0.975)
     for case in cases:
         case["paired_llm_minus_rrf_hit1"] = float(case["llm_hit@1"]) - float(case["rrf_hit@1"])
     output["paired_llm_minus_rrf_hit1"] = estimate(strata, "paired_llm_minus_rrf_hit1")
-    difference_estimates = []
-    for _ in range(bootstrap):
-        sampled = {name: rng.choices(group, k=len(group)) for name, group in strata.items()}
-        difference_estimates.append(estimate(sampled, "paired_llm_minus_rrf_hit1"))
+    difference_estimates = fpc_bootstrap("paired_llm_minus_rrf_hit1", rng)
     output["paired_llm_minus_rrf_hit1_ci_low"] = percentile(difference_estimates, 0.025)
     output["paired_llm_minus_rrf_hit1_ci_high"] = percentile(difference_estimates, 0.975)
     return output
@@ -153,12 +172,13 @@ def main() -> None:
     parser.add_argument("--input-dir", type=Path, default=HERE / "out" / "r")
     parser.add_argument("--pattern", default="*.jsonl")
     parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA)
+    parser.add_argument("--split", default="test", choices=("train", "dev", "test"))
     parser.add_argument("--output-dir", type=Path, default=HERE / "outputs" / "reranker_analysis")
     parser.add_argument("--design", type=Path, default=HERE / "design" / "forward_sample150.json")
     parser.add_argument("--bootstrap", type=int, default=2000)
     args = parser.parse_args()
 
-    gold = {row["record_id"]: dedupe_specs(row["gold_answer"]) for row in load_split(args.data_dir, "test")}
+    gold = {row["record_id"]: dedupe_specs(row["gold_answer"]) for row in load_split(args.data_dir, args.split)}
     cases: list[dict[str, Any]] = []
     groups: dict[tuple[str, str, int, float], list[dict[str, Any]]] = defaultdict(list)
     for path in sorted(args.input_dir.glob(args.pattern)):
@@ -187,7 +207,10 @@ def main() -> None:
     write_csv(args.output_dir / "coverage_curve.csv", curves)
     (args.output_dir / "manifest.json").write_text(
         json.dumps({"files": sorted(path.name for path in args.input_dir.glob(args.pattern)), "bootstrap": args.bootstrap,
-                    "bootstrap_seed": 20260807, "n_case_runs": len(cases)}, indent=2), encoding="utf-8"
+                    "bootstrap_seed": 20260807, "n_case_runs": len(cases), "split": args.split,
+                    "design": str(args.design),
+                    "estimator": "stratified Horvitz-Thompson population mean, equivalent to the known-N post-stratified/Hajek mean",
+                    "uncertainty": "within-stratum fixed-size empirical bootstrap with finite-population-adjusted replicate deviations"}, indent=2), encoding="utf-8"
     )
     print(f"Analyzed {len(cases)} reranker case-runs")
 

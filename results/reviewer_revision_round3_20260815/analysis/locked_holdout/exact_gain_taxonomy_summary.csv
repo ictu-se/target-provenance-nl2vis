@@ -1,0 +1,25 @@
+﻿model,contrast,baseline_difference,cases
+gemma3:27b,staged-rich minus direct-basic (secondary),field_or_channel_mapping,4
+gemma3:27b,staged-rich minus direct-basic (secondary),multiple_components,10
+gemma3:27b,staged-rich minus direct-basic (secondary),operation_only,1
+gemma3:27b,staged-rich minus direct-rich,field_or_channel_mapping,5
+gemma3:27b,staged-rich minus direct-rich,multiple_components,12
+gemma3:27b,staged-rich minus direct-rich,operation_only,1
+mistral-small:24b,staged-rich minus direct-basic (secondary),field_or_channel_mapping,4
+mistral-small:24b,staged-rich minus direct-basic (secondary),filter_only,1
+mistral-small:24b,staged-rich minus direct-basic (secondary),multiple_components,1
+mistral-small:24b,staged-rich minus direct-basic (secondary),operation_only,1
+mistral-small:24b,staged-rich minus direct-basic (secondary),other_representation_difference,13
+mistral-small:24b,staged-rich minus direct-rich,field_or_channel_mapping,3
+mistral-small:24b,staged-rich minus direct-rich,filter_only,2
+mistral-small:24b,staged-rich minus direct-rich,multiple_components,2
+mistral-small:24b,staged-rich minus direct-rich,other_representation_difference,13
+qwen3:14b,direct-rich minus direct-basic,multiple_components,1
+qwen3:14b,staged-rich minus direct-basic (secondary),field_or_channel_mapping,4
+qwen3:14b,staged-rich minus direct-basic (secondary),multiple_components,4
+qwen3:14b,staged-rich minus direct-basic (secondary),operation_only,1
+qwen3:14b,staged-rich minus direct-basic (secondary),other_representation_difference,5
+qwen3:14b,staged-rich minus direct-rich,field_or_channel_mapping,3
+qwen3:14b,staged-rich minus direct-rich,multiple_components,4
+qwen3:14b,staged-rich minus direct-rich,operation_only,1
+qwen3:14b,staged-rich minus direct-rich,other_representation_difference,6

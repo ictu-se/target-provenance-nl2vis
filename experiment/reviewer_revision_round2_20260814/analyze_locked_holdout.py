@@ -14,6 +14,7 @@ import json
 import random
 import sys
 from collections import Counter, defaultdict
+from math import sqrt
 from pathlib import Path
 from statistics import mean
 from typing import Any, Callable
@@ -34,12 +35,21 @@ METRICS = (
     "parse_success",
     "any_valid_candidate",
     "all_candidates_valid",
+    "top1_validity",
+    "valid_fraction",
+    "validity@3",
+    "validity@5",
     "candidate_count",
     "valid_candidate_count",
     "raw_hit@1",
     "raw_hit@5",
     "raw_recall@5",
     "top1_macro",
+    "top1_mark",
+    "top1_channels",
+    "top1_fields",
+    "top1_operations",
+    "top1_filters",
     "best5_macro",
     "elapsed_seconds",
     "core_hit@1",
@@ -92,20 +102,35 @@ def bootstrap_ci(
     repetitions: int,
     seed: int,
 ) -> tuple[float, float]:
+    """Finite-population-adjusted stratified bootstrap interval.
+
+    Each registered stratum is resampled independently at its observed sample
+    size. Replicate deviations are scaled to match the SRS-without-replacement
+    variance, including the stratum sampling fraction n_h/N_h. The n/(n-1)
+    term corrects the ordinary empirical bootstrap's variance shrinkage.
+    Census strata and singleton strata contribute no empirically estimable
+    within-stratum variance.
+    """
     strata: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for case in cases:
         strata[str(case["gold_family"])].append(case)
     rng = random.Random(seed)
+    total = sum(populations.values())
+    point = weighted_mean(cases, populations, value)
+    means = {name: mean(value(case) for case in group) for name, group in strata.items()}
     estimates = []
     for _ in range(repetitions):
-        sampled = {
-            name: rng.choices(strata[name], k=len(strata[name]))
-            for name in populations
-        }
-        estimates.append(
-            sum(populations[name] * mean(value(case) for case in sampled[name]) for name in populations)
-            / sum(populations.values())
-        )
+        deviation = 0.0
+        for name, population in populations.items():
+            group = strata[name]
+            n_h = len(group)
+            if n_h <= 1 or population <= 1 or n_h >= population:
+                continue
+            sampled_mean = mean(value(case) for case in rng.choices(group, k=n_h))
+            finite_fraction = 1.0 - n_h / population
+            scale = sqrt(finite_fraction * n_h / (n_h - 1))
+            deviation += (population / total) * scale * (sampled_mean - means[name])
+        estimates.append(point + deviation)
     return percentile(estimates, 0.025), percentile(estimates, 0.975)
 
 
@@ -175,6 +200,14 @@ def main() -> None:
                 continue
             case = evaluate_case(run, gold_row)
             candidates = dedupe_specs(run.get("candidates", []))[:5]
+            valid_candidates = dedupe_specs(run.get("valid_candidates", []))[:5]
+            valid_keys = {canonical_key(candidate) for candidate in valid_candidates}
+            validity_flags = [float(canonical_key(candidate) in valid_keys) for candidate in candidates]
+            case["top1_validity"] = validity_flags[0] if validity_flags else 0.0
+            case["valid_fraction"] = mean(validity_flags) if validity_flags else 0.0
+            for k in (3, 5):
+                prefix = validity_flags[:k]
+                case[f"validity@{k}"] = mean(prefix) if prefix else 0.0
             golds = dedupe_specs(gold_row["gold_answer"])
             case["core_hit@1"] = core_hit(candidates, golds, 1)
             case["core_hit@5"] = core_hit(candidates, golds, 5)
@@ -288,14 +321,21 @@ def main() -> None:
     write_csv(args.output_dir / "file_inventory.csv", files)
     (args.output_dir / "analysis_manifest.json").write_text(
         json.dumps({
-            "input_dir": str(args.input_dir.resolve()),
-            "design": str(args.design.resolve()),
+            "input_dir": str(args.input_dir),
+            "design": str(args.design),
             "models": expected_models,
             "conditions": sorted(expected_conditions),
             "n_per_run": len(selected_indices),
             "population_after_screen_exclusion": sum(populations.values()),
             "bootstrap_repetitions": args.bootstrap,
             "bootstrap_seed": args.seed,
+            "estimator": "stratified Horvitz-Thompson population mean; algebraically equal to the known-N post-stratified/Hajek mean because inclusion probabilities are constant within each stratum",
+            "sampling_probabilities": {
+                name: allocation[name] / populations[name] for name in populations
+            },
+            "uncertainty": "independent within-stratum empirical bootstrap at fixed n_h, with replicate deviations scaled by sqrt((1-n_h/N_h)*n_h/(n_h-1)) to reproduce SRSWOR finite-population variance",
+            "inferential_population": "fixed 720-record nvBench-2.0 development population after excluding the 30-record engineering screen; no superpopulation claim",
+            "singleton_strata": "census singleton strata have zero sampling variance; the one N_h=2,n_h=1 stratum has no empirically estimable within-stratum variance and receives zero replicate variance. Its weight is 2/720; the worst-case omitted 95% half-width is 0.27 percentage points for a [0,1] mean and 0.54 points for a [-1,1] paired contrast.",
             "full_exact_policy": "full normalized specification equality",
             "core_equivalence_policy": "full equality after removing top-level title, description, usermeta, schema, config, dimensions, and encoding axis/legend/title/format; type and scale are retained because they can affect meaning or rendering",
             "primary_contrasts": ["direct-rich minus direct-basic", "staged-rich minus direct-rich"],

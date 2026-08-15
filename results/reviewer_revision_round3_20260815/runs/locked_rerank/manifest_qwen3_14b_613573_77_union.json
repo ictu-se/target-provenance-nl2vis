@@ -1,0 +1,59 @@
+{
+  "model": "qwen3:14b",
+  "model_manifest": {
+    "name": "qwen3:14b",
+    "model": "qwen3:14b",
+    "modified_at": "2026-08-13T10:10:44.426152674+07:00",
+    "size": 9276198565,
+    "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "14.8B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 40960,
+      "embedding_length": 5120
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  },
+  "seed": 77,
+  "temperature": 0.0,
+  "input_policy": "query_schema_and_valid_forward_candidate_pool_only",
+  "source_files": [
+    "gemma3_27b_1eb26b_d_55_d_r2holdout150.jsonl",
+    "gemma3_27b_1eb26b_s_55_d_r2holdout150.jsonl",
+    "llama3_2_3b_925b2c_d_55_d_r2holdout150.jsonl",
+    "llama3_2_3b_925b2c_s_55_d_r2holdout150.jsonl",
+    "mistral_smal_d50e0c_d_55_d_r2holdout150.jsonl",
+    "mistral_smal_d50e0c_s_55_d_r2holdout150.jsonl",
+    "qwen3_14b_613573_d_55_d_r2holdout150.jsonl",
+    "qwen3_14b_613573_s_55_d_r2holdout150.jsonl"
+  ],
+  "source_sha256": {
+    "gemma3_27b_1eb26b_d_55_d_r2holdout150.jsonl": "00376e9b19e607bb73e85a6126c8fec9ed2a11a53ed41249e324b025959d9c09",
+    "gemma3_27b_1eb26b_s_55_d_r2holdout150.jsonl": "9ca5a4377db3b4899db6753f1ab836516ddabf70a0a046e696927488e91f5b28",
+    "llama3_2_3b_925b2c_d_55_d_r2holdout150.jsonl": "b1ff347ac68cd420321dc451e2f8aa14f1c206cf8a484b72bcd0307e5a6d1a13",
+    "llama3_2_3b_925b2c_s_55_d_r2holdout150.jsonl": "50efd7231edcfd643e7145adb41bb82fb55ba3b2c36b3339829102cf20dc88a6",
+    "mistral_smal_d50e0c_d_55_d_r2holdout150.jsonl": "8050dc49545219059edbdecd74620cde103d6bce52130ae51f5179eff91594e5",
+    "mistral_smal_d50e0c_s_55_d_r2holdout150.jsonl": "8e0899127e0feb372cdee98dfdafc0e3a06f11a0fdd9147075370aa64d4c0f45",
+    "qwen3_14b_613573_d_55_d_r2holdout150.jsonl": "6e10e002e29e13b176c75a782c649d4a9d84fa5f7f60c9e45fc0c6bb157dada8",
+    "qwen3_14b_613573_s_55_d_r2holdout150.jsonl": "4ceac8edb15833480c01fd8d6346ddcd2dfde5ee7af99e524514c989892d8f2a"
+  },
+  "input_patterns": [
+    "*_d_55_d_r2holdout150.jsonl",
+    "*_s_55_d_r2holdout150.jsonl"
+  ],
+  "pool_name": "union",
+  "pool_policy": "canonical union of post-validation candidates",
+  "split": "dev",
+  "baseline": "RRF score=sum_s 1/(60+source_rank), where each model-condition run is a distinct source; canonical duplicates retain every source contribution; descending score; canonical-key tie break",
+  "presentation_policy": "deterministic record-and-seed-specific shuffle to avoid RRF-order leakage"
+}

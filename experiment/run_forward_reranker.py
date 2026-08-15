@@ -153,6 +153,7 @@ def main() -> None:
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--timeout", type=int, default=600)
     parser.add_argument("--output-dir", type=Path, default=HERE / "out" / "r")
+    parser.add_argument("--limit", type=int, help="Process at most this many record IDs (for smoke testing).")
     args = parser.parse_args()
 
     generator_rows, source_files = load_generator_rows(args.input_dir, args.input_patterns)
@@ -183,6 +184,8 @@ def main() -> None:
 
     with output_path.open("a", encoding="utf-8") as handle:
         record_ids = sorted(generator_rows, key=lambda value: int(value.rsplit(":", 1)[-1]))
+        if args.limit is not None:
+            record_ids = record_ids[: args.limit]
         for position, record_id in enumerate(record_ids, start=1):
             if record_id in done:
                 continue

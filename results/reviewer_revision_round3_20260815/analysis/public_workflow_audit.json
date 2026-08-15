@@ -1,0 +1,49 @@
+{
+  "audit_type": "immutable source-level target-provenance audit",
+  "repository": "https://github.com/HKUSTDial/nvBench-2.0",
+  "commit": "f664a45c4d828a78e816089e58bf4843ea589555",
+  "files": {
+    "inference": {
+      "path": "code/model_finetune/sft/infer.py",
+      "sha256": "f993522edc18ba6e9e8a5f1d502a3151fa2dba0afbdf25bcd52f638a6a9a36fa"
+    },
+    "templates": {
+      "path": "code/model_finetune/sft/sft_template.py",
+      "sha256": "60480b130176642472d0b5fca1185403357afe4cb826446f05b1c08bc08316cf"
+    },
+    "evaluation": {
+      "path": "code/evaluation/evaluation.py",
+      "sha256": "38fffd989ac19f3c8b92d3a7b2eee1d2ea3581edce6e5ba6293ffc112f2b373f"
+    }
+  },
+  "inference_prompt_format_fields": [
+    "column_examples",
+    "nl_query",
+    "output",
+    "table_columns",
+    "unique_value_counts"
+  ],
+  "template_placeholders": {
+    "SFT_PROMPT_STEP_TEMPLATE": [
+      "column_examples",
+      "nl_query",
+      "output",
+      "table_columns",
+      "unique_value_counts"
+    ],
+    "SFT_PROMPT_TEMPLATE": [
+      "column_examples",
+      "nl_query",
+      "output",
+      "table_columns",
+      "unique_value_counts"
+    ]
+  },
+  "gold_answer_loaded_by_preprocessor": true,
+  "gold_answer_injected_into_inference_prompt": false,
+  "inference_output_placeholder_is_empty": true,
+  "evaluation_keeps_prediction_and_gold_in_separate_fields": true,
+  "per_instance_target_exposure_found": false,
+  "interpretation": "The public SFT inference path serializes table columns, examples, unique-value counts, and the natural-language query. Although the dataset loader carries gold_answer through preprocessing, it is not passed to PROMPT_TEMPLATE.format; the output placeholder is empty. The evaluator reads gold answers only after predictions are produced.",
+  "boundary": "This audit establishes source-level input separation for the checked public SFT path; it does not reproduce trained-model performance or rule out training-data memorization."
+}

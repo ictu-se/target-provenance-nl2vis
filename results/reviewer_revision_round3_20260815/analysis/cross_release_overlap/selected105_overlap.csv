@@ -1,0 +1,106 @@
+﻿record_id,db_id,chart_family,db_id_overlap,query_overlap,db_query_overlap,db_schema_overlap,db_analytic_overlap
+nvbench-v1-strict:1203@y_name@ASC,dog_kennels,Bar,1,0,0,0,0
+nvbench-v1-strict:2205,manufactory_1,Bar,1,0,0,0,0
+nvbench-v1-strict:2235@y_name@ASC,manufactory_1,Bar,1,0,0,0,0
+nvbench-v1-strict:2351@y_name@ASC,mountain_photos,Bar,1,0,0,1,0
+nvbench-v1-strict:2360@y_name@ASC,movie_1,Bar,1,0,0,0,0
+nvbench-v1-strict:2751@y_name@ASC,ship_1,Bar,1,0,0,1,0
+nvbench-v1-strict:3111@y_name@ASC,university_basketball,Bar,1,0,0,1,0
+nvbench-v1-strict:3209@y_name@DESC,wedding,Bar,1,0,0,1,0
+nvbench-v1-strict:3237,wine_1,Bar,1,0,0,0,0
+nvbench-v1-strict:47@y_name@ASC,allergy_1,Bar,1,0,0,1,0
+nvbench-v1-strict:513@y_name@ASC,college_1,Bar,1,0,0,0,0
+nvbench-v1-strict:627,college_2,Bar,1,0,0,1,0
+nvbench-v1-strict:683,company_employee,Bar,1,0,0,1,0
+nvbench-v1-strict:793@y_name@ASC,cre_Doc_Tracking_DB,Bar,1,0,0,0,0
+nvbench-v1-strict:872@y_name@ASC,cre_Drama_Workshop_Groups,Bar,1,0,0,0,0
+nvbench-v1-strict:129@y_name@DESC,assets_maintenance,Stacked Bar,1,0,0,0,0
+nvbench-v1-strict:1334@y_name@ASC,employee_hire_evaluation,Stacked Bar,1,0,0,1,0
+nvbench-v1-strict:134@y_name@DESC,assets_maintenance,Stacked Bar,1,0,0,0,0
+nvbench-v1-strict:145@y_name@ASC,assets_maintenance,Stacked Bar,1,0,0,0,0
+nvbench-v1-strict:2080@y_name@DESC,local_govt_and_lot,Stacked Bar,1,0,0,0,0
+nvbench-v1-strict:2247@y_name@DESC,manufactory_1,Stacked Bar,1,0,0,0,0
+nvbench-v1-strict:2750@y_name@DESC,ship_1,Stacked Bar,1,0,0,1,0
+nvbench-v1-strict:2755@y_name@DESC,ship_mission,Stacked Bar,1,0,0,1,0
+nvbench-v1-strict:2946,theme_gallery,Stacked Bar,1,0,0,1,0
+nvbench-v1-strict:3086@y_name@DESC,university_basketball,Stacked Bar,1,0,0,1,0
+nvbench-v1-strict:3090,university_basketball,Stacked Bar,1,0,0,1,0
+nvbench-v1-strict:3093,university_basketball,Stacked Bar,1,0,0,1,0
+nvbench-v1-strict:558,college_1,Stacked Bar,1,0,0,0,0
+nvbench-v1-strict:680@y_name@ASC,company_employee,Stacked Bar,1,0,0,1,0
+nvbench-v1-strict:849@y_name@DESC,cre_Docs_and_Epenses,Stacked Bar,1,0,0,0,0
+nvbench-v1-strict:1021,customers_campaigns_ecommerce,Pie,1,0,0,1,1
+nvbench-v1-strict:1198,dog_kennels,Pie,1,0,0,0,0
+nvbench-v1-strict:1236,dorm_1,Pie,1,0,0,1,0
+nvbench-v1-strict:1314,election,Pie,1,0,0,0,1
+nvbench-v1-strict:14,activity_1,Pie,1,0,0,1,1
+nvbench-v1-strict:1420,flight_company,Pie,1,0,0,0,0
+nvbench-v1-strict:1431,flight_company,Pie,1,0,0,0,1
+nvbench-v1-strict:2313,manufacturer,Pie,1,0,0,0,0
+nvbench-v1-strict:433,car_1,Pie,1,0,0,0,0
+nvbench-v1-strict:478,cinema,Pie,1,0,0,0,0
+nvbench-v1-strict:565,college_1,Pie,1,0,0,1,1
+nvbench-v1-strict:698,concert_singer,Pie,1,0,0,1,1
+nvbench-v1-strict:712,course_teach,Pie,1,0,0,0,1
+nvbench-v1-strict:874,cre_Drama_Workshop_Groups,Pie,1,0,0,0,1
+nvbench-v1-strict:959,customers_and_invoices,Pie,1,0,0,0,0
+nvbench-v1-strict:1096,department_management,Line,1,0,0,1,0
+nvbench-v1-strict:1098,department_management,Line,1,0,0,1,0
+nvbench-v1-strict:1165,dog_kennels,Line,1,0,0,0,0
+nvbench-v1-strict:1186,dog_kennels,Line,1,0,0,1,0
+nvbench-v1-strict:169,baseball_1,Line,1,0,0,1,0
+nvbench-v1-strict:170,baseball_1,Line,1,0,0,1,0
+nvbench-v1-strict:171,baseball_1,Line,1,0,0,1,0
+nvbench-v1-strict:188,behavior_monitoring,Line,1,0,0,0,0
+nvbench-v1-strict:3008,tracking_share_transactions,Line,1,0,0,0,0
+nvbench-v1-strict:324,bike_1,Line,1,0,0,0,1
+nvbench-v1-strict:3240,wine_1,Line,1,0,0,1,0
+nvbench-v1-strict:770,cre_Doc_Tracking_DB,Line,1,0,0,1,0
+nvbench-v1-strict:798,cre_Doc_Tracking_DB,Line,1,0,0,0,0
+nvbench-v1-strict:895,cre_Theme_park,Line,1,0,0,0,0
+nvbench-v1-strict:997,customers_and_products_contacts,Line,1,0,0,0,0
+nvbench-v1-strict:1349,employee_hire_evaluation,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:1350,employee_hire_evaluation,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:1351,employee_hire_evaluation,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:1352,employee_hire_evaluation,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:1353,employee_hire_evaluation,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:1387,farm,Grouping Line,1,0,0,0,0
+nvbench-v1-strict:1484,game_injury,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:1490,game_injury,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:647,college_2,Grouping Line,1,0,0,1,1
+nvbench-v1-strict:648,college_2,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:776,cre_Doc_Tracking_DB,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:778,cre_Doc_Tracking_DB,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:779,cre_Doc_Tracking_DB,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:850,cre_Docs_and_Epenses,Grouping Line,1,0,0,0,0
+nvbench-v1-strict:942,customers_and_invoices,Grouping Line,1,0,0,1,0
+nvbench-v1-strict:1425,flight_company,Scatter,1,0,0,0,0
+nvbench-v1-strict:2125,local_govt_and_lot,Scatter,1,0,0,0,0
+nvbench-v1-strict:2266,manufactory_1,Scatter,1,0,0,0,0
+nvbench-v1-strict:2270,manufactory_1,Scatter,1,0,0,0,0
+nvbench-v1-strict:2272,manufactory_1,Scatter,1,0,0,0,0
+nvbench-v1-strict:2874,student_1,Scatter,1,0,0,1,0
+nvbench-v1-strict:2991,tracking_share_transactions,Scatter,1,0,0,0,0
+nvbench-v1-strict:3284,wrestler,Scatter,1,0,0,1,0
+nvbench-v1-strict:351,body_builder,Scatter,1,0,0,1,0
+nvbench-v1-strict:352,body_builder,Scatter,1,0,0,1,0
+nvbench-v1-strict:391,candidate_poll,Scatter,1,0,0,1,0
+nvbench-v1-strict:410,car_1,Scatter,1,0,0,0,0
+nvbench-v1-strict:62,allergy_1,Scatter,1,0,0,1,0
+nvbench-v1-strict:707,county_public_safety,Scatter,1,0,0,0,0
+nvbench-v1-strict:877,cre_Drama_Workshop_Groups,Scatter,1,0,0,0,0
+nvbench-v1-strict:2064,journal_committee,Grouping Scatter,1,0,0,0,0
+nvbench-v1-strict:2264,manufactory_1,Grouping Scatter,1,0,0,0,0
+nvbench-v1-strict:2275,manufactory_1,Grouping Scatter,1,0,0,0,0
+nvbench-v1-strict:2281,manufactory_1,Grouping Scatter,1,0,0,0,0
+nvbench-v1-strict:2286,manufactory_1,Grouping Scatter,1,0,0,0,0
+nvbench-v1-strict:2290,manufactory_1,Grouping Scatter,1,0,0,0,0
+nvbench-v1-strict:2298,manufactory_1,Grouping Scatter,1,0,0,0,0
+nvbench-v1-strict:2299,manufactory_1,Grouping Scatter,1,0,0,0,0
+nvbench-v1-strict:2361,movie_1,Grouping Scatter,1,0,0,0,0
+nvbench-v1-strict:240,behavior_monitoring,Grouping Scatter,1,0,0,1,0
+nvbench-v1-strict:3072,university_basketball,Grouping Scatter,1,0,0,1,0
+nvbench-v1-strict:3162,university_basketball,Grouping Scatter,1,0,0,1,0
+nvbench-v1-strict:3178,university_basketball,Grouping Scatter,1,0,0,1,0
+nvbench-v1-strict:385,candidate_poll,Grouping Scatter,1,0,0,1,0
+nvbench-v1-strict:734,cre_Doc_Template_Mgt,Grouping Scatter,1,0,0,0,0

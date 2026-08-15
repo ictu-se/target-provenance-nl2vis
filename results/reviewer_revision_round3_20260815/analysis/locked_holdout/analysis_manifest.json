@@ -1,0 +1,43 @@
+{
+  "input_dir": "experiments/reviewer_revision_round2_20260814/runs/holdout",
+  "design": "experiments/reviewer_revision_round2_20260814/design/dev_locked_holdout150.json",
+  "models": [
+    "gemma3:27b",
+    "llama3.2:3b",
+    "mistral-small:24b",
+    "qwen3:14b"
+  ],
+  "conditions": [
+    "direct",
+    "direct_rich",
+    "staged"
+  ],
+  "n_per_run": 150,
+  "population_after_screen_exclusion": 720,
+  "bootstrap_repetitions": 5000,
+  "bootstrap_seed": 20260815,
+  "estimator": "stratified Horvitz-Thompson population mean; algebraically equal to the known-N post-stratified/Hajek mean because inclusion probabilities are constant within each stratum",
+  "sampling_probabilities": {
+    "line": 0.2,
+    "rect": 0.20689655172413793,
+    "bar+line+point": 1.0,
+    "bar": 0.2088607594936709,
+    "arc": 0.20512820512820512,
+    "boxplot": 0.2,
+    "bar+line": 0.2,
+    "point": 0.2033898305084746,
+    "bar+line+point+rect": 1.0,
+    "arc+bar+line": 0.5,
+    "bar+line+rect": 0.23076923076923078
+  },
+  "uncertainty": "independent within-stratum empirical bootstrap at fixed n_h, with replicate deviations scaled by sqrt((1-n_h/N_h)*n_h/(n_h-1)) to reproduce SRSWOR finite-population variance",
+  "inferential_population": "fixed 720-record nvBench-2.0 development population after excluding the 30-record engineering screen; no superpopulation claim",
+  "singleton_strata": "census singleton strata have zero sampling variance; the one N_h=2,n_h=1 stratum has no empirically estimable within-stratum variance and receives zero replicate variance. Its weight is 2/720; the worst-case omitted 95% half-width is 0.27 percentage points for a [0,1] mean and 0.54 points for a [-1,1] paired contrast.",
+  "full_exact_policy": "full normalized specification equality",
+  "core_equivalence_policy": "full equality after removing top-level title, description, usermeta, schema, config, dimensions, and encoding axis/legend/title/format; type and scale are retained because they can affect meaning or rendering",
+  "primary_contrasts": [
+    "direct-rich minus direct-basic",
+    "staged-rich minus direct-rich"
+  ],
+  "secondary_contrast": "staged-rich minus direct-basic"
+}

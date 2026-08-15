@@ -1,0 +1,47 @@
+{
+  "status": "locked_before_reranking_inference",
+  "created_local_date": "2026-08-15",
+  "motivation": "reviewer-requested transfer of pooled reranking from the adaptively reused test sample to the previously locked development holdout",
+  "sample": {
+    "split": "nvBench-2.0 development",
+    "record_count": 150,
+    "population_after_engineering_screen_exclusion": 720,
+    "design_file": "dev_locked_holdout150.json",
+    "selection_was_locked_before_generation": true
+  },
+  "candidate_sources": {
+    "models": [
+      "gemma3:27b",
+      "llama3.2:3b",
+      "mistral-small:24b",
+      "qwen3:14b"
+    ],
+    "generation_temperature": 0.0,
+    "generation_seed": 55,
+    "direct_pool": "canonical union of validator-accepted direct-basic candidates from all four models",
+    "staged_pool": "canonical union of validator-accepted staged-rich candidates from all four models",
+    "union_pool": "canonical union of the direct and staged pools"
+  },
+  "ordering": {
+    "fixed_baseline": "reciprocal rank fusion with k0=60 and canonical-key tie breaking",
+    "llm_rerankers": [
+      "qwen3:14b",
+      "mistral-small:24b"
+    ],
+    "temperature": 0.0,
+    "seed": 77,
+    "context_length": 8192,
+    "maximum_output_tokens": 256,
+    "prompt_policy": "unchanged from the historical reranking experiment",
+    "candidate_presentation": "deterministic record-and-seed-specific shuffle"
+  },
+  "primary_metrics": [
+    "complete-pool exact oracle",
+    "RRF Hit@1 and Hit@5",
+    "LLM Hit@1 and Hit@5",
+    "paired LLM-minus-RRF Hit@1"
+  ],
+  "inference_target": "the fixed 720-record development population after exclusion of the 30-record engineering screen",
+  "analysis_policy": "stratum-weighted point estimates with sampling fractions n_h/N_h and finite-population-adjusted stratified uncertainty",
+  "tuning_policy": "no prompt, model, pool, metric, or RRF-constant tuning is permitted after outcomes are observed"
+}

@@ -1,0 +1,17 @@
+{
+  "files": [
+    "mistral_smal_d50e0c_77_direct.jsonl",
+    "mistral_smal_d50e0c_77_staged.jsonl",
+    "mistral_smal_d50e0c_77_union.jsonl",
+    "qwen3_14b_613573_77_direct.jsonl",
+    "qwen3_14b_613573_77_staged.jsonl",
+    "qwen3_14b_613573_77_union.jsonl"
+  ],
+  "bootstrap": 5000,
+  "bootstrap_seed": 20260807,
+  "n_case_runs": 900,
+  "split": "dev",
+  "design": "experiments/reviewer_revision_round2_20260814/design/dev_locked_holdout150.json",
+  "estimator": "stratified Horvitz-Thompson population mean, equivalent to the known-N post-stratified/Hajek mean",
+  "uncertainty": "within-stratum fixed-size empirical bootstrap with finite-population-adjusted replicate deviations"
+}
