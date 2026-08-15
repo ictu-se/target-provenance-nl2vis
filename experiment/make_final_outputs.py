@@ -97,7 +97,7 @@ def main() -> None:
         "",
         md_table(["Condition", "n", "Any valid %", "Hit@1 %", "Hit@5 %", "MRR", "Top-1 graded"], full_table),
         "",
-        "## Leakage-free pooled reranking (design weighted)",
+        "## Target-answer-free pooled reranking (design weighted)",
         "",
         md_table(["Reranker", "n", "Raw union", "Valid pool", "Pool oracle %", "RRF H@1 %", "RRF H@5 %", "LLM H@1 %", "LLM H@5 %", "LLM graded"], rerank_table),
         "",
@@ -139,7 +139,7 @@ def main() -> None:
             axis.hlines(100 * float(row["complete_pool_oracle"]), value - 0.42, value + 0.42, color="#756bb1", linestyle="--")
         axis.set_xticks(x, labels)
         axis.set_ylabel("Exact Hit@1 (%)")
-        axis.set_title("Leakage-free pool ordering")
+        axis.set_title("Target-answer-free pool ordering")
         axis.legend(frameon=False)
         figure.savefig(OUT / "forward_reranking.png", dpi=300)
         figure.savefig(OUT / "forward_reranking.pdf")

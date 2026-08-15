@@ -69,7 +69,7 @@ def main() -> None:
     ax.bar([x-width for x in xs], [100*float(r["oracle_any_gold"]) for r in pools], width, label="Pool oracle", color="#756bb1")
     ax.bar(xs, [100*float(r["rrf_hit1"]) for r in pools], width, label="RRF Hit@1", color="#31a354")
     ax.bar([x+width for x in xs], [100*float(r["rrf_hit5"]) for r in pools], width, label="RRF Hit@5", color="#6baed6")
-    ax.set_xticks(list(xs), labels); ax.set_ylabel("Design-weighted exact rate (%)"); ax.set_title("Leakage-free candidate-pool comparison")
+    ax.set_xticks(list(xs), labels); ax.set_ylabel("Design-weighted exact rate (%)"); ax.set_title("Target-answer-free candidate-pool comparison")
     ax.legend(frameon=False, ncol=3, loc="upper center", bbox_to_anchor=(0.5, 1.16))
     fig.savefig(ROOT / "figure5_forward_reranking.pdf", bbox_inches="tight")
     fig.savefig(ROOT / "figure5_forward_reranking.png", dpi=300, bbox_inches="tight")

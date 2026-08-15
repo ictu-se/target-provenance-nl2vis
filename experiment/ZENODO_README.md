@@ -30,4 +30,4 @@ stratified paired intervals, pool construction, RRF sensitivity, constrained
 LLM reranking, and cross-seed overlap. Benchmark source datasets retain their
 original licenses and citations.
 
-Please cite version 1.1.0 as https://doi.org/10.5281/zenodo.21940669.
+Please cite version 1.1.1 as https://doi.org/10.5281/zenodo.21941099.

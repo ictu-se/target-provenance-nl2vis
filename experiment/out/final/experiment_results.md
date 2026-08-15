@@ -25,7 +25,7 @@ On 751 test records, `step_6.answer` equals the canonical gold set in 92.81% and
 | direct | 751 | 60.32 | 0.40 | 1.20 | 0.007 | 0.721 |
 | staged | 751 | 52.06 | 11.19 | 11.98 | 0.115 | 0.744 |
 
-## Leakage-free pooled reranking (design weighted)
+## Target-answer-free pooled reranking (design weighted)
 
 | Reranker | n | Raw union | Valid pool | Pool oracle % | RRF H@1 % | RRF H@5 % | LLM H@1 % | LLM H@5 % | LLM graded |
 |---|---|---|---|---|---|---|---|---|---|

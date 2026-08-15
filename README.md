@@ -64,8 +64,8 @@ submission file, or participant data. No participant study was conducted.
 
 ## Persistent archive
 
-The immutable version-1.1.0 research snapshot is available at
-[Zenodo](https://doi.org/10.5281/zenodo.21940669).
+The immutable version-1.1.1 research snapshot is available at
+[Zenodo](https://doi.org/10.5281/zenodo.21941099).
 
 ## License
 
