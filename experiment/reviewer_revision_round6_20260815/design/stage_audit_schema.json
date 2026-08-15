@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ranked NL2Vis stage-audit record",
+  "type": "object",
+  "required": [
+    "workflow_id",
+    "input_contract",
+    "candidate_ancestry",
+    "target_containment",
+    "forward_replacement",
+    "output_layers",
+    "coverage_before_ordering",
+    "claim_boundary"
+  ],
+  "properties": {
+    "workflow_id": {"type": "string", "minLength": 1},
+    "input_contract": {"enum": ["documented", "verified", "violated", "unavailable"]},
+    "candidate_ancestry": {"enum": ["complete", "partial", "source_only", "unavailable"]},
+    "target_containment": {"enum": ["measured", "source_checked", "not_applicable", "unavailable"]},
+    "forward_replacement": {"enum": ["matched", "different_mechanism", "not_run", "not_applicable"]},
+    "output_layers": {
+      "type": "array",
+      "items": {"enum": ["parseability", "execution", "benchmark_conformity", "exact_target", "component_overlap"]},
+      "uniqueItems": true
+    },
+    "coverage_before_ordering": {"enum": ["measured", "single_candidate", "not_available"]},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

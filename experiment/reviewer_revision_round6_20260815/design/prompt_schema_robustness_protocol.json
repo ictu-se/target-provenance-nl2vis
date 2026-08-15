@@ -1,0 +1,26 @@
+{
+  "status": "locked_before_round6_inference",
+  "date": "2026-08-15",
+  "role": "post-review sensitivity, not a new confirmatory holdout",
+  "sample": "the same 150-case locked nvBench 2.0 development sample",
+  "model": "qwen3:14b",
+  "baseline": "retained direct-rich, temperature 0, seed 55",
+  "variants": {
+    "prompt_paraphrase": "same task inventory and output schema, rewritten instruction order and wording",
+    "schema_reverse": "unchanged direct-rich prompt with reversed schema-column serialization order"
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "seed": 55,
+    "num_ctx": 8192,
+    "num_predict": 3072
+  },
+  "metrics": [
+    "top-one canonical agreement with baseline",
+    "candidate-set Jaccard",
+    "exact Hit@1 and Hit@5",
+    "top-one benchmark-conformity",
+    "top-one component-overlap score"
+  ],
+  "claim_boundary": "tests local configuration sensitivity to wording and schema order; it does not estimate robustness to users, datasets, or model updates"
+}

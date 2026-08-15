@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "variants": [
+    "prompt_paraphrase",
+    "schema_reverse"
+  ],
+  "sample": "same locked 150-case development sample",
+  "model": "qwen3:14b",
+  "condition": "direct-rich",
+  "claim_boundary": "post-review local robustness sensitivity"
+}

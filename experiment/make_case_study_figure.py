@@ -220,7 +220,7 @@ def main() -> None:
                     "note": "Daily fee is summed by product type",
                 },
                 {
-                    "title": "(b) Qwen staged top 1\n(normal-form noncompliant)",
+                    "title": "(b) Qwen staged top 1\n(benchmark-nonconforming)",
                     "spec": runs["qwen_staged"][358]["candidates"][0],
                     "note": "Count-with-field yields equal cost slices",
                 },

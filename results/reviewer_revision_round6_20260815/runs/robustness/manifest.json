@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-08-15T15:44:42.594776+00:00",
+  "role": "post-review robustness sensitivity on the existing locked cases",
+  "model": {
+    "qwen3:14b": {
+      "name": "qwen3:14b",
+      "model": "qwen3:14b",
+      "modified_at": "2026-08-13T10:10:44.426152674+07:00",
+      "size": 9276198565,
+      "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 40960,
+        "embedding_length": 5120
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "thinking"
+      ]
+    }
+  },
+  "variants": [
+    "prompt_paraphrase",
+    "schema_reverse"
+  ],
+  "seed": 55,
+  "temperature": 0.0,
+  "condition": "direct_rich",
+  "design_sha256": "7378ff19be4199f8e4c0cc588eeaabc25bde63b6f184613d9b381beaafea6887",
+  "data_sha256": "905e71d68581226b27ec9fcf0ec144960f6cc734de5e86213424b12fe6f4a8a7",
+  "paraphrase_template_sha256": "fbe5cde7488de07699da1381c32ee78f9563210641034b5ef93aa6cec1ade15a",
+  "baseline_template_sha256": "b9d5d1836420a3b0f591fb511890a7019278d3e04ce1f2eaba63bbb34a0d7e0e"
+}

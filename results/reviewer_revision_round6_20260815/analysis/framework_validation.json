@@ -1,0 +1,89 @@
+{
+  "status": "complete",
+  "schema": "experiment/reviewer_revision_round6_20260815/design/stage_audit_schema.json",
+  "required_artifacts": [
+    "workflow_id",
+    "input_contract",
+    "candidate_ancestry",
+    "target_containment",
+    "forward_replacement",
+    "output_layers",
+    "coverage_before_ordering",
+    "claim_boundary"
+  ],
+  "instances": [
+    {
+      "workflow_id": "internal_privileged_prototype",
+      "valid": true,
+      "errors": [],
+      "record": {
+        "workflow_id": "internal_privileged_prototype",
+        "input_contract": "violated",
+        "candidate_ancestry": "partial",
+        "target_containment": "measured",
+        "forward_replacement": "different_mechanism",
+        "output_layers": [
+          "exact_target",
+          "component_overlap"
+        ],
+        "coverage_before_ordering": "measured",
+        "claim_boundary": "retained forensic record; original constructor source and matched all-fields-removed run unavailable"
+      }
+    },
+    {
+      "workflow_id": "public_nvbench2_sft_path",
+      "valid": true,
+      "errors": [],
+      "record": {
+        "workflow_id": "public_nvbench2_sft_path",
+        "input_contract": "verified",
+        "candidate_ancestry": "source_only",
+        "target_containment": "source_checked",
+        "forward_replacement": "not_run",
+        "output_layers": [],
+        "coverage_before_ordering": "not_available",
+        "claim_boundary": "source-level positive control; no trained-model score reproduced"
+      }
+    },
+    {
+      "workflow_id": "locked_nvbench2_forward_and_reranking",
+      "valid": true,
+      "errors": [],
+      "record": {
+        "workflow_id": "locked_nvbench2_forward_and_reranking",
+        "input_contract": "verified",
+        "candidate_ancestry": "complete",
+        "target_containment": "not_applicable",
+        "forward_replacement": "different_mechanism",
+        "output_layers": [
+          "parseability",
+          "execution",
+          "benchmark_conformity",
+          "exact_target",
+          "component_overlap"
+        ],
+        "coverage_before_ordering": "measured",
+        "claim_boundary": "design-based inference to the fixed 720-record development population only"
+      }
+    },
+    {
+      "workflow_id": "viseval_candidate_field_pair",
+      "valid": true,
+      "errors": [],
+      "record": {
+        "workflow_id": "viseval_candidate_field_pair",
+        "input_contract": "violated",
+        "candidate_ancestry": "complete",
+        "target_containment": "measured",
+        "forward_replacement": "matched",
+        "output_layers": [
+          "parseability",
+          "exact_target",
+          "component_overlap"
+        ],
+        "coverage_before_ordering": "single_candidate",
+        "claim_boundary": "independent-benchmark diagnostic using retained five-model outputs; not a published pipeline reproduction"
+      }
+    }
+  ]
+}

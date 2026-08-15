@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "benchmark": "VisEval",
+  "scope": "independent-benchmark paired provenance diagnostic",
+  "query_only_rows": 500,
+  "privileged_rows": 500,
+  "unique_cases": 100,
+  "models": [
+    "codegemma:7b",
+    "granite3.1-dense:2b",
+    "llama3.2:3b",
+    "phi3.5:latest",
+    "qwen2.5:3b"
+  ],
+  "privileged_source": "candidate fields extracted from released SQL plus gold x/y metadata",
+  "claim_boundary": "diagnoses target-derived field assistance; not a deployment score or a published-system reproduction"
+}

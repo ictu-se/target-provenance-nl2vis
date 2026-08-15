@@ -13,6 +13,10 @@ four local-model families and three prompt conditions, a same-lineage
 nvBench-v1 cross-release check, repeated temperature-0 runs, locked
 development-holdout RRF and two LLM rerankers, candidate-level execution,
 study-normal-form and component analyses, and four rendered case studies.
+The latest revision also includes a machine-validated stage-audit schema, an
+independent VisEval provenance diagnostic across five model families, and
+Qwen prompt-paraphrase and schema-order sensitivities on the same locked
+150-case development sample.
 
 ## Repository structure
 
@@ -27,6 +31,9 @@ study-normal-form and component analyses, and four rendered case studies.
 - `experiment/reviewer_revision_round5_20260815/`: core/component-matched
   breadth, cost, normal-form validation, forensic replay, and eligible-pool
   reranking code plus the inference-fixed protocol.
+- `experiment/reviewer_revision_round6_20260815/`: executable audit schema,
+  independent VisEval provenance analysis, and locked prompt/schema robustness
+  code and protocols.
 - `results/reviewer_revision_round2_20260814/`: retained machine outputs and
   derived tables for the locked holdout, cross-release check, reranking extension,
   and temperature-0 repeatability experiment.
@@ -37,6 +44,8 @@ study-normal-form and component analyses, and four rendered case studies.
 - `results/reviewer_revision_round5_20260815/`: all-TAF executable/intersected
   reranking outputs, leave-self-out results, normal-form perturbation checks,
   cost summaries, and matched-breadth tables.
+- `results/reviewer_revision_round6_20260815/`: retained VisEval paired inputs,
+  Qwen perturbation outputs, case-level analyses, and schema-validation records.
 - `results/figures/`: final empirical plots and four rendered benchmark cases
   in PDF and PNG formats.
 - `results/external_transfer/`: an earlier external-adapter campaign retained

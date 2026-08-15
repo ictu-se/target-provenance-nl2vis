@@ -50,6 +50,10 @@ stage-wise aggregates, counterfactual results, and worked-example evidence.
   audits, locked reranking analysis, and empirical figure generation.
 - `reviewer_revision_round4_20260815/`: renderer-execution and retained
   complete-pool reranker-protocol audits.
+- `reviewer_revision_round5_20260815/`: eligible-pool reranking, cost and
+  breadth analyses, normal-form validation, and forensic replay.
+- `reviewer_revision_round6_20260815/`: executable stage schema, independent
+  VisEval provenance diagnostic, and prompt/schema perturbation analysis.
 
 ## Locked experimental design
 
