@@ -18,17 +18,21 @@ or human-participant data. No participant study was conducted.
 - `reviewer_revision_round2_20260814/` contains the locked development screen,
   disjoint holdout, three-condition cross-family experiment, strict nvBench-v1
   eligible-subset check and temperature-0 repeatability evidence.
-- `reviewer_revision_round3_20260815/` adds candidate-level validity,
+- `reviewer_revision_round3_20260815/` adds candidate-level conformity,
   component metrics, the public-workflow provenance check, cross-release
   overlap audit, and locked Qwen/Mistral reranking on three pools.
 - `reviewer_revision_round4_20260815/` separates JSON parseability,
-  Vega-Lite renderer execution, and study-normal-form compliance, and
+  Vega-Lite renderer execution, and study benchmark conformity, and
   verifies complete-pool exposure and prefix-only output handling for the
   retained reranker runs.
 - `reviewer_revision_round5_20260815/` surfaces core and component-matched
   breadth, primary latency and token cost, validates the normal-form checker
   using 15,750 perturbations, replays the retained forensic record, and runs
   full and leave-self-out reranking on executable/intersected all-TAF pools.
+- `reviewer_revision_round6_20260815/` adds an executable stage-audit schema,
+  a paired independent-VisEval provenance diagnostic across five model
+  families, and Qwen prompt-paraphrase/schema-order robustness outputs on the
+  locked 150-case development sample.
 - The earlier cross-release adapter campaign is retained with an explicit
   exclusion notice and is not part of the reported result.
 

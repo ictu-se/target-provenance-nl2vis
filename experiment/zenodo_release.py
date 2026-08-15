@@ -207,7 +207,7 @@ def main() -> None:
     parser.add_argument("--publish", action="store_true")
     parser.add_argument("--state-file", type=Path)
     parser.add_argument("--new-version-of", type=int)
-    parser.add_argument("--version", default="1.2.3")
+    parser.add_argument("--version", default="1.2.4")
     args = parser.parse_args()
 
     token = env_value(args.env_file, "ZENODO_ACCESS_TOKEN")
