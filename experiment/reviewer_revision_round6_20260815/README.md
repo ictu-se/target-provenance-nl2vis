@@ -1,6 +1,6 @@
 # Reviewer revision round 6
 
-This directory contains the independent VisEval provenance diagnostic, prompt/schema robustness audit, and version-2 executable stage-audit contract.
+This directory contains the controlled VisEval positive control, prompt/schema robustness audit, and version-2 executable stage-audit contract.
 
 The stage audit is not a checklist of self-declared statuses. Each workflow record binds structured input contracts, stage graphs, candidate ancestry, containment measurements, output layers, coverage, ranking, and claim boundaries to resolvable empirical artifacts. The validator checks schema structure, evidence files and fields, input-contract consistency, stage dependencies, candidate IDs and sources, and registered containment arithmetic.
 

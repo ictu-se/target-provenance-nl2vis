@@ -1,7 +1,7 @@
-# Experimental archive: stage-resolved target provenance and exact-match evaluation in ranked NL2Vis
+# Experimental archive: recorded target provenance and ranking in NL2Vis
 
-This machine-only archive supports the experiments reported in “A Stage-Resolved
-Audit of Target Provenance and Exact-Match Evaluation in Ranked NL2Vis.” It contains generation
+This machine-only archive supports the experiments reported in “A Recorded-
+Evidence Audit of Target Provenance and Ranking in NL2Vis.” It contains generation
 and analysis code, frozen sample indices, model outputs, validation records,
 aggregate results, rendered experimental figures, and environment/version
 records.
@@ -30,9 +30,17 @@ or human-participant data. No participant study was conducted.
   using 15,750 perturbations, replays the retained forensic record, and runs
   full and leave-self-out reranking on executable/intersected all-TAF pools.
 - `reviewer_revision_round6_20260815/` adds an executable stage-audit schema,
-  a paired independent-VisEval provenance diagnostic across five model
+  a paired controlled VisEval positive control across five model
   families, and Qwen prompt-paraphrase/schema-order robustness outputs on the
   locked 150-case development sample.
+- `reviewer_revision_round7_20260816/` adds fixed-pool candidate-presentation
+  sensitivity for Qwen and Mistral rerankers.
+- `reviewer_revision_round8_20260816/` separates source-attached from
+  type-completed execution, cross-checks the conformity gate, and validates
+  component-identical exact gains with completed specifications and pixels.
+- `reviewer_revision_round9_20260816/` separates exact-oracle coverage from
+  ordering, adds a source-rank-free heuristic, extends positional sensitivity
+  to ten fixed presentations, and audits list breadth and token limits.
 - The earlier cross-release adapter campaign is retained with an explicit
   exclusion notice and is not part of the reported result.
 

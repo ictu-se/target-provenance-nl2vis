@@ -52,8 +52,15 @@ stage-wise aggregates, counterfactual results, and worked-example evidence.
   complete-pool reranker-protocol audits.
 - `reviewer_revision_round5_20260815/`: eligible-pool reranking, cost and
   breadth analyses, normal-form validation, and forensic replay.
-- `reviewer_revision_round6_20260815/`: executable stage schema, independent
-  VisEval provenance diagnostic, and prompt/schema perturbation analysis.
+- `reviewer_revision_round6_20260815/`: executable stage schema, controlled
+  VisEval positive control, and prompt/schema perturbation analysis.
+- `reviewer_revision_round7_20260816/`: candidate-presentation sensitivity
+  inference and analysis.
+- `reviewer_revision_round8_20260816/`: parallel execution-layer and
+  conformity/reference implementation checks.
+- `reviewer_revision_round9_20260816/`: oracle-conditioned ordering,
+  source-rank-free heuristic, ten-presentation analysis, and candidate-breadth
+  measurements.
 
 ## Locked experimental design
 

@@ -47,6 +47,15 @@ def weighted_mean(rows: list[dict[str, Any]], metric: str, populations: dict[str
     return sum(populations[name] * mean(float(row[metric]) for row in strata[name]) for name in populations) / total
 
 
+def percentile(values: list[float], probability: float) -> float:
+    ordered = sorted(values)
+    position = (len(ordered) - 1) * probability
+    lower = int(position)
+    upper = min(lower + 1, len(ordered) - 1)
+    fraction = position - lower
+    return ordered[lower] * (1 - fraction) + ordered[upper] * fraction
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--new-run-dir", type=Path, required=True)
@@ -147,6 +156,8 @@ def main() -> None:
     model_summary: list[dict[str, Any]] = []
     for model in models:
         rows = [row for row in permutation_summary if row["model"] == model]
+        hit1_values = [float(row["hit1"]) for row in rows]
+        difference_values = [float(row["llm_minus_rrf_hit1"]) for row in rows]
         unanimous_rows: list[dict[str, Any]] = []
         for record_id in analyzed_record_ids:
             keys = []
@@ -164,10 +175,14 @@ def main() -> None:
             "permutations": len(permutations),
             "hit1_min": min(float(row["hit1"]) for row in rows),
             "hit1_max": max(float(row["hit1"]) for row in rows),
+            "hit1_q25": percentile(hit1_values, 0.25),
+            "hit1_median": percentile(hit1_values, 0.50),
+            "hit1_q75": percentile(hit1_values, 0.75),
             "hit5_min": min(float(row["hit5"]) for row in rows),
             "hit5_max": max(float(row["hit5"]) for row in rows),
             "llm_minus_rrf_hit1_min": min(float(row["llm_minus_rrf_hit1"]) for row in rows),
             "llm_minus_rrf_hit1_max": max(float(row["llm_minus_rrf_hit1"]) for row in rows),
+            "llm_minus_rrf_hit1_median": percentile(difference_values, 0.50),
             "mean_pairwise_top1_identity": mean(float(row["top1_identity"]) for row in pair_rows),
             "mean_pairwise_top5_jaccard": mean(float(row["top5_jaccard"]) for row in pair_rows),
             "unanimous_top1_identity": weighted_mean(unanimous_rows, "unanimous", populations),

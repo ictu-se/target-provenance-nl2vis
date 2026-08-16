@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Paired provenance audit on the independent VisEval benchmark.
+"""Paired controlled positive control on the release-independent VisEval benchmark.
 
 The retained campaign compares a query-only prompt with a prompt that appends
 candidate fields extracted from released SQL and gold field metadata.  The

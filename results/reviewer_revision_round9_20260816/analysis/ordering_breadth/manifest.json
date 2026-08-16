@@ -1,0 +1,7 @@
+{
+  "status": "complete",
+  "ordering": "all-case and oracle-conditioned exact relevance metrics for fixed eligible pools",
+  "ndcg": "binary exact-match relevance; IDCG uses the number of exact gold candidates present in each pool, capped at five",
+  "spec_only_heuristic": "query/candidate lexical-structural score with canonical-key tie breaking; no source identity, source rank, RRF score, or gold input",
+  "breadth": "design-weighted emitted and unique candidate counts plus retained Ollama completion metadata"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "locked_before_new_inference",
+  "locked_local_date": "2026-08-16",
+  "scope": "post-review measurement clarification on the existing design-locked 150-case development sample",
+  "positional_study": {
+    "models": ["mistral-small:24b", "qwen3:14b"],
+    "decoding": {
+      "temperature": 0.0,
+      "seed": 91,
+      "context": 8192,
+      "maximum_output_tokens": 256
+    },
+    "presentation_permutation_seeds": [5, 17, 29, 43, 59, 73, 91, 107, 131, 149],
+    "previously_completed_seeds": [17, 43, 91],
+    "new_seeds": [5, 29, 59, 73, 107, 131, 149],
+    "pool": "the unchanged all-source eligible canonical union used in round 7",
+    "output_contract": "exactly min(5,pool size) distinct existing candidate IDs",
+    "primary_metrics": [
+      "range and distribution of design-weighted Hit@1 and Hit@5",
+      "mean pairwise top-one identity",
+      "mean pairwise top-five Jaccard",
+      "unanimous top-one identity across ten permutations"
+    ]
+  },
+  "ordering_decomposition": {
+    "primary_subset": "cases whose eligible canonical pool contains at least one exact gold candidate",
+    "metrics": ["Hit@1", "Hit@5", "MRR", "NDCG@5"],
+    "rankers": ["RRF source-rank ensemble", "spec-only LLM", "spec-only lexical-structural heuristic"],
+    "heuristic_inputs": "query text and canonical candidate specification only; no source identity, source rank, RRF score, or gold field"
+  },
+  "breadth_and_truncation": {
+    "inputs": "all 1,800 locked generator rows",
+    "metrics": [
+      "mean emitted candidate count",
+      "design-weighted proportions emitting 1 through 5 candidates",
+      "mean unique candidate count",
+      "Ollama done reason",
+      "maximum generated-token count",
+      "token-limit completion count"
+    ]
+  },
+  "interpretation": "post-review sensitivity analysis; no claim of untouched confirmatory evaluation or human semantic validation"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "external_full-ranked audit not executable from retained public artifacts",
+  "checked_date": "2026-08-16",
+  "official_repository": "https://github.com/HKUSTDial/nvBench-2.0",
+  "checked_commit": "f664a45c4d828a78e816089e58bf4843ea589555",
+  "repository_tree_files": 344,
+  "repository_tree_truncated": false,
+  "available_relevant_files": [
+    "code/model_finetune/sft/infer.py",
+    "code/evaluation/evaluation.py",
+    "code/evaluation/utils.py"
+  ],
+  "ranked_model_checkpoint_found": false,
+  "published_case_level_ranked_predictions_found": false,
+  "local_external_ranked_checkpoint_found": false,
+  "interpretation": "The public source supports the source-level input-contract audit already reported. It does not supply the checkpoint and case-level ranked outputs required to reconstruct complete candidate ancestry, pool transformations, and ordering for an independently implemented ranked system. The manuscript therefore narrows its scope instead of describing a full external validation.",
+  "human_validation": {
+    "authorized_expert_participants_available": false,
+    "independently_collected_semantic_labels_available": false,
+    "action": "No human or synthetic proxy labels are reported; construct validity remains an explicit limitation."
+  }
+}

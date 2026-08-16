@@ -1,26 +1,28 @@
-# A Target-Provenance and Metric-Decomposition Audit for Ranked NL2Vis
+# A Recorded-Evidence Audit of Target Provenance and Ranking in NL2Vis
 
 This repository contains the code, frozen experimental designs, machine outputs,
-and derived results for the paper *A Target-Provenance and Metric-Decomposition
-Audit for Ranked NL2Vis*. The manuscript and submission documents are
+and derived results for the paper *A Recorded-Evidence Audit of Target
+Provenance and Ranking in NL2Vis*. The manuscript and submission documents are
 intentionally excluded.
 
-The study audits how target-derived benchmark annotations can enter ranked
-NL2Vis candidate pools. It separates privileged diagnostics from
+The study audits how recorded target-derived benchmark annotations can enter
+ranked NL2Vis candidate pools. It separates privileged diagnostics from
 per-instance-target-answer-free generation, candidate coverage, and ordering.
 The retained evidence includes a locked development-holdout comparison across
 four local-model families and three prompt conditions, a same-lineage
 nvBench-v1 cross-release check, repeated temperature-0 runs, locked
 development-holdout RRF and two LLM rerankers, candidate-level execution,
 study-normal-form and component analyses, and four rendered case studies.
-The retained revisions also include a machine-validated stage-audit schema, an
-independent VisEval provenance diagnostic across five model families, and
+The retained revisions also include a machine-validated stage-audit schema, a
+controlled VisEval positive control across five model families, and
 Qwen prompt-paraphrase and schema-order sensitivities on the same locked
-150-case development sample. The newest block varies only candidate
-presentation order across three fixed permutations for two LLM rerankers. The
-latest measurement block separates source-attached from type-completed
+150-case development sample. One block varies only candidate presentation
+order across ten fixed permutations for two LLM rerankers. The latest
+measurement blocks separate source-attached from type-completed
 execution, cross-checks the conformity gate with an independent implementation
-on all generated candidates, and validates every component-identical exact gain.
+on all generated candidates, validate every component-identical exact gain,
+condition ranking on exact-oracle-positive pools, add a source-rank-free
+heuristic, and report emitted-list breadth and token-limit completion.
 
 ## Repository structure
 
@@ -37,12 +39,15 @@ on all generated candidates, and validates every component-identical exact gain.
   breadth, cost, normal-form validation, forensic replay, and eligible-pool
   reranking code plus the inference-fixed protocol.
 - `experiment/reviewer_revision_round6_20260815/`: executable audit schema,
-  independent VisEval provenance analysis, and locked prompt/schema robustness
+  controlled VisEval positive-control analysis, and locked prompt/schema robustness
   code and protocols.
 - `experiment/reviewer_revision_round7_20260816/`: locked candidate-position
   protocol and positional-robustness inference and analysis code.
 - `experiment/reviewer_revision_round8_20260816/`: execution-layer,
   independent-conformity, and representation-equivalence audit code.
+- `experiment/reviewer_revision_round9_20260816/`: oracle-conditioned ranking,
+  source-rank-free baseline, ten-order positional study, candidate breadth, and
+  external-validation feasibility records.
 - `results/reviewer_revision_round2_20260814/`: retained machine outputs and
   derived tables for the locked holdout, cross-release check, reranking extension,
   and temperature-0 repeatability experiment.
@@ -59,6 +64,9 @@ on all generated candidates, and validates every component-identical exact gain.
   per reranker and their design-weighted stability summaries.
 - `results/reviewer_revision_round8_20260816/`: candidate-level execution,
   checker-agreement, and exact-gain pixel-equivalence results.
+- `results/reviewer_revision_round9_20260816/`: new positional outputs and
+  summaries, oracle-conditioned ranking, candidate breadth, and the empirical
+  ten-order plot.
 - `results/figures/`: final empirical plots and four rendered benchmark cases
   in PDF and PNG formats.
 - `results/external_transfer/`: an earlier external-adapter campaign retained
