@@ -1,0 +1,3 @@
+﻿model,cases,completed_spec_equal,rendered_svg_equal,rendered_png_equal
+mistral-small:24b,13,6,6,6
+qwen3:14b,6,3,2,3

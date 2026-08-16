@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "scope": "all retained candidates from 1,800 locked development model-condition rows",
+  "candidate_rows": 4703,
+  "source_attached_definition": "candidate plus source rows, schema URL, width, and height; no missing type is inserted",
+  "type_completed_definition": "source-attached candidate plus deterministic insertion of missing encoding types",
+  "renderer": "vl-convert-python 1.9.0",
+  "reference_checker": "independent reimplementation; no import of production validation function",
+  "checker_scope_boundary": "implementation agreement with declared benchmark normal form, not external expert semantic or perceptual validity",
+  "source_attached_failures": 584,
+  "type_completed_failures": 440,
+  "completion_rescues": 144,
+  "completion_breaks": 0,
+  "checker": {
+    "generated_candidates": 4703,
+    "reference_accepts": 2261,
+    "reference_rejects": 2442,
+    "true_accept": 2261,
+    "false_accept": 0,
+    "true_reject": 2442,
+    "false_reject": 0,
+    "accept_precision": 1.0,
+    "accept_recall": 1.0,
+    "accept_agreement": 1.0,
+    "error_set_agreement": 0.9559855411439506
+  },
+  "distinct_error_set_pairs": 119
+}

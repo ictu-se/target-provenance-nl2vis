@@ -13,11 +13,14 @@ four local-model families and three prompt conditions, a same-lineage
 nvBench-v1 cross-release check, repeated temperature-0 runs, locked
 development-holdout RRF and two LLM rerankers, candidate-level execution,
 study-normal-form and component analyses, and four rendered case studies.
-The latest revision also includes a machine-validated stage-audit schema, an
+The retained revisions also include a machine-validated stage-audit schema, an
 independent VisEval provenance diagnostic across five model families, and
 Qwen prompt-paraphrase and schema-order sensitivities on the same locked
 150-case development sample. The newest block varies only candidate
-presentation order across three fixed permutations for two LLM rerankers.
+presentation order across three fixed permutations for two LLM rerankers. The
+latest measurement block separates source-attached from type-completed
+execution, cross-checks the conformity gate with an independent implementation
+on all generated candidates, and validates every component-identical exact gain.
 
 ## Repository structure
 
@@ -38,6 +41,8 @@ presentation order across three fixed permutations for two LLM rerankers.
   code and protocols.
 - `experiment/reviewer_revision_round7_20260816/`: locked candidate-position
   protocol and positional-robustness inference and analysis code.
+- `experiment/reviewer_revision_round8_20260816/`: execution-layer,
+  independent-conformity, and representation-equivalence audit code.
 - `results/reviewer_revision_round2_20260814/`: retained machine outputs and
   derived tables for the locked holdout, cross-release check, reranking extension,
   and temperature-0 repeatability experiment.
@@ -52,6 +57,8 @@ presentation order across three fixed permutations for two LLM rerankers.
   Qwen perturbation outputs, case-level analyses, and schema-validation records.
 - `results/reviewer_revision_round7_20260816/`: two new presentation-order runs
   per reranker and their design-weighted stability summaries.
+- `results/reviewer_revision_round8_20260816/`: candidate-level execution,
+  checker-agreement, and exact-gain pixel-equivalence results.
 - `results/figures/`: final empirical plots and four rendered benchmark cases
   in PDF and PNG formats.
 - `results/external_transfer/`: an earlier external-adapter campaign retained

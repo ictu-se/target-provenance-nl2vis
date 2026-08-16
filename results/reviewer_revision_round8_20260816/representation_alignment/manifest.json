@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "scope": "all staged-rich minus direct-rich exact gains whose baseline shares all five registered component sets with the matched gold",
+  "cases": 19,
+  "models": {
+    "mistral-small:24b": 13,
+    "qwen3:14b": 6
+  },
+  "completed_spec_equal": 9,
+  "rendered_svg_equal": 8,
+  "rendered_png_equal": 9,
+  "interpretation": "completed-spec/pixel equality supports execution-level representation equivalence only; unequal cases are not labelled analytically equivalent"
+}

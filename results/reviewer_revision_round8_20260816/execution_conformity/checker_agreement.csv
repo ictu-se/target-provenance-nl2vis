@@ -1,0 +1,2 @@
+﻿generated_candidates,reference_accepts,reference_rejects,true_accept,false_accept,true_reject,false_reject,accept_precision,accept_recall,accept_agreement,error_set_agreement
+4703,2261,2442,2261,0,2442,0,1.0,1.0,1.0,0.9559855411439506
