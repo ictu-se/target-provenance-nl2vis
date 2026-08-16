@@ -1,8 +1,8 @@
-# A Stage-Resolved Audit of Target Provenance and Exact-Match Evaluation in Ranked NL2Vis
+# A Target-Provenance and Metric-Decomposition Audit for Ranked NL2Vis
 
 This repository contains the code, frozen experimental designs, machine outputs,
-and derived results for the paper *A Stage-Resolved Audit of Target Provenance
-and Exact-Match Evaluation in Ranked NL2Vis*. The manuscript and submission documents are
+and derived results for the paper *A Target-Provenance and Metric-Decomposition
+Audit for Ranked NL2Vis*. The manuscript and submission documents are
 intentionally excluded.
 
 The study audits how target-derived benchmark annotations can enter ranked
@@ -16,7 +16,8 @@ study-normal-form and component analyses, and four rendered case studies.
 The latest revision also includes a machine-validated stage-audit schema, an
 independent VisEval provenance diagnostic across five model families, and
 Qwen prompt-paraphrase and schema-order sensitivities on the same locked
-150-case development sample.
+150-case development sample. The newest block varies only candidate
+presentation order across three fixed permutations for two LLM rerankers.
 
 ## Repository structure
 
@@ -26,7 +27,8 @@ Qwen prompt-paraphrase and schema-order sensitivities on the same locked
   design, strict cross-release adapter, and round-2 analysis code.
 - `experiment/reviewer_revision_round3_20260815/`: locked reranking design,
   public-workflow source audit, release-lineage audit, and analysis code.
-- `experiment/reviewer_revision_round4_20260815/`: renderer-execution and
+- `experiment/reviewer_revision_round4_20260815/`: standardized-completion
+  execution and
   complete-pool reranker-protocol audit code.
 - `experiment/reviewer_revision_round5_20260815/`: core/component-matched
   breadth, cost, normal-form validation, forensic replay, and eligible-pool
@@ -34,6 +36,8 @@ Qwen prompt-paraphrase and schema-order sensitivities on the same locked
 - `experiment/reviewer_revision_round6_20260815/`: executable audit schema,
   independent VisEval provenance analysis, and locked prompt/schema robustness
   code and protocols.
+- `experiment/reviewer_revision_round7_20260816/`: locked candidate-position
+  protocol and positional-robustness inference and analysis code.
 - `results/reviewer_revision_round2_20260814/`: retained machine outputs and
   derived tables for the locked holdout, cross-release check, reranking extension,
   and temperature-0 repeatability experiment.
@@ -46,6 +50,8 @@ Qwen prompt-paraphrase and schema-order sensitivities on the same locked
   cost summaries, and matched-breadth tables.
 - `results/reviewer_revision_round6_20260815/`: retained VisEval paired inputs,
   Qwen perturbation outputs, case-level analyses, and schema-validation records.
+- `results/reviewer_revision_round7_20260816/`: two new presentation-order runs
+  per reranker and their design-weighted stability summaries.
 - `results/figures/`: final empirical plots and four rendered benchmark cases
   in PDF and PNG formats.
 - `results/external_transfer/`: an earlier external-adapter campaign retained

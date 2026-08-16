@@ -1,0 +1,23 @@
+{
+  "status": "locked_before_inference",
+  "locked_local_date": "2026-08-16",
+  "scientific_question": "Does the central full-pool LLM-versus-RRF ordering result depend on one deterministic candidate presentation order?",
+  "sample": "existing stratified 150-case nvBench-2.0 development sample",
+  "population_estimand": "fixed 720-record development population after the 30-case engineering screen",
+  "pool": "all twelve target-answer-free generator lists, canonicalized and restricted to candidates with at least one standardized-completion-executable and benchmark-conforming source occurrence",
+  "models": ["mistral-small:24b", "qwen3:14b"],
+  "decoding": {"temperature": 0.0, "seed": 91, "context": 8192, "maximum_output_tokens": 256},
+  "presentation_permutations": [17, 43, 91],
+  "baseline_permutation": 91,
+  "new_permutations": [17, 43],
+  "output_contract": "exactly min(5, pool size) distinct IDs from the presented pool",
+  "primary_metrics": [
+    "design-weighted Hit@1 for each permutation",
+    "design-weighted LLM-minus-RRF Hit@1 for each permutation",
+    "design-weighted pairwise top-one candidate identity",
+    "design-weighted pairwise top-five set Jaccard",
+    "design-weighted unanimous top-one identity across all three permutations"
+  ],
+  "secondary_metrics": ["Hit@5", "prefix completeness", "selected candidate presentation position"],
+  "interpretation": "post-review positional robustness sensitivity; presentation order is the only intended prompt-content change"
+}

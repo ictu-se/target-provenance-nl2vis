@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "models": [
+    "mistral-small:24b",
+    "qwen3:14b"
+  ],
+  "permutations": [
+    17,
+    43,
+    91
+  ],
+  "case_runs": 900,
+  "pool_invariant": "canonical eligible pool and RRF order identical across presentation permutations",
+  "decoding": "temperature 0, seed 91; only candidate presentation permutation changes",
+  "output_contract": "exactly min(5,pool_size) distinct IDs"
+}

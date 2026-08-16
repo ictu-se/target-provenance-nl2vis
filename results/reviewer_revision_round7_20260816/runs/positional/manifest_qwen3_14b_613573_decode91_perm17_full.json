@@ -1,0 +1,50 @@
+{
+  "status": "complete",
+  "model": "qwen3:14b",
+  "model_manifest": {
+    "name": "qwen3:14b",
+    "model": "qwen3:14b",
+    "modified_at": "2026-08-13T10:10:44.426152674+07:00",
+    "size": 9276198565,
+    "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "14.8B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 40960,
+      "embedding_length": 5120
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  },
+  "variant": "full",
+  "decoding_seed": 91,
+  "permutation_seed": 17,
+  "temperature": 0.0,
+  "source_files": [
+    "gemma3_27b_1eb26b_d_55_d_r2holdout150.jsonl",
+    "gemma3_27b_1eb26b_r_55_d_r2holdout150.jsonl",
+    "gemma3_27b_1eb26b_s_55_d_r2holdout150.jsonl",
+    "llama3_2_3b_925b2c_d_55_d_r2holdout150.jsonl",
+    "llama3_2_3b_925b2c_r_55_d_r2holdout150.jsonl",
+    "llama3_2_3b_925b2c_s_55_d_r2holdout150.jsonl",
+    "mistral_smal_d50e0c_d_55_d_r2holdout150.jsonl",
+    "mistral_smal_d50e0c_r_55_d_r2holdout150.jsonl",
+    "mistral_smal_d50e0c_s_55_d_r2holdout150.jsonl",
+    "qwen3_14b_613573_d_55_d_r2holdout150.jsonl",
+    "qwen3_14b_613573_r_55_d_r2holdout150.jsonl",
+    "qwen3_14b_613573_s_55_d_r2holdout150.jsonl"
+  ],
+  "eligibility": "standardized-completion executable AND study-registered benchmark-normal-form compliant",
+  "baseline": "RRF k0=60 over eligible source ranks with canonical-key tie breaking",
+  "output_policy": "exactly min(5,pool_size) distinct existing IDs; no backfill",
+  "rows": 150
+}
