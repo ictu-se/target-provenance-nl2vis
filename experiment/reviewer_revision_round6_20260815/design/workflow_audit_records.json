@@ -1,0 +1,203 @@
+[
+  {
+    "schema_version": "2.0.0",
+    "workflow_id": "internal_privileged_prototype",
+    "input_contract": {
+      "status": "violated",
+      "admissible_fields": ["query", "schema"],
+      "observed_fields": ["query", "schema", "step1_answer", "step2_answer", "step3_answer", "step4_answer", "step5_answer", "step6_answer"],
+      "privileged_fields": ["step1_answer", "step2_answer", "step3_answer", "step4_answer", "step5_answer", "step6_answer"],
+      "evidence_ids": ["legacy_pool_stages", "forensic_replay"]
+    },
+    "stage_graph": [
+      {"stage_id": "benchmark_answers", "operation": "source", "depends_on": [], "emits_candidates": true},
+      {"stage_id": "raw_pool", "operation": "construct", "depends_on": ["benchmark_answers"], "emits_candidates": true},
+      {"stage_id": "canonical_pool", "operation": "canonicalize", "depends_on": ["raw_pool"], "emits_candidates": true},
+      {"stage_id": "cap15", "operation": "filter", "depends_on": ["canonical_pool"], "emits_candidates": true},
+      {"stage_id": "ranked_prefix", "operation": "rank", "depends_on": ["cap15"], "emits_candidates": true},
+      {"stage_id": "exact_evaluation", "operation": "evaluate", "depends_on": ["ranked_prefix"], "emits_candidates": false}
+    ],
+    "candidate_ancestry": {
+      "status": "partial",
+      "evidence_id": "legacy_pool_stages",
+      "case_id_field": "record_id",
+      "candidate_id_field": null,
+      "source_field": null,
+      "expected_case_count": 751,
+      "record_prefix": "nvbench2:test:",
+      "checks": ["expected_cases", "unique_case_ids"]
+    },
+    "target_containment": {
+      "status": "measured",
+      "evidence_id": "legacy_pool_stages",
+      "metrics": [
+        {"stage_id": "benchmark_answers", "column": "step6_contains_any_gold", "record_prefix": "nvbench2:test:", "numerator": 730, "denominator": 751, "rate": 0.9720372836218375},
+        {"stage_id": "cap15", "column": "complete_pool_contains_any_gold", "record_prefix": "nvbench2:test:", "numerator": 732, "denominator": 751, "rate": 0.9747003994673769}
+      ]
+    },
+    "counterfactuals": [
+      {"contrast_id": "leave_step6_out", "baseline": "all_six_answers", "comparison": "steps1_to_5_only", "changed_inputs": ["step6_answer"], "matched_constructor": true, "evidence_ids": ["legacy_pair"], "claim": "attribution among privileged sources, not an admissible-input leakage effect"}
+    ],
+    "output_layers": [
+      {"layer": "exact_target", "status": "measured", "evidence_ids": ["legacy_pair", "forensic_replay"]},
+      {"layer": "component_overlap", "status": "measured", "evidence_ids": ["legacy_pair"]}
+    ],
+    "coverage_before_ordering": {"status": "measured", "estimate": 0.9747003994673769, "estimator": "unweighted fixed-test proportion", "evidence_ids": ["legacy_pool_stages", "forensic_replay"]},
+    "ranking": {"status": "measured", "rankers": ["heuristic", "logistic"], "evidence_ids": ["legacy_pair", "forensic_replay"]},
+    "claim_boundary": {
+      "estimand": "retained 751-case internal test record",
+      "supported_claims": ["target containment is high before ranking", "Step 6 contributes most retained exact targets"],
+      "unsupported_claims": ["published-system leakage prevalence", "causal effect of removing all privileged inputs"]
+    },
+    "evidence": [
+      {"evidence_id": "legacy_pool_stages", "path": "../../outputs/legacy_audit/legacy_pool_stages.csv", "format": "csv", "min_rows": 751, "required_fields": ["record_id", "step6_contains_any_gold", "complete_pool_contains_any_gold", "cap15_count"]},
+      {"evidence_id": "legacy_pair", "path": "../../out/a/legacy_pair/per_case.csv", "format": "csv", "min_rows": 751, "required_fields": ["record_id", "heuristic_hit@1", "learned_hit@1", "learned_hit@5"]},
+      {"evidence_id": "forensic_replay", "path": "../../../results/reviewer_revision_round5_20260815/analysis/forensic_replay.json", "format": "json", "min_rows": null, "required_fields": ["status", "n", "heuristic", "logistic", "complete_pool_contains_any_gold"]}
+    ]
+  },
+  {
+    "schema_version": "2.0.0",
+    "workflow_id": "public_nvbench2_sft_path",
+    "input_contract": {
+      "status": "verified",
+      "admissible_fields": ["column_examples", "nl_query", "table_columns", "unique_value_counts"],
+      "observed_fields": ["column_examples", "nl_query", "table_columns", "unique_value_counts"],
+      "privileged_fields": ["gold_answer"],
+      "evidence_ids": ["public_source_audit"]
+    },
+    "stage_graph": [
+      {"stage_id": "dataset_loader", "operation": "source", "depends_on": [], "emits_candidates": false},
+      {"stage_id": "inference_prompt", "operation": "construct", "depends_on": ["dataset_loader"], "emits_candidates": false},
+      {"stage_id": "model_output", "operation": "construct", "depends_on": ["inference_prompt"], "emits_candidates": true},
+      {"stage_id": "posthoc_evaluation", "operation": "evaluate", "depends_on": ["model_output"], "emits_candidates": false}
+    ],
+    "candidate_ancestry": {
+      "status": "source_only",
+      "evidence_id": "public_source_audit",
+      "case_id_field": null,
+      "candidate_id_field": null,
+      "source_field": null,
+      "expected_case_count": null,
+      "record_prefix": null,
+      "checks": ["public_prompt_separation"]
+    },
+    "target_containment": {"status": "source_checked", "evidence_id": "public_source_audit", "metrics": []},
+    "counterfactuals": [],
+    "output_layers": [],
+    "coverage_before_ordering": {"status": "not_available", "estimate": null, "estimator": null, "evidence_ids": []},
+    "ranking": {"status": "not_measured", "rankers": [], "evidence_ids": []},
+    "claim_boundary": {
+      "estimand": "checked public SFT source path at the recorded commit",
+      "supported_claims": ["gold_answer is separated from inference prompt formatting in the checked source"],
+      "unsupported_claims": ["trained-model performance reproduction", "absence of pretraining memorization"]
+    },
+    "evidence": [
+      {"evidence_id": "public_source_audit", "path": "../../../results/reviewer_revision_round3_20260815/analysis/public_workflow_audit.json", "format": "json", "min_rows": null, "required_fields": ["repository", "commit", "gold_answer_injected_into_inference_prompt", "per_instance_target_exposure_found"]}
+    ]
+  },
+  {
+    "schema_version": "2.0.0",
+    "workflow_id": "locked_nvbench2_forward_and_reranking",
+    "input_contract": {
+      "status": "verified",
+      "admissible_fields": ["query", "schema_fields", "field_examples", "unique_value_counts"],
+      "observed_fields": ["query", "schema_fields", "field_examples", "unique_value_counts"],
+      "privileged_fields": ["benchmark_steps", "database_id", "gold_chart", "source_visualization"],
+      "evidence_ids": ["locked_rerank_jsonl", "locked_analysis_manifest"]
+    },
+    "stage_graph": [
+      {"stage_id": "taf_generation", "operation": "construct", "depends_on": [], "emits_candidates": true},
+      {"stage_id": "canonicalization", "operation": "canonicalize", "depends_on": ["taf_generation"], "emits_candidates": true},
+      {"stage_id": "execution_conformity_filter", "operation": "filter", "depends_on": ["canonicalization"], "emits_candidates": true},
+      {"stage_id": "eligible_union", "operation": "construct", "depends_on": ["execution_conformity_filter"], "emits_candidates": true},
+      {"stage_id": "rrf_or_llm_order", "operation": "rank", "depends_on": ["eligible_union"], "emits_candidates": true},
+      {"stage_id": "ranked_evaluation", "operation": "evaluate", "depends_on": ["rrf_or_llm_order"], "emits_candidates": false}
+    ],
+    "candidate_ancestry": {
+      "status": "complete",
+      "evidence_id": "locked_rerank_jsonl",
+      "case_id_field": "record_id",
+      "candidate_id_field": "pool_details[].canonical_key",
+      "source_field": "pool_details[].sources",
+      "expected_case_count": 150,
+      "record_prefix": "nvbench2:dev:",
+      "checks": ["expected_cases", "unique_case_ids", "pool_count_matches", "sources_nonempty", "ranked_ids_resolve"]
+    },
+    "target_containment": {"status": "not_applicable", "evidence_id": null, "metrics": []},
+    "counterfactuals": [
+      {"contrast_id": "leave_self_out", "baseline": "all_taf_eligible_full", "comparison": "own_family_removed_before_pooling", "changed_inputs": ["own_model_family_candidates"], "matched_constructor": false, "evidence_ids": ["locked_rerank_per_case"], "claim": "ancestry sensitivity under changed candidate availability"}
+    ],
+    "output_layers": [
+      {"layer": "parseability", "status": "measured", "evidence_ids": ["locked_rerank_jsonl"]},
+      {"layer": "execution", "status": "measured", "evidence_ids": ["locked_analysis_manifest"]},
+      {"layer": "benchmark_conformity", "status": "measured", "evidence_ids": ["locked_analysis_manifest"]},
+      {"layer": "exact_target", "status": "measured", "evidence_ids": ["locked_rerank_per_case"]},
+      {"layer": "component_overlap", "status": "measured", "evidence_ids": ["locked_rerank_per_case"]}
+    ],
+    "coverage_before_ordering": {"status": "measured", "estimate": 0.3208, "estimator": "design-weighted oracle over fixed 720-record population", "evidence_ids": ["locked_rerank_per_case"]},
+    "ranking": {"status": "measured", "rankers": ["RRF", "Mistral-Small-24B", "Qwen3-14B"], "evidence_ids": ["locked_rerank_jsonl", "locked_rerank_per_case"]},
+    "claim_boundary": {
+      "estimand": "fixed 720-record development population represented by the locked 150-case stratified sample",
+      "supported_claims": ["eligible-union coverage precedes ordering", "candidate IDs resolve to candidates with retained source ancestry"],
+      "unsupported_claims": ["blind confirmatory inference", "future-user or future-dataset performance"]
+    },
+    "evidence": [
+      {"evidence_id": "locked_rerank_jsonl", "path": "../../../results/reviewer_revision_round5_20260815/runs/eligible_rerank/qwen3_14b_613573_91_all_taf_eligible_full.jsonl", "format": "jsonl", "min_rows": 150, "required_fields": ["record_id", "eligible_pool_count", "pool_details", "llm_ranked_ids", "parse_success"]},
+      {"evidence_id": "locked_rerank_per_case", "path": "../../../results/reviewer_revision_round5_20260815/analysis/eligible_rerank/per_case.csv", "format": "csv", "min_rows": 600, "required_fields": ["record_id", "model", "variant", "pool_size", "pool_oracle", "rrf_hit@1", "llm_hit@1"]},
+      {"evidence_id": "locked_analysis_manifest", "path": "../../../results/reviewer_revision_round3_20260815/analysis/locked_holdout/analysis_manifest.json", "format": "json", "min_rows": null, "required_fields": ["input_dir", "design", "models", "conditions", "n_per_run"]}
+    ]
+  },
+  {
+    "schema_version": "2.0.0",
+    "workflow_id": "viseval_candidate_field_pair",
+    "input_contract": {
+      "status": "violated",
+      "admissible_fields": ["query"],
+      "observed_fields": ["query", "candidate_fields_from_gold_sql", "gold_x", "gold_y"],
+      "privileged_fields": ["candidate_fields_from_gold_sql", "gold_x", "gold_y"],
+      "evidence_ids": ["viseval_pairs", "viseval_manifest"]
+    },
+    "stage_graph": [
+      {"stage_id": "released_query", "operation": "source", "depends_on": [], "emits_candidates": false},
+      {"stage_id": "gold_field_append", "operation": "construct", "depends_on": ["released_query"], "emits_candidates": false},
+      {"stage_id": "compact_intent", "operation": "construct", "depends_on": ["gold_field_append"], "emits_candidates": true},
+      {"stage_id": "paired_evaluation", "operation": "evaluate", "depends_on": ["compact_intent"], "emits_candidates": false}
+    ],
+    "candidate_ancestry": {
+      "status": "partial",
+      "evidence_id": "viseval_pairs",
+      "case_id_field": "case_id",
+      "candidate_id_field": null,
+      "source_field": "model",
+      "expected_case_count": 100,
+      "record_prefix": null,
+      "checks": ["expected_cases", "gold_fields_exposed_all"]
+    },
+    "target_containment": {
+      "status": "measured",
+      "evidence_id": "viseval_pairs",
+      "metrics": [
+        {"stage_id": "gold_field_append", "column": "gold_fields_exposed", "record_prefix": null, "numerator": 500, "denominator": 500, "rate": 1.0}
+      ]
+    },
+    "counterfactuals": [
+      {"contrast_id": "remove_gold_derived_candidate_fields", "baseline": "privileged_candidate_fields", "comparison": "query_only", "changed_inputs": ["candidate_fields_from_gold_sql", "gold_x", "gold_y"], "matched_constructor": true, "evidence_ids": ["viseval_pairs"], "claim": "paired target-derived field-assistance effect for retained model outputs"}
+    ],
+    "output_layers": [
+      {"layer": "parseability", "status": "measured", "evidence_ids": ["viseval_pairs"]},
+      {"layer": "exact_target", "status": "measured", "evidence_ids": ["viseval_pairs"]},
+      {"layer": "component_overlap", "status": "measured", "evidence_ids": ["viseval_pairs"]}
+    ],
+    "coverage_before_ordering": {"status": "single_candidate", "estimate": null, "estimator": null, "evidence_ids": ["viseval_pairs"]},
+    "ranking": {"status": "not_measured", "rankers": [], "evidence_ids": []},
+    "claim_boundary": {
+      "estimand": "paired 100-case VisEval diagnostic across five retained local model families",
+      "supported_claims": ["gold-derived field support changes field-pair matching in the retained diagnostic"],
+      "unsupported_claims": ["published VisEval pipeline performance", "ranked-chart breadth"]
+    },
+    "evidence": [
+      {"evidence_id": "viseval_pairs", "path": "../../../results/reviewer_revision_round6_20260815/analysis/viseval_provenance/paired_rows.csv", "format": "csv", "min_rows": 500, "required_fields": ["case_id", "model", "gold_fields_exposed", "query_only_chart_match", "privileged_chart_match", "query_only_field_pair_match", "privileged_field_pair_match"]},
+      {"evidence_id": "viseval_manifest", "path": "../../../results/reviewer_revision_round6_20260815/analysis/viseval_provenance/manifest.json", "format": "json", "min_rows": null, "required_fields": ["status", "benchmark", "query_only_rows", "privileged_rows", "unique_cases", "models"]}
+    ]
+  }
+]

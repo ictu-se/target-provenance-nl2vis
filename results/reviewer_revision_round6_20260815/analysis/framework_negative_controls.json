@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "registered_mutations": 7,
+  "rejected_mutations": 7,
+  "mutations": [
+    {
+      "mutation": "remove_required_claim_boundary",
+      "rejected": true,
+      "errors": [
+        "'claim_boundary' is a required property"
+      ]
+    },
+    {
+      "mutation": "label_privileged_inputs_verified",
+      "rejected": true,
+      "errors": [
+        "verified input contract observes privileged fields: ['step1_answer', 'step2_answer', 'step3_answer', 'step4_answer', 'step5_answer', 'step6_answer']"
+      ]
+    },
+    {
+      "mutation": "insert_unknown_stage_dependency",
+      "rejected": true,
+      "errors": [
+        "stage inference_prompt depends on unknown or later stages: ['future_stage']"
+      ]
+    },
+    {
+      "mutation": "remove_empirical_evidence",
+      "rejected": true,
+      "errors": [
+        "missing evidence file: missing/paired_rows.csv",
+        "ancestry evidence must be row-oriented for the registered checks",
+        "measured containment requires row-oriented evidence"
+      ]
+    },
+    {
+      "mutation": "alter_containment_numerator",
+      "rejected": true,
+      "errors": [
+        "benchmark_answers: declared 731/751 but evidence gives 730/751"
+      ]
+    },
+    {
+      "mutation": "remove_candidate_source_ancestry",
+      "rejected": true,
+      "errors": [
+        "row 1: candidate without retained source ancestry"
+      ]
+    },
+    {
+      "mutation": "insert_unresolved_ranked_id",
+      "rejected": true,
+      "errors": [
+        "row 1: unresolved ranked IDs ['c999']"
+      ]
+    }
+  ]
+}

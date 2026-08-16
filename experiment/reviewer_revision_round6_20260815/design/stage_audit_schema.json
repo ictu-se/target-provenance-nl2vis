@@ -1,30 +1,180 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Ranked NL2Vis stage-audit record",
+  "$id": "https://example.org/ranked-nl2vis-stage-audit-v2.schema.json",
+  "title": "Executable ranked-NL2Vis stage-audit record",
   "type": "object",
   "required": [
+    "schema_version",
     "workflow_id",
     "input_contract",
+    "stage_graph",
     "candidate_ancestry",
     "target_containment",
-    "forward_replacement",
+    "counterfactuals",
     "output_layers",
     "coverage_before_ordering",
-    "claim_boundary"
+    "ranking",
+    "claim_boundary",
+    "evidence"
   ],
   "properties": {
+    "schema_version": {"const": "2.0.0"},
     "workflow_id": {"type": "string", "minLength": 1},
-    "input_contract": {"enum": ["documented", "verified", "violated", "unavailable"]},
-    "candidate_ancestry": {"enum": ["complete", "partial", "source_only", "unavailable"]},
-    "target_containment": {"enum": ["measured", "source_checked", "not_applicable", "unavailable"]},
-    "forward_replacement": {"enum": ["matched", "different_mechanism", "not_run", "not_applicable"]},
+    "input_contract": {
+      "type": "object",
+      "required": ["status", "admissible_fields", "observed_fields", "privileged_fields", "evidence_ids"],
+      "properties": {
+        "status": {"enum": ["verified", "violated", "unavailable"]},
+        "admissible_fields": {"$ref": "#/$defs/stringSet"},
+        "observed_fields": {"$ref": "#/$defs/stringSet"},
+        "privileged_fields": {"$ref": "#/$defs/stringSet"},
+        "evidence_ids": {"$ref": "#/$defs/stringSet"}
+      },
+      "additionalProperties": false
+    },
+    "stage_graph": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["stage_id", "operation", "depends_on", "emits_candidates"],
+        "properties": {
+          "stage_id": {"type": "string", "minLength": 1},
+          "operation": {"enum": ["source", "construct", "canonicalize", "filter", "rank", "evaluate"]},
+          "depends_on": {"$ref": "#/$defs/stringSet"},
+          "emits_candidates": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "candidate_ancestry": {
+      "type": "object",
+      "required": ["status", "evidence_id", "case_id_field", "candidate_id_field", "source_field", "expected_case_count", "record_prefix", "checks"],
+      "properties": {
+        "status": {"enum": ["complete", "partial", "source_only", "unavailable"]},
+        "evidence_id": {"type": ["string", "null"]},
+        "case_id_field": {"type": ["string", "null"]},
+        "candidate_id_field": {"type": ["string", "null"]},
+        "source_field": {"type": ["string", "null"]},
+        "expected_case_count": {"type": ["integer", "null"], "minimum": 0},
+        "record_prefix": {"type": ["string", "null"]},
+        "checks": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"enum": ["expected_cases", "unique_case_ids", "pool_count_matches", "sources_nonempty", "ranked_ids_resolve", "public_prompt_separation", "gold_fields_exposed_all"]}
+        }
+      },
+      "additionalProperties": false
+    },
+    "target_containment": {
+      "type": "object",
+      "required": ["status", "evidence_id", "metrics"],
+      "properties": {
+        "status": {"enum": ["measured", "source_checked", "not_applicable", "unavailable"]},
+        "evidence_id": {"type": ["string", "null"]},
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["stage_id", "column", "record_prefix", "numerator", "denominator", "rate"],
+            "properties": {
+              "stage_id": {"type": "string", "minLength": 1},
+              "column": {"type": "string", "minLength": 1},
+              "record_prefix": {"type": ["string", "null"]},
+              "numerator": {"type": "integer", "minimum": 0},
+              "denominator": {"type": "integer", "minimum": 1},
+              "rate": {"type": "number", "minimum": 0, "maximum": 1}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "counterfactuals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["contrast_id", "baseline", "comparison", "changed_inputs", "matched_constructor", "evidence_ids", "claim"],
+        "properties": {
+          "contrast_id": {"type": "string", "minLength": 1},
+          "baseline": {"type": "string", "minLength": 1},
+          "comparison": {"type": "string", "minLength": 1},
+          "changed_inputs": {"$ref": "#/$defs/stringSet"},
+          "matched_constructor": {"type": "boolean"},
+          "evidence_ids": {"$ref": "#/$defs/stringSet"},
+          "claim": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
     "output_layers": {
       "type": "array",
-      "items": {"enum": ["parseability", "execution", "benchmark_conformity", "exact_target", "component_overlap"]},
-      "uniqueItems": true
+      "items": {
+        "type": "object",
+        "required": ["layer", "status", "evidence_ids"],
+        "properties": {
+          "layer": {"enum": ["parseability", "execution", "benchmark_conformity", "exact_target", "component_overlap", "robustness", "cost"]},
+          "status": {"enum": ["measured", "source_checked", "not_measured"]},
+          "evidence_ids": {"$ref": "#/$defs/stringSet"}
+        },
+        "additionalProperties": false
+      }
     },
-    "coverage_before_ordering": {"enum": ["measured", "single_candidate", "not_available"]},
-    "claim_boundary": {"type": "string", "minLength": 1}
+    "coverage_before_ordering": {
+      "type": "object",
+      "required": ["status", "estimate", "estimator", "evidence_ids"],
+      "properties": {
+        "status": {"enum": ["measured", "single_candidate", "not_available"]},
+        "estimate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "estimator": {"type": ["string", "null"]},
+        "evidence_ids": {"$ref": "#/$defs/stringSet"}
+      },
+      "additionalProperties": false
+    },
+    "ranking": {
+      "type": "object",
+      "required": ["status", "rankers", "evidence_ids"],
+      "properties": {
+        "status": {"enum": ["measured", "fixed", "not_measured"]},
+        "rankers": {"$ref": "#/$defs/stringSet"},
+        "evidence_ids": {"$ref": "#/$defs/stringSet"}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": ["estimand", "supported_claims", "unsupported_claims"],
+      "properties": {
+        "estimand": {"type": "string", "minLength": 1},
+        "supported_claims": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "unsupported_claims": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "path", "format", "min_rows", "required_fields"],
+        "properties": {
+          "evidence_id": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "format": {"enum": ["csv", "json", "jsonl"]},
+          "min_rows": {"type": ["integer", "null"], "minimum": 0},
+          "required_fields": {"$ref": "#/$defs/stringSet"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "stringSet": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
   },
   "additionalProperties": false
 }
